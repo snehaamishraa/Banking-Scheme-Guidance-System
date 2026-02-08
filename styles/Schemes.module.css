@@ -6,7 +6,7 @@
 
 .header {
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,25 +16,26 @@
 
 .backButton {
   background: transparent;
-  border: 1px solid var(--neon-cyan);
-  color: var(--neon-cyan);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  color: var(--text-primary);
   padding: 0.75rem 1.5rem;
-  border-radius: 25px;
+  border-radius: 12px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .backButton:hover {
-  background: var(--neon-cyan);
-  color: var(--dark-bg);
-  box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.7);
+  color: var(--text-primary);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.35);
 }
 
 .bankTitle {
   font-size: 1.5rem;
   color: var(--neon-purple);
-  text-shadow: 0 0 10px var(--neon-purple);
+  text-shadow: none;
 }
 
 .main {
@@ -59,8 +60,7 @@
 
 .neonText {
   color: var(--neon-cyan);
-  text-shadow: 0 0 10px var(--neon-cyan),
-               0 0 20px var(--neon-cyan);
+  text-shadow: none;
 }
 
 .subtitle {
@@ -71,20 +71,20 @@
 
 .filterButton {
   background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
-  color: white;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: bold;
   padding: 1rem 2.5rem;
   border: none;
-  border-radius: 50px;
+  border-radius: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
 }
 
 .filterButton:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 0, 110, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.45);
 }
 
 .loading,
@@ -118,8 +118,8 @@
 .schemeCard {
   background: var(--card-bg);
   padding: 2rem;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -142,9 +142,9 @@
 }
 
 .schemeCard:hover {
-  border-color: var(--neon-cyan);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 40px rgba(0, 243, 255, 0.3);
+  border-color: rgba(59, 130, 246, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.4);
 }
 
 .schemeCard:hover::after {
@@ -154,9 +154,9 @@
 .viewDetailsButton {
   margin-top: auto;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, rgba(0, 243, 255, 0.2), rgba(180, 0, 255, 0.2));
-  border: 1px solid rgba(0, 243, 255, 0.4);
-  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(20, 184, 166, 0.18));
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  border-radius: 12px;
   text-align: center;
   color: var(--neon-cyan);
   font-weight: 600;
@@ -165,8 +165,8 @@
 
 .schemeCard:hover .viewDetailsButton {
   background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-  color: var(--dark-bg);
-  border-color: var(--neon-cyan);
+  color: #ffffff;
+  border-color: rgba(59, 130, 246, 0.8);
 }
 
 .schemeHeader {
@@ -186,9 +186,9 @@
 
 .interest {
   background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan));
-  color: var(--dark-bg);
+  color: #ffffff;
   padding: 0.4rem 0.8rem;
-  border-radius: 20px;
+  border-radius: 999px;
   font-weight: bold;
   font-size: 0.9rem;
   white-space: nowrap;
@@ -202,9 +202,9 @@
 
 .targetGroup {
   padding: 0.75rem;
-  background: rgba(180, 0, 255, 0.1);
-  border-left: 3px solid var(--neon-purple);
-  border-radius: 5px;
+  background: rgba(20, 184, 166, 0.08);
+  border-left: 3px solid rgba(20, 184, 166, 0.6);
+  border-radius: 10px;
   font-size: 0.9rem;
 }
 

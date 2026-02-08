@@ -6,7 +6,7 @@
 
 .header {
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,10 +17,10 @@
 .backButton,
 .viewAllButton {
   background: transparent;
-  border: 1px solid var(--neon-cyan);
-  color: var(--neon-cyan);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  color: var(--text-primary);
   padding: 0.75rem 1.5rem;
-  border-radius: 25px;
+  border-radius: 12px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -28,9 +28,10 @@
 
 .backButton:hover,
 .viewAllButton:hover {
-  background: var(--neon-cyan);
-  color: var(--dark-bg);
-  box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.7);
+  color: var(--text-primary);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.35);
 }
 
 .main {
@@ -67,10 +68,10 @@
 .retryButton {
   margin-top: 1rem;
   background: var(--neon-pink);
-  color: var(--dark-bg);
+  color: #ffffff;
   border: none;
   padding: 0.75rem 2rem;
-  border-radius: 25px;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
@@ -78,8 +79,8 @@
 }
 
 .retryButton:hover {
-  box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
-  transform: scale(1.05);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.4);
+  transform: translateY(-2px);
 }
 
 .resultsHeader {
@@ -94,9 +95,7 @@
 
 .neonText {
   color: var(--neon-cyan);
-  text-shadow: 0 0 10px var(--neon-cyan),
-               0 0 20px var(--neon-cyan),
-               0 0 30px var(--neon-cyan);
+  text-shadow: none;
 }
 
 .subtitle {
@@ -113,8 +112,8 @@
 .criteriaCard {
   background: var(--card-bg);
   padding: 2rem;
-  border-radius: 15px;
-  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
   max-width: 900px;
   margin: 0 auto;
 }
@@ -137,8 +136,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem;
-  background: rgba(0, 243, 255, 0.05);
-  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.08);
+  border-radius: 10px;
 }
 
 .criteriaLabel {
@@ -161,8 +160,8 @@
 .schemeCard {
   background: var(--card-bg);
   padding: 2rem;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -184,9 +183,9 @@
 }
 
 .schemeCard:hover {
-  border-color: var(--neon-cyan);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 40px rgba(0, 243, 255, 0.3);
+  border-color: rgba(59, 130, 246, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.4);
 }
 
 .schemeCard:hover::after {
@@ -194,15 +193,15 @@
 }
 
 .bestMatch {
-  border-color: var(--neon-pink);
-  background: linear-gradient(135deg, 
-    rgba(255, 0, 110, 0.05) 0%, 
-    rgba(180, 0, 255, 0.05) 100%);
+  border-color: rgba(249, 115, 22, 0.5);
+  background: linear-gradient(135deg,
+    rgba(249, 115, 22, 0.08) 0%,
+    rgba(20, 184, 166, 0.06) 100%);
 }
 
 .bestMatch:hover {
-  border-color: var(--neon-pink);
-  box-shadow: 0 10px 40px rgba(255, 0, 110, 0.4);
+  border-color: rgba(249, 115, 22, 0.6);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.45);
 }
 
 .bestMatchBadge {
@@ -212,20 +211,10 @@
   background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
   color: white;
   padding: 0.5rem 1.5rem;
-  border-radius: 20px;
+  border-radius: 999px;
   font-size: 0.85rem;
   font-weight: bold;
-  box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(255, 0, 110, 0.8);
-  }
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.35);
 }
 
 .schemeHeader {
@@ -249,9 +238,9 @@
 
 .interest {
   background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan));
-  color: var(--dark-bg);
+  color: #ffffff;
   padding: 0.4rem 0.8rem;
-  border-radius: 20px;
+  border-radius: 999px;
   font-weight: bold;
   font-size: 0.9rem;
   white-space: nowrap;
@@ -292,20 +281,20 @@
 }
 
 .tag {
-  background: rgba(255, 0, 110, 0.2);
+  background: rgba(249, 115, 22, 0.18);
   color: var(--neon-pink);
   padding: 0.3rem 0.8rem;
-  border-radius: 15px;
+  border-radius: 999px;
   font-size: 0.85rem;
-  border: 1px solid rgba(255, 0, 110, 0.3);
+  border: 1px solid rgba(249, 115, 22, 0.3);
   transition: all 0.3s ease;
 }
 
 .matchedGoal {
   background: var(--neon-pink);
-  color: var(--dark-bg);
+  color: #ffffff;
   font-weight: bold;
-  box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.35);
 }
 
 .benefits,
@@ -354,8 +343,8 @@
   text-align: center;
   padding: 3rem 2rem;
   background: var(--card-bg);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 0, 110, 0.3);
+  border-radius: 18px;
+  border: 1px solid rgba(249, 115, 22, 0.3);
 }
 
 .noResultsIcon {
@@ -377,9 +366,9 @@
 }
 
 .suggestions {
-  background: rgba(0, 243, 255, 0.05);
+  background: rgba(59, 130, 246, 0.08);
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 2rem;
   text-align: left;
   max-width: 500px;
@@ -420,44 +409,45 @@
 
 .primaryButton {
   background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-  color: var(--dark-bg);
+  color: #ffffff;
   font-size: 1rem;
   font-weight: bold;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 50px;
+  border-radius: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .primaryButton:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 243, 255, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.45);
 }
 
 .secondaryButton {
   background: transparent;
-  border: 2px solid var(--neon-cyan);
-  color: var(--neon-cyan);
+  border: 1px solid rgba(59, 130, 246, 0.6);
+  color: var(--text-primary);
   font-size: 1rem;
   font-weight: bold;
   padding: 1rem 2rem;
-  border-radius: 50px;
+  border-radius: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .secondaryButton:hover {
-  background: var(--neon-cyan);
-  color: var(--dark-bg);
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.8);
+  color: var(--text-primary);
 }
 
 .disclaimer {
   margin-top: 3rem;
   padding: 2rem;
-  background: rgba(255, 0, 110, 0.1);
-  border: 1px solid rgba(255, 0, 110, 0.3);
-  border-radius: 15px;
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 14px;
   text-align: center;
 }
 
@@ -485,9 +475,9 @@
 .viewDetailsButton {
   margin-top: auto;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, rgba(0, 243, 255, 0.2), rgba(180, 0, 255, 0.2));
-  border: 1px solid rgba(0, 243, 255, 0.4);
-  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(20, 184, 166, 0.18));
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  border-radius: 12px;
   text-align: center;
   color: var(--neon-cyan);
   font-weight: 600;
@@ -496,17 +486,17 @@
 
 .schemeCard:hover .viewDetailsButton {
   background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-  color: var(--dark-bg);
-  border-color: var(--neon-cyan);
+  color: #ffffff;
+  border-color: rgba(59, 130, 246, 0.8);
 }
 
 .bestMatch .viewDetailsButton {
-  border-color: var(--neon-pink);
+  border-color: rgba(249, 115, 22, 0.6);
 }
 
 .bestMatch:hover .viewDetailsButton {
   background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
-  border-color: var(--neon-pink);
+  border-color: rgba(249, 115, 22, 0.8);
 }
 
 /* Responsive */

@@ -1,7 +1,9 @@
 .container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 100%);
-  color: #ffffff;
+  background: radial-gradient(1200px circle at 15% 10%, rgba(20, 184, 166, 0.12), transparent 55%),
+              radial-gradient(900px circle at 85% 0%, rgba(59, 130, 246, 0.14), transparent 50%),
+              linear-gradient(180deg, #0b1220 0%, #0b1220 100%);
+  color: var(--text-primary);
   padding: 20px;
 }
 
@@ -15,11 +17,11 @@
 }
 
 .backButton {
-  background: linear-gradient(135deg, #00f3ff 0%, #b400ff 100%);
-  color: #0a0a0f;
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+  color: #ffffff;
   border: none;
   padding: 12px 24px;
-  border-radius: 25px;
+  border-radius: 12px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -28,7 +30,7 @@
 
 .backButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 243, 255, 0.4);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
 }
 
 .main {
@@ -38,9 +40,9 @@
 }
 
 .content {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 243, 255, 0.3);
-  border-radius: 20px;
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
   padding: 40px;
   backdrop-filter: blur(10px);
 }
@@ -50,15 +52,12 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
-  background: linear-gradient(135deg, #ffffff 0%, #00f3ff 50%, #b400ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
 .neonText {
-  color: #00f3ff;
-  text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 30px #00f3ff;
+  color: var(--neon-cyan);
+  text-shadow: none;
 }
 
 .section {
@@ -67,7 +66,7 @@
 
 .section h2 {
   font-size: 2rem;
-  color: #00f3ff;
+  color: var(--neon-cyan);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -77,7 +76,7 @@
 .section p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
   margin-bottom: 15px;
 }
 
@@ -89,7 +88,7 @@
 .section ul li {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
   margin-bottom: 12px;
   padding-left: 30px;
   position: relative;
@@ -99,15 +98,15 @@
   content: "→";
   position: absolute;
   left: 0;
-  color: #00f3ff;
+  color: var(--neon-cyan);
   font-weight: bold;
 }
 
 .bankList {
-  background: rgba(0, 243, 255, 0.05);
-  border-left: 4px solid #00f3ff;
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 4px solid rgba(59, 130, 246, 0.7);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   margin: 20px 0;
 }
 
@@ -121,21 +120,21 @@
 }
 
 .bankList a {
-  color: #b400ff;
+  color: var(--neon-purple);
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
 }
 
 .bankList a:hover {
-  color: #00f3ff;
+  color: var(--neon-cyan);
   text-decoration: underline;
 }
 
 .note {
-  background: rgba(255, 165, 0, 0.1);
-  border: 1px solid rgba(255, 165, 0, 0.3);
-  border-radius: 10px;
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 12px;
   padding: 20px;
   margin-top: 20px;
   font-size: 1rem;
@@ -149,29 +148,29 @@
 }
 
 .ethicsCard {
-  background: rgba(180, 0, 255, 0.1);
-  border: 1px solid rgba(180, 0, 255, 0.3);
-  border-radius: 15px;
+  background: rgba(20, 184, 166, 0.08);
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  border-radius: 14px;
   padding: 25px;
   transition: all 0.3s ease;
 }
 
 .ethicsCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(180, 0, 255, 0.3);
-  border-color: rgba(180, 0, 255, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+  border-color: rgba(20, 184, 166, 0.6);
 }
 
 .ethicsCard h3 {
   font-size: 1.3rem;
-  color: #00f3ff;
+  color: var(--neon-cyan);
   margin-bottom: 15px;
 }
 
 .ethicsCard p {
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
 }
 
 .howItWorks {
@@ -185,21 +184,21 @@
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  background: rgba(0, 243, 255, 0.05);
-  border: 1px solid rgba(0, 243, 255, 0.2);
-  border-radius: 15px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 14px;
   padding: 25px;
   transition: all 0.3s ease;
 }
 
 .step:hover {
-  background: rgba(0, 243, 255, 0.1);
-  border-color: rgba(0, 243, 255, 0.4);
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.6);
 }
 
 .stepNumber {
-  background: linear-gradient(135deg, #00f3ff 0%, #b400ff 100%);
-  color: #0a0a0f;
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+  color: #ffffff;
   font-size: 1.8rem;
   font-weight: bold;
   width: 60px;
@@ -213,20 +212,20 @@
 
 .stepContent h3 {
   font-size: 1.4rem;
-  color: #00f3ff;
+  color: var(--neon-cyan);
   margin-bottom: 10px;
 }
 
 .stepContent p {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .disclaimer {
-  background: rgba(255, 0, 110, 0.1);
-  border: 2px solid rgba(255, 0, 110, 0.4);
-  border-radius: 15px;
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  border-radius: 14px;
   padding: 30px;
   margin-top: 20px;
 }
@@ -236,7 +235,7 @@
 }
 
 .disclaimer strong {
-  color: #ff006e;
+  color: var(--neon-pink);
 }
 
 .resources {
@@ -247,9 +246,9 @@
 }
 
 .resourceLink {
-  background: linear-gradient(135deg, rgba(0, 243, 255, 0.2) 0%, rgba(180, 0, 255, 0.2) 100%);
-  border: 1px solid rgba(0, 243, 255, 0.4);
-  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18) 0%, rgba(20, 184, 166, 0.18) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  border-radius: 14px;
   padding: 20px;
   text-align: center;
   color: #ffffff;
@@ -260,30 +259,30 @@
 }
 
 .resourceLink:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 243, 255, 0.4);
-  background: linear-gradient(135deg, rgba(0, 243, 255, 0.3) 0%, rgba(180, 0, 255, 0.3) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(20, 184, 166, 0.25) 100%);
 }
 
 .footer {
   text-align: center;
   margin-top: 60px;
   padding-top: 40px;
-  border-top: 1px solid rgba(0, 243, 255, 0.3);
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 .footer p {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   margin-bottom: 30px;
 }
 
 .homeButton {
-  background: linear-gradient(135deg, #b400ff 0%, #ff006e 100%);
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
   color: #ffffff;
   border: none;
   padding: 15px 40px;
-  border-radius: 30px;
+  border-radius: 14px;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
@@ -291,8 +290,8 @@
 }
 
 .homeButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(180, 0, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
 }
 
 /* Responsive Design */
