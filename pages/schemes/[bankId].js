@@ -22,7 +22,10 @@ export default function Schemes() {
       const response = await fetch(`/api/schemes/${bankId}`);
       if (!response.ok) throw new Error('Failed to fetch schemes');
       const data = await response.json();
-      setSchemes(data.schemes);
+      const normalizedSchemes = Array.isArray(data.schemes)
+        ? data.schemes.map((scheme) => mapSchemeToViewModel(scheme))
+        : [];
+      setSchemes(normalizedSchemes);
       setBankName(formatBankName(data.bank));
       setLoading(false);
     } catch (err) {
@@ -31,15 +34,34 @@ export default function Schemes() {
     }
   };
 
-  const formatBankName = (id) => {
-    const bankNames = {
-      'SBI': 'State Bank of India (SBI)',
-      'PNB': 'Punjab National Bank (PNB)',
-      'HDFC_Bank': 'HDFC Bank',
-      'ICICI_Bank': 'ICICI Bank',
-      'Axis_Bank': 'Axis Bank'
+  const mapSchemeToViewModel = (scheme) => {
+    const minAge = scheme.minimum_age ?? null;
+    const maxAge = scheme.maximum_age ?? null;
+    const minIncome = scheme.minimum_income_required ?? null;
+
+    return {
+      id: scheme.id,
+      name: scheme.scheme_name,
+      interestRate: scheme.interest_rate_range,
+      description: scheme.description,
+      targetGroup: scheme.target_audience,
+      eligibility: {
+        minAge,
+        maxAge,
+        minIncome,
+        maxIncome: null,
+        gender: 'Any',
+        categories: scheme.scheme_category ? [scheme.scheme_category] : []
+      },
+      suitableFor: Array.isArray(scheme.key_features) ? scheme.key_features : [],
+      benefits: Array.isArray(scheme.pros) ? scheme.pros : []
     };
-    return bankNames[id] || (id ? id.replace(/_/g, ' ') : '');
+  };
+
+  const formatBankName = (id) => {
+    if (!id) return '';
+    if (id.includes('Bank')) return id;
+    return id.replace(/_/g, ' ');
   };
 
   const handleFilterSchemes = () => {
