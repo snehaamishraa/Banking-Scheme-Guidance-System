@@ -1,77 +1,150 @@
-import schemes from '../../server/data/schemes.json';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+let schemesCache = null;
+
+function loadSchemes() {
+  if (schemesCache) return schemesCache;
+  
+  try {
+    const filePath = join(process.cwd(), 'server/data/bank_schemes.json');
+    const fileContent = readFileSync(filePath, 'utf-8');
+    schemesCache = JSON.parse(fileContent);
+    return schemesCache;
+  } catch (error) {
+    console.error('Error loading schemes:', error);
+    return null;
+  }
+}
+
+function parseCurrency(amount) {
+  if (typeof amount === 'number') return amount;
+  if (typeof amount !== 'string') return 0;
+  return parseInt(amount.replace(/[₹,]/g, '')) || 0;
+}
+
+function parseInterestRate(rateRange) {
+  if (!rateRange) return { min: 0, max: 100 };
+  
+  const match = rateRange.match(/[\d.]+/g);
+  if (!match || match.length < 1) return { min: 0, max: 100 };
+  
+  const min = parseFloat(match[0]);
+  const max = match.length > 1 ? parseFloat(match[1]) : min;
+  
+  return { min, max };
+}
+
+function matchesCriteria(scheme, criteria) {
+  // Age check
+  if (criteria.age) {
+    if (scheme.minimum_age && criteria.age < scheme.minimum_age) return false;
+    if (scheme.maximum_age && criteria.age > scheme.maximum_age) return false;
+  }
+
+  // Income check
+  if (criteria.income) {
+    if (scheme.minimum_income_required && criteria.income < scheme.minimum_income_required) return false;
+  }
+
+  // Loan amount check
+  if (criteria.loanAmount && criteria.loanAmount > 0) {
+    const minAmount = parseCurrency(scheme.loan_amount_min);
+    const maxAmount = parseCurrency(scheme.loan_amount_max);
+    if (criteria.loanAmount < minAmount || criteria.loanAmount > maxAmount) return false;
+  }
+
+  // Purpose/Category check
+  if (criteria.purpose) {
+    if (scheme.scheme_category !== criteria.purpose) return false;
+  }
+
+  // Bank check
+  if (criteria.bank) {
+    if (scheme.bank_name !== criteria.bank) return false;
+  }
+
+  return true;
+}
+
+function calculateMatchScore(scheme, criteria) {
+  let score = 50; // Base score
+
+  // Category match (best indicator)
+  if (criteria.purpose && scheme.scheme_category === criteria.purpose) {
+    score += 30;
+  }
+
+  // Age proximity (if applicable)
+  if (criteria.age) {
+    if (scheme.minimum_age && scheme.maximum_age) {
+      const midAge = (scheme.minimum_age + scheme.maximum_age) / 2;
+      const ageDiff = Math.abs(criteria.age - midAge);
+      if (ageDiff <= 5) score += 15;
+      else if (ageDiff <= 15) score += 10;
+      else if (ageDiff <= 25) score += 5;
+    }
+  }
+
+  // Income match
+  if (criteria.income && scheme.minimum_income_required) {
+    const incomeRatio = criteria.income / scheme.minimum_income_required;
+    if (incomeRatio >= 1.5) score += 5;
+  }
+
+  return Math.min(100, Math.max(0, score));
+}
 
 export default function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
   try {
-    const { bankId, age, gender, category, monthlyIncome, occupation, savingsGoal } = req.body;
+    const { age, income, purpose, loanAmount, bank, limit = 10 } = req.body;
 
-    if (!bankId || !schemes[bankId]) {
-      return res.status(400).json({ error: 'Invalid or missing bank ID' });
+    // Validate input
+    if (age && (age < 18 || age > 100)) {
+      return res.status(400).json({ success: false, error: 'Age must be between 18 and 100' });
     }
 
-    const bankSchemes = schemes[bankId];
-    const filteredSchemes = bankSchemes.filter(scheme => {
-      let matches = true;
+    const data = loadSchemes();
+    if (!data || !data.schemes) {
+      return res.status(404).json({ success: false, error: 'No schemes found' });
+    }
 
-      // Age filter
-      if (scheme.eligibility.minAge && age < scheme.eligibility.minAge) matches = false;
-      if (scheme.eligibility.maxAge && age > scheme.eligibility.maxAge) matches = false;
+    const criteria = {
+      age: age || null,
+      income: income || null,
+      purpose: purpose || null,
+      loanAmount: loanAmount || 0,
+      bank: bank || null
+    };
 
-      // Gender filter
-      if (scheme.eligibility.gender && scheme.eligibility.gender !== 'Any' && scheme.eligibility.gender !== gender) {
-        matches = false;
-      }
-
-      // Category filter
-      if (scheme.eligibility.categories && scheme.eligibility.categories.length > 0) {
-        if (!scheme.eligibility.categories.includes(category) && !scheme.eligibility.categories.includes('All')) {
-          matches = false;
-        }
-      }
-
-      // Income filter
-      if (scheme.eligibility.maxIncome && monthlyIncome > scheme.eligibility.maxIncome) {
-        matches = false;
-      }
-      if (scheme.eligibility.minIncome && monthlyIncome < scheme.eligibility.minIncome) {
-        matches = false;
-      }
-
-      // Occupation filter
-      if (scheme.eligibility.occupations && scheme.eligibility.occupations.length > 0) {
-        if (!scheme.eligibility.occupations.includes(occupation) && !scheme.eligibility.occupations.includes('Any')) {
-          matches = false;
-        }
-      }
-
-      // Savings goal filter (optional matching)
-      if (savingsGoal && scheme.suitableFor && scheme.suitableFor.length > 0) {
-        if (scheme.suitableFor.includes(savingsGoal)) {
-          scheme.bestMatch = true;
-        }
-      }
-
-      return matches;
-    });
-
-    // Sort to show best matches first
-    filteredSchemes.sort((a, b) => {
-      if (a.bestMatch && !b.bestMatch) return -1;
-      if (!a.bestMatch && b.bestMatch) return 1;
-      return 0;
-    });
+    // Filter schemes
+    const matchedSchemes = data.schemes
+      .filter(scheme => matchesCriteria(scheme, criteria))
+      .map(scheme => ({
+        ...scheme,
+        matchScore: calculateMatchScore(scheme, criteria)
+      }))
+      .sort((a, b) => b.matchScore - a.matchScore)
+      .slice(0, limit);
 
     res.status(200).json({
-      bank: bankId,
-      totalSchemes: bankSchemes.length,
-      matchedSchemes: filteredSchemes.length,
-      schemes: filteredSchemes,
-      userCriteria: { age, gender, category, monthlyIncome, occupation, savingsGoal }
+      success: true,
+      criteria,
+      totalSchemes: data.schemes.length,
+      matchedSchemes: matchedSchemes.length,
+      schemes: matchedSchemes,
+      timestamp: new Date().toISOString()
     });
   } catch (error) {
-    res.status(500).json({ error: 'Failed to filter schemes' });
+    console.error('Error in /api/filter-schemes:', error);
+    res.status(500).json({ 
+      success: false,
+      error: 'Failed to filter schemes',
+      message: error.message 
+    });
   }
 }
