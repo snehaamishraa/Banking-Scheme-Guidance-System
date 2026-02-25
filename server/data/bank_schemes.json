@@ -1083,6 +1083,153 @@
       ],
       "official_website_reference": "www.unionbankofindia.co.in/agricultural-loans",
       "last_updated": "2026-02-25"
+    },
+    {
+      "id": "gov_girl_child_1",
+      "bank_name": "Government-backed (All Banks)",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Sukanya Samriddhi Account (SSA)",
+      "description": "Small savings scheme for long-term financial security of a girl child",
+      "target_audience": "Parents/guardians of a girl child below 10 years",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 0,
+      "maximum_age": 10,
+      "loan_amount_min": "₹250",
+      "loan_amount_max": "₹1,50,000",
+      "interest_rate_range": "8.0% (govt notified, subject to change)",
+      "processing_fee": "₹0",
+      "repayment_tenure": "Deposit for 15 years, maturity at 21 years",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Account can be opened at authorized banks and post offices",
+        "Tax benefits as per prevailing rules",
+        "Partial withdrawal allowed after a specified age",
+        "Long-term savings discipline for girl child"
+      ],
+      "required_documents": [
+        "Birth certificate of girl child",
+        "Identity and address proof of parent/guardian",
+        "Photographs",
+        "KYC documents"
+      ],
+      "eligibility_criteria": [
+        "Girl child below 10 years at time of account opening",
+        "Resident Indian",
+        "One account per girl child (up to two girls per family)"
+      ],
+      "pros": [
+        "Attractive government-backed interest rate",
+        "Tax benefits on deposits",
+        "Long tenure for wealth creation",
+        "High safety and low risk"
+      ],
+      "cons": [
+        "Lock-in period before maturity",
+        "Annual deposit limits apply",
+        "Withdrawal rules are regulated"
+      ],
+      "official_website_reference": "www.indiapost.gov.in/Financial/pages/content/post-office-saving-schemes.aspx",
+      "scheme_tags": [
+        "Girl Child"
+      ],
+      "last_updated": "2026-02-25"
+    },
+    {
+      "id": "gov_girl_child_2",
+      "bank_name": "Government-backed (All Banks)",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Balika Samriddhi Yojana (BSY)",
+      "description": "Government savings scheme to support the education and well-being of girl children",
+      "target_audience": "Girl child from economically weaker sections",
+      "minimum_income_required": "BPL/EWS eligibility",
+      "minimum_age": 0,
+      "maximum_age": 18,
+      "loan_amount_min": "₹0",
+      "loan_amount_max": "₹0",
+      "interest_rate_range": "Savings rate (govt notified)",
+      "processing_fee": "₹0",
+      "repayment_tenure": "Benefits until 18 years",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "One-time grant at birth and annual scholarships for schooling",
+        "Focus on retention of girl child in school",
+        "Government-backed support program"
+      ],
+      "required_documents": [
+        "Birth certificate",
+        "BPL/EWS certificate",
+        "School enrollment proof",
+        "Identity proof of parent/guardian"
+      ],
+      "eligibility_criteria": [
+        "Girl child belonging to BPL/EWS families",
+        "Enrollment and continuation in school",
+        "Resident Indian"
+      ],
+      "pros": [
+        "Direct support for girl child education",
+        "Government-backed benefits",
+        "Encourages school retention"
+      ],
+      "cons": [
+        "Eligibility limited to BPL/EWS families",
+        "Documentation requirements",
+        "Benefits linked to school attendance"
+      ],
+      "official_website_reference": "wcd.nic.in/schemes/balika-samriddhi-yojana",
+      "scheme_tags": [
+        "Girl Child"
+      ],
+      "last_updated": "2026-02-25"
+    },
+    {
+      "id": "gov_single_child_1",
+      "bank_name": "Government-backed (All Banks)",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Single Girl Child Scholarship (CBSE)",
+      "description": "Scholarship support for single girl child students in CBSE-affiliated schools",
+      "target_audience": "Single girl child students in Classes XI-XII",
+      "minimum_income_required": "Family income as per CBSE norms",
+      "minimum_age": 15,
+      "maximum_age": 19,
+      "loan_amount_min": "₹0",
+      "loan_amount_max": "₹0",
+      "interest_rate_range": "Not applicable",
+      "processing_fee": "₹0",
+      "repayment_tenure": "Scholarship period for Classes XI-XII",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Scholarship for single girl child to promote education",
+        "Applicable to CBSE-affiliated schools",
+        "Government-backed financial support"
+      ],
+      "required_documents": [
+        "School certificate",
+        "Single girl child declaration",
+        "Income certificate (if applicable)",
+        "Identity proof"
+      ],
+      "eligibility_criteria": [
+        "Single girl child studying in Class XI or XII",
+        "CBSE-affiliated school enrollment",
+        "Meets CBSE eligibility rules"
+      ],
+      "pros": [
+        "Supports continued education",
+        "Government-backed scheme",
+        "Recognized nationwide"
+      ],
+      "cons": [
+        "Not a bank product",
+        "Eligibility tied to CBSE rules",
+        "Limited to eligible schools"
+      ],
+      "official_website_reference": "www.cbse.gov.in/cbsenew/scholarship.html",
+      "scheme_tags": [
+        "Single Child",
+        "Girl Child"
+      ],
+      "last_updated": "2026-02-25"
     }
   ]
 }

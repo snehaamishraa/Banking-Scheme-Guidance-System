@@ -19,11 +19,13 @@ export default function QuickFilter() {
     'Education Loans',
     'Home Loans',
     'Personal Loans',
-    'MSME/Business Loans',
+    'MSME / Business Loans',
     'Agriculture Loans',
-    'Government-backed Schemes',
+    'Government-backed schemes',
     'Fixed Deposits',
-    'Savings Accounts'
+    'Savings Accounts',
+    'Single Child',
+    'Girl Child'
   ];
 
   const handleChange = (e) => {

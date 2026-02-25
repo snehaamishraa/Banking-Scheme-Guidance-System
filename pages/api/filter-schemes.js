@@ -35,6 +35,15 @@ function parseInterestRate(rateRange) {
   return { min, max };
 }
 
+function normalizeLabel(value) {
+  return (value || '').toString().toLowerCase().replace(/[^a-z0-9]+/g, '');
+}
+
+function isTagCategory(value) {
+  const key = normalizeLabel(value);
+  return key === 'singlechild' || key === 'girlchild';
+}
+
 function matchesCriteria(scheme, criteria) {
   // Age check
   if (criteria.age) {
@@ -56,7 +65,14 @@ function matchesCriteria(scheme, criteria) {
 
   // Purpose/Category check
   if (criteria.purpose) {
-    if (scheme.scheme_category !== criteria.purpose) return false;
+    const purposeKey = normalizeLabel(criteria.purpose);
+    if (isTagCategory(criteria.purpose)) {
+      const schemeTags = Array.isArray(scheme.scheme_tags) ? scheme.scheme_tags : [];
+      const normalizedTags = schemeTags.map(tag => normalizeLabel(tag));
+      if (!normalizedTags.includes(purposeKey)) return false;
+    } else if (normalizeLabel(scheme.scheme_category) !== purposeKey) {
+      return false;
+    }
   }
 
   // Bank check
@@ -71,8 +87,16 @@ function calculateMatchScore(scheme, criteria) {
   let score = 50; // Base score
 
   // Category match (best indicator)
-  if (criteria.purpose && scheme.scheme_category === criteria.purpose) {
-    score += 30;
+  if (criteria.purpose) {
+    const purposeKey = normalizeLabel(criteria.purpose);
+    const categoryKey = normalizeLabel(scheme.scheme_category);
+    if (purposeKey === categoryKey) {
+      score += 30;
+    } else if (isTagCategory(criteria.purpose)) {
+      const schemeTags = Array.isArray(scheme.scheme_tags) ? scheme.scheme_tags : [];
+      const normalizedTags = schemeTags.map(tag => normalizeLabel(tag));
+      if (normalizedTags.includes(purposeKey)) score += 30;
+    }
   }
 
   // Age proximity (if applicable)
