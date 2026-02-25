@@ -23,10 +23,7 @@ export default function SchemeDetails() {
       const response = await fetch(`/api/schemes/${encodedBankId}`);
       if (!response.ok) throw new Error('Failed to fetch scheme');
       const data = await response.json();
-      // Find scheme by ID or by bank name
-      const foundScheme = data.schemes.find(s => 
-        s.id === schemeId || (s.scheme_name && s.scheme_name.includes(schemeId))
-      );
+      const foundScheme = data.schemes.find(s => s.id === schemeId);
       if (foundScheme) {
         setScheme(foundScheme);
       } else {
