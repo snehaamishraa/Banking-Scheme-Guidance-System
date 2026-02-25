@@ -21,61 +21,80 @@ export default function Home() {
 
         <main className={styles.main}>
           <div className={styles.hero}>
-            <h1 className={styles.title}>
-              Find the <span className={styles.neonText}>Perfect</span> Banking Scheme
-            </h1>
-            <p className={styles.subtitle}>
-              A smart, rule-based guidance system that helps you discover banking schemes 
-              tailored to your unique eligibility and financial goals.
-            </p>
-            
-            <div className={styles.features}>
-              <div className={styles.featureCard}>
-                <span className={styles.featureIcon}>🎯</span>
-                        <div className={styles.ctaContainer}>
-                          <Link href="/quick-filter">
-                            <button className={styles.ctaButton}>
-                              Find Your Perfect Scheme
-                              <span className={styles.arrow}>→</span>
-                            </button>
-                          </Link>
-                          <Link href="/select-bank">
-                            <button className={styles.secondaryButton}>
-                              Browse by Bank
-                            </button>
-                          </Link>
-                        </div>
-                <p>Get immediate results using rule-based filtering logic</p>
-              </div>
-              <div className={styles.featureCard}>
-                <span className={styles.featureIcon}>🔒</span>
-                <h3>No Data Storage</h3>
-                <p>Your information is never saved or shared</p>
+            {/* Hero Section */}
+            <div className={styles.heroContent}>
+              <h1 className={styles.title}>
+                Find the <span className={styles.neonText}>Perfect</span> Banking Scheme
+              </h1>
+              <p className={styles.subtitle}>
+                Discover banking schemes tailored to your needs. Our rule-based matching system
+                finds the best options across major banks in seconds.
+              </p>
+            </div>
+
+            {/* Primary CTA */}
+            <div className={styles.ctaSection}>
+              <div className={styles.ctaContainer}>
+                <Link href="/quick-filter">
+                  <button className={styles.ctaButton}>
+                    <span className={styles.ctaLabel}>Find Your Perfect Scheme</span>
+                    <span className={styles.arrow}>→</span>
+                  </button>
+                </Link>
+                <Link href="/select-bank">
+                  <button className={styles.secondaryButton}>
+                    Browse by Bank
+                  </button>
+                </Link>
               </div>
             </div>
 
-            <Link href="/select-bank">
-              <button className={styles.ctaButton}>
-                Explore Schemes
-                <span className={styles.arrow}>→</span>
-              </button>
-            </Link>
+            {/* Features Grid */}
+            <div className={styles.features}>
+              <div className={styles.featureCard}>
+                <span className={styles.featureIcon}>⚡</span>
+                <h3>Instant Matching</h3>
+                <p>Get personalized results in seconds based on your eligibility</p>
+              </div>
+              <div className={styles.featureCard}>
+                <span className={styles.featureIcon}>🔒</span>
+                <h3>100% Private</h3>
+                <p>No data storage. Your information is never saved or shared</p>
+              </div>
+              <div className={styles.featureCard}>
+                <span className={styles.featureIcon}>✅</span>
+                <h3>Verified Data</h3>
+                <p>All schemes are from official bank sources and updated regularly</p>
+              </div>
+            </div>
 
+            {/* Categories Preview */}
+            <div className={styles.categoriesSection}>
+              <h2 className={styles.sectionTitle}>Browse by Category</h2>
+              <div className={styles.categoriesGrid}>
+                <div className={styles.categoryTag}>📚 Education</div>
+                <div className={styles.categoryTag}>🏠 Home Loans</div>
+                <div className={styles.categoryTag}>💰 Personal Loans</div>
+                <div className={styles.categoryTag}>🏢 Business</div>
+                <div className={styles.categoryTag}>🌾 Agriculture</div>
+                <div className={styles.categoryTag}>💳 Savings</div>
+                <div className={styles.categoryTag}>👧 Girl Child</div>
+                <div className={styles.categoryTag}>👨‍👩‍👧 Single Child</div>
+              </div>
+            </div>
+
+            {/* Disclaimer */}
             <div className={styles.disclaimer}>
               <p>
-                <strong>⚠️ Educational Purpose Only:</strong> Scheme information based on publicly available 
-                data from official Indian bank sources. For the most current details, please visit official 
-                bank websites or contact banks directly.
+                <strong>⚠️ Educational Purpose:</strong> Scheme information is for informational use only. 
+                Always verify with official bank sources before applying.
               </p>
-              <Link href="/about" className={styles.aboutLink}>
-                Learn More About Data Sources & Ethics →
-              </Link>
             </div>
           </div>
         </main>
 
         <footer className={styles.footer}>
-          <p>🏦 Banking Scheme Guidance • Real Bank Data • Secure & Private • Educational Purpose</p>
+          <p>🏦 Banking Scheme Guidance • Secure • Private • Trusted</p>
         </footer>
       </div>
     </>

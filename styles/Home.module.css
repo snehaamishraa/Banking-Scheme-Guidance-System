@@ -38,33 +38,139 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
 
 .hero {
   max-width: 1200px;
+  width: 100%;
   text-align: center;
+}
+
+.heroContent {
+  margin-bottom: 3rem;
 }
 
 .title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .neonText {
-  color: var(--neon-cyan);
-  text-shadow: none;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  margin-bottom: 3rem;
-  max-width: 800px;
+  margin-bottom: 0;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.8;
+  font-weight: 400;
+}
+
+.ctaSection {
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ctaButton {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 1.2rem 2.8rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 8px 24px rgba(0, 243, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 243, 255, 0.3);
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+.ctaButton:active {
+  transform: translateY(-1px);
+}
+
+.ctaLabel {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.arrow {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(8px);
+}
+
+.secondaryButton {
+  background: rgba(20, 184, 166, 0.05);
+  color: var(--neon-cyan);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 1.2rem 2.8rem;
+  border: 1.5px solid var(--neon-cyan);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.secondaryButton:hover {
+  background: rgba(20, 184, 166, 0.15);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(20, 184, 166, 0.15);
+}
+
+.secondaryButton:active {
+  transform: translateY(-1px);
 }
 
 .features {
@@ -75,29 +181,42 @@
 }
 
 .featureCard {
-  background: var(--card-bg);
-  padding: 2rem;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.05), rgba(59, 130, 246, 0.05));
+  padding: 2.5rem 2rem;
   border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.4), transparent);
 }
 
 .featureCard:hover {
-  background: var(--card-hover);
-  border-color: rgba(59, 130, 246, 0.6);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.4);
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.08), rgba(59, 130, 246, 0.08));
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(20, 184, 166, 0.15);
 }
 
 .featureIcon {
-  font-size: 3rem;
+  font-size: 2.8rem;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .featureCard h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
   color: var(--neon-cyan);
 }
 
@@ -105,54 +224,56 @@
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
+  margin: 0;
 }
 
-.ctaButton {
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-  color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: bold;
-  padding: 1.1rem 2.6rem;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
+.categoriesSection {
+  margin-bottom: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.03), rgba(59, 130, 246, 0.03));
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.categoryTag {
+  padding: 0.9rem 1.2rem;
+  background: rgba(20, 184, 166, 0.08);
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--neon-cyan);
   transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
+  cursor: pointer;
 }
 
-.ctaButton:hover {
+.categoryTag:hover {
+  background: rgba(20, 184, 166, 0.15);
+  border-color: rgba(59, 130, 246, 0.5);
   transform: translateY(-2px);
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.45);
-}
-
-.ctaButton:active {
-  transform: translateY(0);
-}
-  .ctaContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .ctaButton,
-  .secondaryButton {
-    width: 100%;
-    justify-content: center;
-    padding: 1rem 2rem;
-  }
-
-.ctaButton:hover .arrow {
-  transform: translateX(5px);
+  box-shadow: 0 6px 16px rgba(20, 184, 166, 0.2);
 }
 
 .disclaimer {
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 1.5rem;
-  background: rgba(249, 115, 22, 0.08);
-  border: 1px solid rgba(249, 115, 22, 0.25);
+  background: rgba(249, 115, 22, 0.06);
+  border: 1px solid rgba(249, 115, 22, 0.2);
   border-radius: 12px;
   max-width: 800px;
   margin-left: auto;
@@ -167,7 +288,7 @@
 }
 
 .disclaimer strong {
-  color: var(--neon-pink);
+  color: var(--neon-cyan);
 }
 
 .aboutLink {
@@ -188,40 +309,6 @@
 }
 
 .footer {
-  .ctaContainer {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 2rem 0;
-  }
-
-  .secondaryButton {
-    background: transparent;
-    color: var(--neon-cyan);
-    font-size: 1.25rem;
-    font-weight: bold;
-    padding: 1.1rem 2.6rem;
-    border: 2px solid var(--neon-cyan);
-    border-radius: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .secondaryButton:hover {
-    background: rgba(20, 184, 166, 0.1);
-    border-color: var(--neon-purple);
-    color: var(--neon-purple);
-    transform: translateY(-2px);
-  }
-
-  .secondaryButton:active {
-    transform: translateY(0);
-  }
-
   padding: 2rem;
   text-align: center;
   border-top: 1px solid rgba(148, 163, 184, 0.25);
@@ -236,17 +323,53 @@
   }
   
   .main {
-    padding: 1rem;
+    padding: 2rem 1rem;
+  }
+  
+  .title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+  
+  .subtitle {
+    font-size: 1rem;
   }
   
   .features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin-bottom: 2rem;
   }
   
-  .ctaButton {
+  .ctaContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .ctaButton,
+  .secondaryButton {
     width: 100%;
     justify-content: center;
-    padding: 1rem 2rem;
+    padding: 1.1rem 2rem;
+    font-size: 0.95rem;
+  }
+  
+  .categoriesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+  }
+  
+  .categoryTag {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  .categoriesSection {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
   }
 }
