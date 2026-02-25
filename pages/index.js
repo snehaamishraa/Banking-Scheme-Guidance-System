@@ -32,12 +32,19 @@ export default function Home() {
             <div className={styles.features}>
               <div className={styles.featureCard}>
                 <span className={styles.featureIcon}>🎯</span>
-                <h3>Personalized Results</h3>
-                <p>Filter schemes based on your age, income, occupation, and goals</p>
-              </div>
-              <div className={styles.featureCard}>
-                <span className={styles.featureIcon}>⚡</span>
-                <h3>Instant Matching</h3>
+                        <div className={styles.ctaContainer}>
+                          <Link href="/quick-filter">
+                            <button className={styles.ctaButton}>
+                              Find Your Perfect Scheme
+                              <span className={styles.arrow}>→</span>
+                            </button>
+                          </Link>
+                          <Link href="/select-bank">
+                            <button className={styles.secondaryButton}>
+                              Browse by Bank
+                            </button>
+                          </Link>
+                        </div>
                 <p>Get immediate results using rule-based filtering logic</p>
               </div>
               <div className={styles.featureCard}>
