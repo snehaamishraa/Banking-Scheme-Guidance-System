@@ -266,7 +266,10 @@ export default function Results() {
 
                         <button
                           className={styles.learnMoreButton}
-                          onClick={() => router.push(`/scheme-details?schemeId=${scheme.id}`)}
+                          onClick={() => {
+                            const bankParam = scheme.bank_name ? encodeURIComponent(scheme.bank_name) : bank;
+                            router.push(`/scheme-details?schemeId=${scheme.id}&bankId=${bankParam}`);
+                          }}
                         >
                           Learn More Details
                           <span className={styles.arrow}>→</span>
