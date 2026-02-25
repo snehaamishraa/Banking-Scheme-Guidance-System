@@ -79,14 +79,14 @@ export default function Home() {
             <div className={styles.categoriesSection}>
               <h2 className={styles.sectionTitle}>Browse by Category</h2>
               <div className={styles.categoriesGrid}>
-                <div className={styles.categoryTag} onClick={() => handleCategoryClick('Education Loans')}>📚 Education</div>
-                <div className={styles.categoryTag} onClick={() => handleCategoryClick('Home Loans')}>🏠 Home Loans</div>
-                <div className={styles.categoryTag} onClick={() => handleCategoryClick('Personal Loans')}>💰 Personal Loans</div>
-                <div className={styles.categoryTag} onClick={() => handleCategoryClick('Business Loans')}>🏢 Business</div>
-                <div className={styles.categoryTag} onClick={() => handleCategoryClick('Agriculture Loans')}>🌾 Agriculture</div>
-                <div className={styles.categoryTag} onClick={() => handleCategoryClick('Savings Schemes')}>💳 Savings</div>
-                <div className={styles.categoryTag} onClick={() => handleCategoryClick('Girl Child')}>👧 Girl Child</div>
-                <div className={styles.categoryTag} onClick={() => handleCategoryClick('Single Child')}>👨‍👩‍👧 Single Child</div>
+                <button className={styles.categoryTag} onClick={() => handleCategoryClick('Education Loans')}>📚 Education</button>
+                <button className={styles.categoryTag} onClick={() => handleCategoryClick('Home Loans')}>🏠 Home Loans</button>
+                <button className={styles.categoryTag} onClick={() => handleCategoryClick('Personal Loans')}>💰 Personal Loans</button>
+                <button className={styles.categoryTag} onClick={() => handleCategoryClick('Business Loans')}>🏢 Business</button>
+                <button className={styles.categoryTag} onClick={() => handleCategoryClick('Agriculture Loans')}>🌾 Agriculture</button>
+                <button className={styles.categoryTag} onClick={() => handleCategoryClick('Savings Schemes')}>💳 Savings</button>
+                <button className={styles.categoryTag} onClick={() => handleCategoryClick('Girl Child')}>👧 Girl Child</button>
+                <button className={styles.categoryTag} onClick={() => handleCategoryClick('Single Child')}>👨‍👩‍👧 Single Child</button>
               </div>
             </div>
 

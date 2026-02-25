@@ -260,6 +260,9 @@
   color: var(--neon-cyan);
   transition: all 0.3s ease;
   cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .categoryTag:hover {
@@ -267,6 +270,10 @@
   border-color: rgba(59, 130, 246, 0.5);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(20, 184, 166, 0.2);
+}
+
+.categoryTag:active {
+  transform: translateY(0);
 }
 
 .disclaimer {
