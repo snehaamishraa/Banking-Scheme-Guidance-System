@@ -120,49 +120,73 @@ function calculateMatchScore(scheme, criteria) {
 }
 
 export default function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ success: false, error: 'Method not allowed' });
-  }
-
   try {
-    const { age, income, purpose, loanAmount, bank, limit = 10 } = req.body;
-
-    // Validate input
-    if (age && (age < 18 || age > 100)) {
-      return res.status(400).json({ success: false, error: 'Age must be between 18 and 100' });
-    }
-
     const data = loadSchemes();
     if (!data || !data.schemes) {
       return res.status(404).json({ success: false, error: 'No schemes found' });
     }
 
-    const criteria = {
-      age: age || null,
-      income: income || null,
-      purpose: purpose || null,
-      loanAmount: loanAmount || 0,
-      bank: bank || null
-    };
+    // Handle GET request - return all schemes
+    if (req.method === 'GET') {
+      return res.status(200).json({
+        success: true,
+        totalSchemes: data.schemes.length,
+        schemes: data.schemes,
+        timestamp: new Date().toISOString()
+      });
+    }
 
-    // Filter schemes
-    const matchedSchemes = data.schemes
-      .filter(scheme => matchesCriteria(scheme, criteria))
-      .map(scheme => ({
-        ...scheme,
-        matchScore: calculateMatchScore(scheme, criteria)
-      }))
-      .sort((a, b) => b.matchScore - a.matchScore)
-      .slice(0, limit);
+    // Handle POST request - filter schemes
+    if (req.method === 'POST') {
+      const { age, income, purpose, loanAmount, bank, limit = 10, category } = req.body;
 
-    res.status(200).json({
-      success: true,
-      criteria,
-      totalSchemes: data.schemes.length,
-      matchedSchemes: matchedSchemes.length,
-      schemes: matchedSchemes,
-      timestamp: new Date().toISOString()
-    });
+      // Validate input
+      if (age && (age < 18 || age > 100)) {
+        return res.status(400).json({ success: false, error: 'Age must be between 18 and 100' });
+      }
+
+      const criteria = {
+        age: age || null,
+        income: income || null,
+        purpose: purpose || null,
+        loanAmount: loanAmount || 0,
+        bank: bank || null,
+        category: category || null
+      };
+
+      // Filter schemes
+      let filteredSchemes = data.schemes;
+
+      // If only category is provided, filter by category
+      if (category && !age && !income && !purpose) {
+        filteredSchemes = data.schemes.filter(scheme => 
+          scheme.scheme_category === category
+        );
+      } else {
+        // Full criteria matching
+        filteredSchemes = data.schemes
+          .filter(scheme => matchesCriteria(scheme, criteria))
+          .map(scheme => ({
+            ...scheme,
+            matchScore: calculateMatchScore(scheme, criteria)
+          }))
+          .sort((a, b) => b.matchScore - a.matchScore)
+          .slice(0, limit);
+      }
+
+      return res.status(200).json({
+        success: true,
+        criteria,
+        totalSchemes: data.schemes.length,
+        matchedSchemes: filteredSchemes.length,
+        schemes: filteredSchemes,
+        timestamp: new Date().toISOString()
+      });
+    }
+
+    // Method not allowed
+    return res.status(405).json({ success: false, error: 'Method not allowed' });
+
   } catch (error) {
     console.error('Error in /api/filter-schemes:', error);
     res.status(500).json({ 
