@@ -429,7 +429,7 @@ Currently no environment variables required. All configuration is hardcoded for 
 
 ## 👥 Contributors
 
-- **Sneha Mishra** - Team Lead, Full Stack Development
+- **Sneha Mishra** - Team Lead
 - **Saloni** - Team Member
 
 ## 📝 Notes
