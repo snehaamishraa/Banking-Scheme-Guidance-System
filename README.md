@@ -466,7 +466,6 @@ This project is open source and available under the MIT License.
 
 For issues, feature requests, or feedback:
 - GitHub Issues: [Banking-Scheme-Guidance-System Issues](https://github.com/snehaamishraa/Banking-Scheme-Guidance-System/issues)
-- Email: developer contact (if applicable)
 
 ---
 
