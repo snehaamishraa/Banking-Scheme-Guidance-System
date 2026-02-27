@@ -75,8 +75,8 @@ All schemes are stored in `server/data/bank_schemes.json`. Each entry includes:
 
 ## Contributors
 
-- **Sneha Mishra** - Developer
-- **Saloni** - Team Lead
+- **Sneha Mishra** - Team Lead
+- **Saloni** - Team Member
 
 ## Disclaimer
 
