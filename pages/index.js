@@ -39,17 +39,6 @@ export default function Home() {
       <div className={styles.container}>
         <header className={styles.header}>
           <div className={styles.logo}>
-            <svg className={styles.logoIcon} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#2563eb', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#1e40af', stopOpacity: 1}} />
-                </linearGradient>
-              </defs>
-              <circle cx="50" cy="50" r="45" fill="url(#logoGrad)" />
-              <path d="M 35 55 L 50 35 L 65 55 M 50 35 L 50 65" stroke="white" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="50" cy="65" r="3" fill="white" />
-            </svg>
             <span className={styles.logoText}>Fin<span className={styles.highlight}>Agent</span></span>
           </div>
         </header>
