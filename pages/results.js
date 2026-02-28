@@ -267,8 +267,8 @@ export default function Results() {
                         <button
                           className={styles.learnMoreButton}
                           onClick={() => {
-                            const bankParam = scheme.bank_name ? encodeURIComponent(scheme.bank_name) : bank;
-                            router.push(`/scheme-details?schemeId=${scheme.id}&bankId=${bankParam}`);
+                            // only schemeId is needed; details page will locate the correct bank
+                            router.push(`/scheme-details?schemeId=${scheme.id}`);
                           }}
                         >
                           Learn More Details

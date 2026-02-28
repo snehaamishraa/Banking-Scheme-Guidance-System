@@ -12,23 +12,20 @@ export default function SchemeDetails() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (schemeId && bankId) {
+    if (schemeId) {
       fetchSchemeDetails();
     }
-  }, [schemeId, bankId]);
+  }, [schemeId]);
 
   const fetchSchemeDetails = async () => {
     try {
-      const encodedBankId = encodeURIComponent(bankId);
-      const response = await fetch(`/api/schemes/${encodedBankId}`);
+      // Try the general lookup endpoint first
+      const response = await fetch(`/api/scheme/${encodeURIComponent(schemeId)}`);
       if (!response.ok) throw new Error('Failed to fetch scheme');
       const data = await response.json();
-      
-      // Single lookup - find scheme by ID
-      const scheme = data.schemes.find(s => s.id === schemeId); 
-      
-      if (scheme) {
-        setScheme(scheme);
+
+      if (data.scheme) {
+        setScheme(data.scheme);
       } else {
         setError('Scheme not found');
       }
@@ -39,7 +36,8 @@ export default function SchemeDetails() {
     }
   };
 
-  const formatBankName = (id) => {
+  const formatBankName = (idOrName) => {
+    // if the passed value exactly matches a known code, return the friendly name
     const bankNames = {
       'SBI': 'State Bank of India (SBI)',
       'PNB': 'Punjab National Bank (PNB)',
@@ -47,10 +45,15 @@ export default function SchemeDetails() {
       'ICICI_Bank': 'ICICI Bank',
       'Axis_Bank': 'Axis Bank'
     };
-    return bankNames[id] || (id ? id.replace(/_/g, ' ') : '');
+
+    if (!idOrName) return '';
+    if (bankNames[idOrName]) return bankNames[idOrName];
+
+    // otherwise assume it's already a readable bank name
+    return idOrName.replace(/_/g, ' ');
   };
 
-  const getBankContact = () => {
+  const getBankContact = (identifier) => {
     const contacts = {
       'SBI': {
         customerCare: '1800 11 2211 (Toll-Free) / 1800 425 3800',
@@ -83,7 +86,9 @@ export default function SchemeDetails() {
         smsService: 'SMS "AXIS" to 5676757'
       }
     };
-    return contacts[bankId] || scheme?.bankContact || contacts['SBI'];
+
+    // prefer lookup by explicit identifier, fall back to scheme's own contact info
+    return contacts[identifier] || scheme?.bankContact || contacts['SBI'];
   };
 
   if (loading) {
@@ -110,7 +115,9 @@ export default function SchemeDetails() {
     );
   }
 
-  const bankContact = scheme.bankContact || getBankContact();
+  // try using bankId first (added by new API), otherwise fall back to bank_name text
+  const bankIdentifier = scheme.bankId || scheme.bank_name || bankId;
+  const bankContact = scheme.bankContact || getBankContact(bankIdentifier);
 
   return (
     <>
@@ -123,7 +130,7 @@ export default function SchemeDetails() {
           <button onClick={() => router.back()} className={styles.backButton}>
             ← Back to Schemes
           </button>
-          <div className={styles.bankBadge}>{formatBankName(bankId)}</div>
+          <div className={styles.bankBadge}>{formatBankName(bankIdentifier)}</div>
         </header>
 
         <main className={styles.main}>
