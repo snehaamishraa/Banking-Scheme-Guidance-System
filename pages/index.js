@@ -1,26 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { BookOpen, Home as HomeIcon, DollarSign, Briefcase, Leaf, TrendingUp, PiggyBank, Building, ArrowRight, Shield, Zap, Lock } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Lock } from 'lucide-react';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const router = useRouter();
 
-  const handleCategoryClick = (category) => {
-    router.push(`/select-bank?category=${encodeURIComponent(category)}`);
-  };
 
-  const categories = [
-    { name: 'Education Loans', icon: BookOpen },
-    { name: 'Home Loans', icon: HomeIcon },
-    { name: 'Personal Loans', icon: DollarSign },
-    { name: 'MSME / Business Loans', icon: Briefcase },
-    { name: 'Agriculture Loans', icon: Leaf },
-    { name: 'Savings Accounts', icon: PiggyBank },
-    { name: 'Fixed Deposits', icon: TrendingUp },
-    { name: 'Government-backed schemes', icon: Building },
-  ];
 
   const features = [
     { 
@@ -142,32 +129,6 @@ export default function Home() {
                     <h3>{feature.title}</h3>
                     <p>{feature.description}</p>
                   </div>
-                );
-              })}
-            </div>
-          </section>
-
-          {/* Schemes Section */}
-          <section className={styles.schemesSection} id="schemes">
-            <div className={styles.sectionHeader}>
-              <h2>Browse by Category</h2>
-              <p>Find your perfect scheme in seconds</p>
-            </div>
-            <div className={styles.schemesGrid}>
-              {categories.map((category, idx) => {
-                const Icon = category.icon;
-                return (
-                  <button
-                    key={idx}
-                    className={styles.schemeCard}
-                    onClick={() => handleCategoryClick(category.name)}
-                  >
-                    <div className={styles.schemeIcon}>
-                      <Icon size={24} />
-                    </div>
-                    <h3>{category.name}</h3>
-                    <ArrowRight size={16} />
-                  </button>
                 );
               })}
             </div>
