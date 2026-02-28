@@ -25,7 +25,7 @@ export default function SchemeDetails() {
       const data = await response.json();
       
       // Single lookup - find scheme by ID
-      const scheme = data.schemes.find(s => s.id === schemeId);
+      const scheme = data.schemes.find(s => s.id === schemeId); 
       
       if (scheme) {
         setScheme(scheme);
