@@ -137,7 +137,7 @@ export default function Results() {
   return (
     <>
       <Head>
-        <title>{browseMode === 'category' ? router.query.category + ' Schemes' : 'Your Matches'} - Banking Scheme Guidance</title>
+        <title>{browseMode === 'category' ? router.query.category + ' Schemes' : 'Your Matches'} - Finagent</title>
       </Head>
 
       <div className={styles.container}>

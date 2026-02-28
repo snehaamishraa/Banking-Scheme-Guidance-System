@@ -81,7 +81,7 @@ export default function QuickFilter() {
   return (
     <>
       <Head>
-        <title>Find Your Perfect Scheme - Banking Scheme Finder</title>
+        <title>Find Your Perfect Scheme - Finagent</title>
       </Head>
 
       <div className={styles.container}>
