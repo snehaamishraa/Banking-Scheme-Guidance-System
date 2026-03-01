@@ -114,7 +114,7 @@ export default function Filter() {
           <div className={styles.content}>
             <div className={styles.intro}>
               <h1 className={styles.title}>
-                Find Your <span className={styles.neonText}>Best Match</span>
+                Find Your Best Match
               </h1>
               <p className={styles.subtitle}>
                 Tell us about yourself to discover schemes from {bankName} that match your profile
