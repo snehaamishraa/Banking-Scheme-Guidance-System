@@ -9,6 +9,7 @@ export default function GetStarted() {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [browseType, setBrowseType] = useState(null);
+  // previously used for quick search; removed
   const [formData, setFormData] = useState({
     name: '',
     age: '',
@@ -46,12 +47,12 @@ export default function GetStarted() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+
+
   const handleProceed = () => {
     if (browseType === 'categories') {
-      // Navigate with form data to results
       router.push(`/results?type=category&prefs=${encodeURIComponent(JSON.stringify(formData))}`);
     } else {
-      // Navigate to bank selection with form data
       router.push(`/select-bank?type=bank&prefs=${encodeURIComponent(JSON.stringify(formData))}`);
     }
   };
@@ -85,6 +86,7 @@ export default function GetStarted() {
         </header>
 
         <main className={styles.main}>
+
           {/* Step 1: Choose Browse Type */}
           {step === 1 && !browseType && (
             <div className={styles.stepContainer}>
@@ -130,6 +132,9 @@ export default function GetStarted() {
               </div>
             </div>
           )}
+
+          {/* Step 2: Search by Scheme Name */}
+
 
           {/* Step 2: Personalization Form */}
           {browseType && step === 1 && (
