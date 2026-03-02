@@ -82,7 +82,8 @@ export default function SelectBank() {
       'Government-backed schemes': '🏛️',
       'Government': '🏵️',
       'Investment': '📈',
-      'Insurance': '🛡️'
+      'Insurance': '🛡️',
+      'Loans': '💸'
     };
     return icons[category] || '💼';
   };
@@ -117,6 +118,10 @@ export default function SelectBank() {
   };
 
   const filteredBanks = filterBanks(banks);
+
+  // split categories into loan-related and others so we can show a single "Loans" box
+  const loanCategories = categories.filter(c => c.toLowerCase().includes('loan'));
+  const otherCategories = categories.filter(c => !c.toLowerCase().includes('loan'));
 
   return (
     <>
@@ -271,7 +276,20 @@ export default function SelectBank() {
             {!loading && !error && browseMode === 'category' && (
               <>
                 <div className={styles.categoryGrid}>
-                  {categories.map((category) => (
+                  {/* if there are any loan-related categories, show a single 'Loans' box */}
+                  {loanCategories.length > 0 && (
+                    <div
+                      key="Loans"
+                      className={styles.categoryCard}
+                      onClick={() => router.push('/loan-categories')}
+                    >
+                      <div className={styles.categoryIcon}>{getCategoryIcon('Loans')}</div>
+                      <h3>Loans</h3>
+                      <p>Browse all loan schemes</p>
+                    </div>
+                  )}
+
+                  {otherCategories.map((category) => (
                     <div
                       key={category}
                       className={`${styles.categoryCard} ${
