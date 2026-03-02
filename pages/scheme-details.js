@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/SchemeDetails.module.css';
+import { schemeExplanations } from '../utils/explanations';
 
 export default function SchemeDetails() {
   const router = useRouter();
@@ -149,6 +150,45 @@ export default function SchemeDetails() {
                 <span className={styles.icon}>🎯</span>
                 <strong>Target Group:</strong> {scheme.targetGroup}
               </div>
+
+              {/* Scheme Explanation */}
+              {schemeExplanations[scheme.suitableFor?.[0]] && (
+                <div className={styles.schemeExplainerBox}>
+                  <div className={styles.explainerHeader}>
+                    <span className={styles.icon}>📖</span>
+                    <h3>Simple Explanation</h3>
+                  </div>
+                  
+                  <div className={styles.explainerContent}>
+                    <div className={styles.explainerCard}>
+                      <span className={styles.cardIcon}>💡</span>
+                      <div className={styles.cardText}>
+                        <strong>In Simple Terms:</strong>
+                        <p>{schemeExplanations[scheme.suitableFor?.[0]]?.simple}</p>
+                      </div>
+                    </div>
+
+                    <div className={styles.explainerCard}>
+                      <span className={styles.cardIcon}>📚</span>
+                      <div className={styles.cardText}>
+                        <strong>More Details:</strong>
+                        <p>{schemeExplanations[scheme.suitableFor?.[0]]?.detailed}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.benefitsSection}>
+                    <div className={styles.benefitColumn}>
+                      <strong className={styles.benefitTitle}>✨ Key Benefits</strong>
+                      <p>{schemeExplanations[scheme.suitableFor?.[0]]?.benefits}</p>
+                    </div>
+                    <div className={styles.benefitColumn}>
+                      <strong className={styles.benefitTitle}>👥 Best For</strong>
+                      <p>{schemeExplanations[scheme.suitableFor?.[0]]?.whoNeeds}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Eligibility Criteria */}

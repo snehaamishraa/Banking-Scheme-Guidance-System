@@ -99,3 +99,74 @@
     font-size: 1.45rem;
   }
 }
+
+/* New styles for enhanced explanations */
+.schemeExplainer {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(102, 126, 234, 0.08) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+}
+
+.explainerContent h3 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.simpleExplainer {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.detailedExplainer {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.benefitsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.benefitItem {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.benefitItem strong {
+  color: var(--primary);
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.benefitItem p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.required {
+  color: #ff6b6b;
+}

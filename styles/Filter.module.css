@@ -274,3 +274,14 @@
     justify-content: center;
   }
 }
+
+/* Label row with info icon */
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.required {
+  color: #ff6b6b;
+}

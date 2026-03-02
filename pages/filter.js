@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/Filter.module.css';
+import InfoIcon from '../components/InfoIcon';
+import { fieldExplanations } from '../utils/explanations';
 
 export default function Filter() {
   const router = useRouter();
@@ -130,13 +132,17 @@ export default function Filter() {
             <form onSubmit={handleSubmit} className={styles.form}>
               {/* Age Field */}
               <div className={styles.formGroup}>
-                <label htmlFor="age">
-                  Age <span className={styles.required}>*</span>
-                </label>
-                <p className={styles.helperText}>
-                  <strong>Why we ask:</strong> Many schemes have age-specific eligibility criteria. 
-                  For example, youth schemes for 18-30, senior citizen benefits for 60+, etc.
-                </p>
+                <div className={styles.labelRow}>
+                  <label htmlFor="age">
+                    Age <span className={styles.required}>*</span>
+                  </label>
+                  <InfoIcon 
+                    title={fieldExplanations.age.title}
+                    description={fieldExplanations.age.description}
+                  >
+                    <span></span>
+                  </InfoIcon>
+                </div>
                 <input
                   type="number"
                   id="age"
@@ -153,13 +159,17 @@ export default function Filter() {
 
               {/* Gender Field */}
               <div className={styles.formGroup}>
-                <label htmlFor="gender">
-                  Gender <span className={styles.required}>*</span>
-                </label>
-                <p className={styles.helperText}>
-                  <strong>Why we ask:</strong> Some schemes specifically target women's empowerment 
-                  or provide gender-specific benefits. This helps us show you relevant options.
-                </p>
+                <div className={styles.labelRow}>
+                  <label htmlFor="gender">
+                    Gender <span className={styles.required}>*</span>
+                  </label>
+                  <InfoIcon 
+                    title={fieldExplanations.gender.title}
+                    description={fieldExplanations.gender.description}
+                  >
+                    <span></span>
+                  </InfoIcon>
+                </div>
                 <select
                   id="gender"
                   name="gender"
@@ -177,13 +187,17 @@ export default function Filter() {
 
               {/* Category Field */}
               <div className={styles.formGroup}>
-                <label htmlFor="category">
-                  Category <span className={styles.required}>*</span>
-                </label>
-                <p className={styles.helperText}>
-                  <strong>Why we ask:</strong> Banks offer special schemes for SC/ST/OBC/Minority 
-                  communities to promote financial inclusion with subsidized rates and benefits.
-                </p>
+                <div className={styles.labelRow}>
+                  <label htmlFor="category">
+                    Category <span className={styles.required}>*</span>
+                  </label>
+                  <InfoIcon 
+                    title={fieldExplanations.category.title}
+                    description={fieldExplanations.category.description}
+                  >
+                    <span></span>
+                  </InfoIcon>
+                </div>
                 <select
                   id="category"
                   name="category"
@@ -203,13 +217,17 @@ export default function Filter() {
 
               {/* Monthly Income Field */}
               <div className={styles.formGroup}>
-                <label htmlFor="monthlyIncome">
-                  Monthly Income (₹) <span className={styles.required}>*</span>
-                </label>
-                <p className={styles.helperText}>
-                  <strong>Why we ask:</strong> Income determines eligibility for various schemes. 
-                  Low-income schemes offer subsidies, while premium schemes require minimum income.
-                </p>
+                <div className={styles.labelRow}>
+                  <label htmlFor="monthlyIncome">
+                    Monthly Income (₹) <span className={styles.required}>*</span>
+                  </label>
+                  <InfoIcon 
+                    title={fieldExplanations.monthlyIncome.title}
+                    description={fieldExplanations.monthlyIncome.description}
+                  >
+                    <span></span>
+                  </InfoIcon>
+                </div>
                 <input
                   type="number"
                   id="monthlyIncome"
@@ -225,13 +243,17 @@ export default function Filter() {
 
               {/* Occupation Field */}
               <div className={styles.formGroup}>
-                <label htmlFor="occupation">
-                  Occupation <span className={styles.required}>*</span>
-                </label>
-                <p className={styles.helperText}>
-                  <strong>Why we ask:</strong> Specific schemes exist for students, farmers, 
-                  salaried professionals, entrepreneurs, etc., each with tailored benefits.
-                </p>
+                <div className={styles.labelRow}>
+                  <label htmlFor="occupation">
+                    Occupation <span className={styles.required}>*</span>
+                  </label>
+                  <InfoIcon 
+                    title={fieldExplanations.occupation.title}
+                    description={fieldExplanations.occupation.description}
+                  >
+                    <span></span>
+                  </InfoIcon>
+                </div>
                 <select
                   id="occupation"
                   name="occupation"
@@ -256,13 +278,17 @@ export default function Filter() {
 
               {/* Savings Goal Field */}
               <div className={styles.formGroup}>
-                <label htmlFor="savingsGoal">
-                  Primary Savings Goal <span className={styles.required}>*</span>
-                </label>
-                <p className={styles.helperText}>
-                  <strong>Why we ask:</strong> Your goal helps us prioritize schemes. For example, 
-                  education loans for students, home loans for buyers, retirement plans for seniors.
-                </p>
+                <div className={styles.labelRow}>
+                  <label htmlFor="savingsGoal">
+                    Primary Savings Goal <span className={styles.required}>*</span>
+                  </label>
+                  <InfoIcon 
+                    title={fieldExplanations.savingsGoal.title}
+                    description={fieldExplanations.savingsGoal.description}
+                  >
+                    <span></span>
+                  </InfoIcon>
+                </div>
                 <select
                   id="savingsGoal"
                   name="savingsGoal"

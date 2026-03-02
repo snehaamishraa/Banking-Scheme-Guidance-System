@@ -2,6 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
 import styles from '../styles/CategoryDetails.module.css';
+import InfoIcon from '../components/InfoIcon';
+import { categoryFieldExplanations, schemeExplanations } from '../utils/explanations';
 
 const categoryQuestions = {
   'Education Loans': {
@@ -162,38 +164,81 @@ export default function CategoryDetails() {
             ← Back to Categories
           </button>
 
-          <h1>{config.title}</h1>
-          <p className={styles.subtitle}>{config.hint}</p>
+          <div>
+            <h1>{config.title}</h1>
+            <p className={styles.subtitle}>{config.hint}</p>
+            
+            {/* Scheme explanation */}
+            {schemeExplanations[category] && (
+              <div className={styles.schemeExplainer}>
+                <div className={styles.explainerContent}>
+                  <h3>📖 What is {category}?</h3>
+                  <p className={styles.simpleExplainer}>{schemeExplanations[category].simple}</p>
+                  <p className={styles.detailedExplainer}>{schemeExplanations[category].detailed}</p>
+                  
+                  <div className={styles.benefitsRow}>
+                    <div className={styles.benefitItem}>
+                      <strong>✨ Benefits:</strong>
+                      <p>{schemeExplanations[category].benefits}</p>
+                    </div>
+                    <div className={styles.benefitItem}>
+                      <strong>👥 Best For:</strong>
+                      <p>{schemeExplanations[category].whoNeeds}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
 
           <form onSubmit={handleSubmit} className={styles.form}>
-            {config.fields.map((field) => (
-              <div className={styles.formGroup} key={field.key}>
-                <label htmlFor={field.key}>{field.label}</label>
-                {field.type === 'select' ? (
-                  <select
-                    id={field.key}
-                    value={formData[field.key] || ''}
-                    onChange={(e) => handleChange(field.key, e.target.value)}
-                    required={field.required}
-                  >
-                    <option value="">Select</option>
-                    {field.options.map((option) => (
-                      <option key={option} value={option}>{option}</option>
-                    ))}
-                  </select>
-                ) : (
-                  <input
-                    id={field.key}
-                    type={field.type}
-                    min={field.min}
-                    max={field.max}
-                    value={formData[field.key] || ''}
-                    onChange={(e) => handleChange(field.key, e.target.value)}
-                    required={field.required}
-                  />
-                )}
-              </div>
-            ))}
+            {config.fields.map((field) => {
+              const fieldExplain = categoryFieldExplanations[category]?.[field.key];
+              
+              return (
+                <div className={styles.formGroup} key={field.key}>
+                  <div className={styles.labelRow}>
+                    <label htmlFor={field.key}>
+                      {field.label}
+                      {field.required && <span className={styles.required}>*</span>}
+                    </label>
+                    {fieldExplain && (
+                      <InfoIcon 
+                        title={fieldExplain.title}
+                        description={fieldExplain.description}
+                      >
+                        <span></span>
+                      </InfoIcon>
+                    )}
+                  </div>
+                  
+                  {field.type === 'select' ? (
+                    <select
+                      id={field.key}
+                      value={formData[field.key] || ''}
+                      onChange={(e) => handleChange(field.key, e.target.value)}
+                      required={field.required}
+                    >
+                      <option value="">Select {field.label}</option>
+                      {field.options.map((option) => (
+                        <option key={option} value={option}>{option}</option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      id={field.key}
+                      type={field.type}
+                      min={field.min}
+                      max={field.max}
+                      value={formData[field.key] || ''}
+                      onChange={(e) => handleChange(field.key, e.target.value)}
+                      placeholder={`Enter ${field.label.toLowerCase()}`}
+                      required={field.required}
+                    />
+                  )}
+                </div>
+              );
+            })}
 
             <button type="submit" className={styles.submitButton} disabled={!isFormValid}>
               Show Relevant Schemes →
