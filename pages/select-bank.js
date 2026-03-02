@@ -19,12 +19,19 @@ export default function SelectBank() {
   }, []);
 
   useEffect(() => {
+    if (router.query.mode === 'category') {
+      setBrowseMode('category');
+      setSelectedBank('');
+      setSelectedCategory('');
+      return;
+    }
+
     // Check if category is passed from home page
     if (router.query.category) {
       setBrowseMode('category');
       setSelectedCategory(decodeURIComponent(router.query.category));
     }
-  }, [router.query.category]);
+  }, [router.query.category, router.query.mode]);
 
   const fetchBanksAndCategories = async () => {
     try {
@@ -59,7 +66,7 @@ export default function SelectBank() {
     if (browseMode === 'bank' && selectedBank) {
       router.push(`/schemes/${encodeURIComponent(selectedBank)}`);
     } else if (browseMode === 'category' && selectedCategory) {
-      router.push(`/results?category=${encodeURIComponent(selectedCategory)}`);
+      router.push(`/category-details?category=${encodeURIComponent(selectedCategory)}`);
     }
   };
 
@@ -122,7 +129,7 @@ export default function SelectBank() {
           <button onClick={() => router.push('/')} className={styles.backButton}>
             ← Back to Home
           </button>
-          <h1 className={styles.headerTitle}>Browse Banks</h1>
+          <h1 className={styles.headerTitle}>{browseMode === 'category' ? 'Browse Categories' : 'Browse Banks'}</h1>
         </header>
 
         <main className={styles.main}>
@@ -138,7 +145,7 @@ export default function SelectBank() {
             </div>
 
             {/* Mode Switcher */}
-            {!loading && !error && (
+            {!loading && !error && router.query.mode !== 'category' && (
               <div className={styles.modeSwitcher}>
                 <button
                   className={`${styles.modeButton} ${browseMode === 'bank' ? styles.activeModeButton : ''}`}
@@ -293,7 +300,7 @@ export default function SelectBank() {
                   onClick={handleContinue}
                   disabled={!selectedCategory}
                 >
-                  View Schemes by Category
+                  Continue to Category Details
                   <span className={styles.arrow}>→</span>
                 </button>
 

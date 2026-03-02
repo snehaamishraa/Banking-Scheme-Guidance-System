@@ -5,7 +5,7 @@ import styles from '../styles/Results.module.css';
 
 export default function Results() {
   const router = useRouter();
-  const { bank, age, gender, category, monthlyIncome, occupation, savingsGoal } = router.query;
+  const { bank, age, gender, category, monthlyIncome, occupation, savingsGoal, income, loanAmount } = router.query;
   
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -85,14 +85,22 @@ export default function Results() {
 
   const filterByCategory = async () => {
     try {
+      const resolvedIncome = monthlyIncome || income;
+      const requestBody = {
+        category: router.query.category,
+        age: age ? parseInt(age) : undefined,
+        monthlyIncome: resolvedIncome ? parseInt(resolvedIncome) : undefined,
+        loanAmount: loanAmount ? parseInt(loanAmount) : undefined,
+        occupation: occupation || undefined,
+        savingsGoal: savingsGoal || router.query.category
+      };
+
       const response = await fetch('/api/filter-schemes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          category: router.query.category
-        }),
+        body: JSON.stringify(requestBody),
       });
 
       if (!response.ok) throw new Error('Failed to filter schemes');
@@ -120,7 +128,11 @@ export default function Results() {
 
   const handleTryAgain = () => {
     if (browseMode === 'category') {
-      router.push('/select-bank');
+      if (category) {
+        router.push(`/category-details?category=${encodeURIComponent(category)}`);
+      } else {
+        router.push('/select-bank?mode=category');
+      }
     } else {
       router.push(`/filter?bank=${bank}`);
     }

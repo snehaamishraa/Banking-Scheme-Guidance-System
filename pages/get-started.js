@@ -7,7 +7,6 @@ import styles from '../styles/GetStarted.module.css';
 
 export default function GetStarted() {
   const router = useRouter();
-  const [step, setStep] = useState(1);
   const [browseType, setBrowseType] = useState(null);
   // previously used for quick search; removed
   const [formData, setFormData] = useState({
@@ -20,29 +19,6 @@ export default function GetStarted() {
     cibilScore: 'above700',
   });
 
-  const categories = [
-    'Education Loans',
-    'Home Loans',
-    'Personal Loans',
-    'MSME / Business Loans',
-    'Agriculture Loans',
-    'Savings Accounts',
-    'Fixed Deposits',
-    'Government-backed schemes',
-  ];
-
-  const banks = [
-    'HDFC Bank',
-    'ICICI Bank',
-    'State Bank of India',
-    'Axis Bank',
-    'Kotak Mahindra Bank',
-    'IDBI Bank',
-    'Bank of India',
-    'Central Bank of India',
-    'Punjab National Bank',
-  ];
-
   const handleFormChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -50,11 +26,7 @@ export default function GetStarted() {
 
 
   const handleProceed = () => {
-    if (browseType === 'categories') {
-      router.push(`/results?type=category&prefs=${encodeURIComponent(JSON.stringify(formData))}`);
-    } else {
-      router.push(`/select-bank?type=bank&prefs=${encodeURIComponent(JSON.stringify(formData))}`);
-    }
+    router.push(`/select-bank?type=bank&prefs=${encodeURIComponent(JSON.stringify(formData))}`);
   };
 
   const isFormValid = formData.name && formData.age && formData.income;
@@ -88,7 +60,7 @@ export default function GetStarted() {
         <main className={styles.main}>
 
           {/* Step 1: Choose Browse Type */}
-          {step === 1 && !browseType && (
+          {!browseType && (
             <div className={styles.stepContainer}>
               <div className={styles.stepHeader}>
                 <h1>How do you want to explore?</h1>
@@ -98,7 +70,7 @@ export default function GetStarted() {
               <div className={styles.choiceGrid}>
                 <button
                   className={styles.choiceCard}
-                  onClick={() => setBrowseType('categories')}
+                  onClick={() => router.push('/select-bank?mode=category')}
                 >
                   <div className={styles.choiceIcon}>
                     <Layers size={48} />
@@ -133,11 +105,8 @@ export default function GetStarted() {
             </div>
           )}
 
-          {/* Step 2: Search by Scheme Name */}
-
-
-          {/* Step 2: Personalization Form */}
-          {browseType && step === 1 && (
+          {/* Step 2: Personalization Form (Bank Mode) */}
+          {browseType === 'banks' && (
             <div className={styles.stepContainer}>
               <div className={styles.stepHeader}>
                 <button
