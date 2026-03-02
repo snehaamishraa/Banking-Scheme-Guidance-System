@@ -1,8 +1,8 @@
 .container {
   min-height: 100vh;
-  background: radial-gradient(1200px circle at 15% 10%, rgba(20, 184, 166, 0.12), transparent 55%),
-              radial-gradient(900px circle at 85% 0%, rgba(59, 130, 246, 0.14), transparent 50%),
-              linear-gradient(180deg, #0b1220 0%, #0b1220 100%);
+  background: radial-gradient(1200px circle at 15% 10%, rgba(0, 212, 255, 0.12), transparent 55%),
+              radial-gradient(900px circle at 85% 0%, rgba(102, 126, 234, 0.14), transparent 50%),
+              linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
   color: var(--text-primary);
   padding: 20px;
 }
@@ -17,8 +17,8 @@
 }
 
 .backButton {
-  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #08080e;
   border: none;
   padding: 12px 24px;
   border-radius: 12px;
@@ -40,8 +40,8 @@
 }
 
 .content {
-  background: rgba(17, 24, 39, 0.85);
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(135deg, rgba(21, 21, 33, 0.9) 0%, rgba(31, 31, 46, 0.75) 100%);
+  border: 1px solid var(--border-light);
   border-radius: 18px;
   padding: 40px;
   backdrop-filter: blur(10px);
@@ -278,8 +278,8 @@
 }
 
 .homeButton {
-  background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #08080e;
   border: none;
   padding: 15px 40px;
   border-radius: 14px;

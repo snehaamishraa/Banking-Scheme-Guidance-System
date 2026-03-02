@@ -18,6 +18,10 @@
   --border-light: #35354a;
   --success: #27ae60;
   --error: #e74c3c;
+  --neon-cyan: var(--primary);
+  --neon-purple: var(--secondary);
+  --neon-pink: var(--accent);
+  --neon-green: var(--success);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);

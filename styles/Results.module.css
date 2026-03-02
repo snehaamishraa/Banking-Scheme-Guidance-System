@@ -2,14 +2,14 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
 }
 
 .header {
   padding: 1.5rem 2rem;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(8, 8, 14, 0.7);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(241, 245, 249, 0.1);
+  border-bottom: 1px solid var(--border-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,8 +20,8 @@
 .backButton,
 .viewAllButton {
   background: transparent;
-  border: 1px solid rgba(51, 211, 191, 0.3);
-  color: #06b6d4;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--primary);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -32,8 +32,8 @@
 
 .backButton:hover,
 .viewAllButton:hover {
-  background: rgba(6, 182, 212, 0.1);
-  border-color: rgba(51, 211, 191, 0.5);
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.5);
   transform: translateX(-2px);
 }
 
@@ -93,13 +93,13 @@
 .title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #f1f5f9;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   letter-spacing: -0.5px;
 }
 
 .neonText {
-  background: linear-gradient(135deg, #06b6d4 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,7 +107,7 @@
 
 .subtitle {
   font-size: 1.1rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
 }
 
@@ -119,8 +119,8 @@
 }
 
 .schemeCard {
-  background: linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
-  border: 1.5px solid rgba(148, 163, 184, 0.25);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(102, 126, 234, 0.08) 100%);
+  border: 1.5px solid var(--border-light);
   border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -137,16 +137,16 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #06b6d4 0%, #a78bfa 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .schemeCard:hover {
-  border-color: rgba(6, 182, 212, 0.6);
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+  border-color: rgba(0, 212, 255, 0.6);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(102, 126, 234, 0.15) 100%);
   transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(6, 182, 212, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 212, 255, 0.25);
 }
 
 .schemeCard:hover::before {

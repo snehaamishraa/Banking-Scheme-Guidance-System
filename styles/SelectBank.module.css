@@ -1,14 +1,14 @@
 .container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
   padding-bottom: 4rem;
 }
 
 .header {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(8, 8, 14, 0.7);
   backdrop-filter: blur(10px);
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid rgba(241, 245, 249, 0.1);
+  border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -16,8 +16,8 @@
 
 .backButton {
   background: transparent;
-  border: 1px solid rgba(51, 211, 191, 0.3);
-  color: #06b6d4;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--primary);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
@@ -27,8 +27,8 @@
 }
 
 .backButton:hover {
-  background: rgba(6, 182, 212, 0.1);
-  border-color: rgba(51, 211, 191, 0.5);
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.5);
   transform: translateX(-2px);
 }
 
@@ -51,13 +51,13 @@
 .title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #f1f5f9;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   letter-spacing: -0.5px;
 }
 
 .neonText {
-  background: linear-gradient(135deg, #06b6d4 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -66,7 +66,7 @@
 
 .subtitle {
   font-size: 1.1rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
   margin-bottom: 0;
   letter-spacing: 0px;
 }
@@ -87,7 +87,7 @@
   padding: 1rem 2rem;
   background: rgba(30, 41, 59, 0.6);
   border: 2px solid rgba(251, 146, 60, 0.2);
-  color: #cbd5e1;
+  color: var(--text-secondary);
   border-radius: 12px;
   cursor: pointer;
   font-size: 1rem;
@@ -96,17 +96,17 @@
 }
 
 .modeButton:hover {
-  background: rgba(251, 146, 60, 0.1);
-  border-color: rgba(251, 146, 60, 0.4);
-  color: #f97316;
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.4);
+  color: var(--primary);
   transform: translateY(-2px);
 }
 
 .activeModeButton {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(251, 146, 60, 0.2) 100%);
-  border-color: #f97316;
-  color: #f97316;
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(102, 126, 234, 0.2) 100%);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
 .modeIcon {
