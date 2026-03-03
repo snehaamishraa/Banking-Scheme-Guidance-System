@@ -15,6 +15,23 @@ export default function FixedDepositCategories() {
     'Recurring Deposit'
   ];
 
+  const fdDescriptions = {
+    'Regular Fixed Deposit':
+      'Standard FD where you lock a lump sum for a fixed tenure. Great for predictable savings.',
+    'Senior Citizen Fixed Deposit':
+      'FDs with higher interest rates available to depositors aged 60 and above.',
+    'Tax Saving Fixed Deposit':
+      '5‑year FD that qualifies for tax deduction under Section 80C of the Income Tax Act.',
+    'Cumulative Fixed Deposit':
+      'Interest is compounded and paid at maturity; ideal if you don\'t need periodic payouts.',
+    'Non Cumulative Fixed Deposit':
+      'Interest is paid out monthly/quarterly; suitable for regular income seekers.',
+    'Flexi Fixed Deposit':
+      'Linked to savings account; allows auto-sweep from surplus balance with FD rates.',
+    'Recurring Deposit':
+      'Deposit a fixed amount every month; interest rates similar to FDs, good for disciplined saving.'
+  };
+
   const [selectedType, setSelectedType] = useState('');
 
   const handleTypeSelect = (type) => {
@@ -67,6 +84,15 @@ export default function FixedDepositCategories() {
                 </div>
               ))}
             </div>
+
+            {selectedType && (
+              <div className={styles.info}>
+                <p>
+                  <strong>About {selectedType}:</strong>{' '}
+                  {fdDescriptions[selectedType]}
+                </p>
+              </div>
+            )}
 
             <button
               className={styles.continueButton}
