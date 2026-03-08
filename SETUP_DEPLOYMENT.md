@@ -75,7 +75,7 @@ node server/api-tests.js
 BANKSCHEMEFINDER/
 ├── server/
 │   ├── index.js                 ← Main server file (PRODUCTION-READY)
-│   ├── api-tests.js            ← Comprehensive API test suite
+│   ├── api-tests.js             ← Comprehensive API test suite
 │   └── data/
 │       ├── bank_schemes.json    ← Central dataset (45+ schemes)
 │       └── schemes_backup.json  ← Backup (legacy)
@@ -108,15 +108,15 @@ LOG_LEVEL=info
 
 ## API Endpoints Summary
 
-| Method | Endpoint | Purpose | Auth |
-|--------|----------|---------|------|
-| GET | `/api/health` | Server health check | No |
-| GET | `/api/banks` | Get all banks | No |
-| GET | `/api/categories` | Get all loan categories | No |
-| GET | `/api/schemes` | Get all schemes with filters | No |
-| GET | `/api/schemes/:id` | Get specific scheme | No |
-| POST | `/api/filter` | Filter schemes (Core feature) | No |
-| POST | `/api/compare` | Compare schemes | No |
+| Method | Endpoint            | Purpose                       | Auth |
+|--------|---------------------|-------------------------------|------|
+| GET    | `/api/health`       | Server health check           | No   |
+| GET    | `/api/banks`        | Get all banks                 | No   |
+| GET    | `/api/categories`   | Get all loan categories       | No   |
+| GET    | `/api/schemes`      | Get all schemes with filters  | No   |
+| GET    | `/api/schemes/:id`  | Get specific scheme           | No   |
+| POST   | `/api/filter`       | Filter schemes (Core feature) | No   |
+| POST   | `/api/compare`      | Compare schemes               | No   |
 
 ---
 
@@ -596,10 +596,10 @@ git push origin main --tags
 
 ## Version History
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | 2026-02-25 | Initial release with 45 schemes |
-| TBD | TBD | Future updates |
+| Version | Date       | Changes                         |
+|---------|------------|---------------------------------|
+| 1.0     | 2026-02-25 | Initial release with 45 schemes |
+| TBD     | TBD        | Future updates                  |
 
 ---
 
