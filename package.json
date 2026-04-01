@@ -29,7 +29,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.27",
     "concurrently": "^8.2.2",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.17",
     "vercel": "^50.23.2"
   }
 }
