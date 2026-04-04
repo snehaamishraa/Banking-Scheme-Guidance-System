@@ -13,7 +13,7 @@
    HEADER
    ============================================ */
 .header {
-  background: rgba(8, 8, 14, 0.7);
+  background: var(--header-bg);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
   padding: 1.5rem 2rem;
@@ -120,7 +120,7 @@
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 0.8rem;
-  background: linear-gradient(135deg, #ffffff 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -143,7 +143,7 @@
 }
 
 .choiceCard {
-  background: linear-gradient(135deg, rgba(21, 21, 33, 0.9) 0%, rgba(31, 31, 46, 0.7) 100%);
+  background: var(--surface-gradient);
   border: 2px solid var(--border-light);
   border-radius: 20px;
   padding: 3rem 2rem;
@@ -260,7 +260,7 @@
    FORM STYLES
    ============================================ */
 .form {
-  background: linear-gradient(135deg, rgba(21, 21, 33, 0.8) 0%, rgba(31, 31, 46, 0.6) 100%);
+  background: var(--surface-gradient);
   border: 1px solid var(--border-light);
   border-radius: 20px;
   padding: 3rem;
@@ -326,7 +326,7 @@
 .formGroup select {
   width: 100%;
   padding: 0.9rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-soft);
   border: 1px solid var(--border-color);
   border-radius: 10px;
   color: var(--text-primary);
@@ -343,7 +343,7 @@
 .formGroup select:focus {
   outline: none;
   border-color: var(--primary);
-  background: rgba(0, 212, 255, 0.05);
+  background: var(--input-focus-bg);
   box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
 }
 
@@ -360,20 +360,20 @@
 }
 
 .formGroup select option {
-  background: #1a1a2e;
-  color: #00d4ff;
+  background: var(--card-bg-light);
+  color: var(--text-primary);
   padding: 0.5rem;
   border: none;
 }
 
 .formGroup select option:hover {
-  background: #f39c12;
-  color: #08080e;
+  background: var(--primary);
+  color: var(--text-on-accent);
 }
 
 .formGroup select option:checked {
-  background: #f39c12;
-  color: #08080e;
+  background: var(--primary);
+  color: var(--text-on-accent);
 }
 
 .twoCol {

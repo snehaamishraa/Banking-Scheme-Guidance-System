@@ -8,7 +8,7 @@
 .header {
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-light);
-  background: rgba(8, 8, 14, 0.7);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
@@ -119,7 +119,7 @@
 }
 
 .schemeCard {
-  background: linear-gradient(135deg, rgba(21, 21, 33, 0.9) 0%, rgba(31, 31, 46, 0.75) 100%);
+  background: var(--surface-gradient);
   padding: 2rem;
   border-radius: 18px;
   border: 1px solid var(--border-light);
@@ -169,7 +169,7 @@
 
 .schemeCard:hover .viewDetailsButton {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #08080e;
+  color: var(--text-on-accent);
   border-color: rgba(0, 212, 255, 0.8);
   transform: scale(1.02);
 }

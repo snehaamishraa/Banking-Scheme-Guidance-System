@@ -40,7 +40,7 @@
 }
 
 .content {
-  background: linear-gradient(135deg, rgba(21, 21, 33, 0.9) 0%, rgba(31, 31, 46, 0.75) 100%);
+  background: var(--surface-gradient);
   border: 1px solid var(--border-light);
   border-radius: 18px;
   padding: 40px;

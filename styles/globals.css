@@ -29,6 +29,42 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --bg-glow-1: rgba(0, 212, 255, 0.08);
+  --bg-glow-2: rgba(102, 126, 234, 0.06);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-focus-bg: rgba(0, 212, 255, 0.05);
+  --scroll-track: var(--darker-bg);
+  --toggle-bg: rgba(17, 17, 26, 0.85);
+  --toggle-border: rgba(0, 212, 255, 0.35);
+  --header-bg: rgba(8, 8, 14, 0.72);
+  --surface-gradient: linear-gradient(135deg, rgba(21, 21, 33, 0.9) 0%, rgba(31, 31, 46, 0.75) 100%);
+  --surface-soft: rgba(255, 255, 255, 0.05);
+  --surface-soft-2: rgba(255, 255, 255, 0.08);
+  --text-on-accent: #071018;
+}
+
+[data-theme='light'] {
+  --dark-bg: #eef4ff;
+  --darker-bg: #dde8fb;
+  --card-bg: #ffffff;
+  --card-bg-light: #f5f8ff;
+  --text-primary: #14233a;
+  --text-secondary: #425978;
+  --text-tertiary: #5e7390;
+  --border-color: #c5d4eb;
+  --border-light: #d6e1f2;
+  --bg-glow-1: rgba(0, 136, 204, 0.1);
+  --bg-glow-2: rgba(243, 156, 18, 0.08);
+  --input-bg: rgba(255, 255, 255, 0.92);
+  --input-focus-bg: rgba(0, 212, 255, 0.14);
+  --scroll-track: #d9e5f6;
+  --toggle-bg: rgba(255, 255, 255, 0.9);
+  --toggle-border: rgba(0, 136, 204, 0.35);
+  --header-bg: rgba(255, 255, 255, 0.84);
+  --surface-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 247, 255, 0.92) 100%);
+  --surface-soft: rgba(8, 94, 160, 0.06);
+  --surface-soft-2: rgba(8, 94, 160, 0.09);
+  --text-on-accent: #082236;
 }
 
 * {
@@ -45,13 +81,14 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background-color: var(--dark-bg);
   background-image: 
-    radial-gradient(500px circle at 20% 10%, rgba(0, 212, 255, 0.08) 0%, transparent 60%),
-    radial-gradient(400px circle at 90% 5%, rgba(102, 126, 234, 0.06) 0%, transparent 50%);
+    radial-gradient(500px circle at 20% 10%, var(--bg-glow-1) 0%, transparent 60%),
+    radial-gradient(400px circle at 90% 5%, var(--bg-glow-2) 0%, transparent 50%);
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -85,7 +122,7 @@ button {
 
 input, textarea, select {
   font-family: 'Inter', inherit;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--input-bg);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   border-radius: 8px;
@@ -96,8 +133,18 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--primary);
-  background-color: rgba(0, 212, 255, 0.05);
+  background-color: var(--input-focus-bg);
   box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
+}
+
+/* Keep native dropdown option lists readable across browsers/OS themes */
+select option {
+  background-color: var(--card-bg-light);
+  color: var(--text-primary);
+}
+
+select option[value=""] {
+  color: var(--text-secondary);
 }
 
 /* Scrollbar Styling */
@@ -106,7 +153,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--darker-bg);
+  background: var(--scroll-track);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -131,4 +178,26 @@ code {
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   color: var(--primary);
+}
+
+.themeToggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2000;
+  border: 1px solid var(--toggle-border);
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--text-primary);
+  background: var(--toggle-bg);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+}
+
+.themeToggle:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px);
 }

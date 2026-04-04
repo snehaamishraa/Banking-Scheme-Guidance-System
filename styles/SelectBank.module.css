@@ -5,7 +5,7 @@
 }
 
 .header {
-  background: rgba(8, 8, 14, 0.7);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   padding: 1.5rem 2rem;
   border-bottom: 1px solid var(--border-light);
@@ -85,7 +85,7 @@
   align-items: center;
   gap: 0.8rem;
   padding: 1rem 2rem;
-  background: rgba(30, 41, 59, 0.6);
+  background: var(--surface-soft);
   border: 2px solid rgba(251, 146, 60, 0.2);
   color: var(--text-secondary);
   border-radius: 12px;
@@ -178,14 +178,14 @@
 .categoryCard h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #f1f5f9;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   margin-top: 0;
 }
 
 .categoryCard p {
   font-size: 0.9rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   margin: 0;
   opacity: 0.9;
 }
@@ -204,9 +204,9 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.8rem 1.4rem;
-  background: rgba(30, 41, 59, 0.6);
+  background: var(--surface-soft);
   border: 2px solid rgba(51, 211, 191, 0.2);
-  color: #cbd5e1;
+  color: var(--text-secondary);
   border-radius: 12px;
   cursor: pointer;
   font-size: 0.95rem;
@@ -297,14 +297,14 @@
 .bankCard h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #f1f5f9;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   margin-top: 0;
 }
 
 .bankCard p {
   font-size: 0.9rem;
-  color: #94a3b8;
+  color: var(--text-secondary);
   margin: 0;
   opacity: 0.9;
 }
