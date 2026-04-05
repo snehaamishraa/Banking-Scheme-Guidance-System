@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/globals.css';
+import { UserProfileProvider } from '../context/UserProfileContext';
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState('light');
@@ -20,7 +21,7 @@ function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <>
+    <UserProfileProvider>
       <button
         type="button"
         className="themeToggle"
@@ -30,7 +31,7 @@ function MyApp({ Component, pageProps }) {
         {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
       </button>
       <Component {...pageProps} />
-    </>
+    </UserProfileProvider>
   );
 }
 

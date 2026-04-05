@@ -3,11 +3,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Filter.module.css';
 import resultStyles from '../styles/Results.module.css';
+import { useUserProfile } from '../context/UserProfileContext';
 
 export default function QuickFilter() {
+  const { profile, hasProfile, isHydrated } = useUserProfile();
   const [formData, setFormData] = useState({
-    age: '',
-    income: '',
     purpose: 'Home Loans',
     loanAmount: ''
   });
@@ -70,13 +70,19 @@ export default function QuickFilter() {
     setLoading(true);
 
     try {
-      // Validate inputs
-      if (!formData.age || formData.age < 18 || formData.age > 100) {
-        throw new Error('Age must be between 18 and 100');
+      if (!hasProfile) {
+        throw new Error('Please complete your profile first');
       }
 
-      if (!formData.income || formData.income < 0) {
-        throw new Error('Please enter valid annual income');
+      const age = parseInt(profile.age, 10);
+      const annualIncome = parseInt(profile.income, 10);
+
+      if (!age || age < 18 || age > 100) {
+        throw new Error('Saved profile age must be between 18 and 100');
+      }
+
+      if (!annualIncome || annualIncome < 0) {
+        throw new Error('Saved profile income is invalid');
       }
 
       const response = await fetch('/api/filter-schemes', {
@@ -85,8 +91,8 @@ export default function QuickFilter() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          age: parseInt(formData.age),
-          income: parseInt(formData.income),
+          age,
+          income: Math.floor(annualIncome / 12),
           purpose: formData.purpose,
           loanAmount: formData.loanAmount ? parseInt(formData.loanAmount) : 0
         })
@@ -107,6 +113,10 @@ export default function QuickFilter() {
       setLoading(false);
     }
   };
+
+  if (!isHydrated) {
+    return null;
+  }
 
   return (
     <>
@@ -130,46 +140,26 @@ export default function QuickFilter() {
               <p className={styles.subtitle}>
                 Answer a few simple questions to discover schemes tailored just for you
               </p>
+              <div className={styles.infoBox}>
+                <p>
+                  <strong>Using Profile:</strong> {profile.name || 'Guest'} | Age {profile.age || '-'} |
+                  Annual Income ₹{profile.income || '-'}
+                </p>
+              </div>
             </div>
 
+            {!hasProfile && (
+              <div className={styles.disclaimer}>
+                <p>Complete your profile once to continue with quick filtering.</p>
+                <Link href="/get-started">
+                  <button className={styles.submitButton}>Go to Get Started</button>
+                </Link>
+              </div>
+            )}
+
+            {hasProfile && (
             <form onSubmit={handleSubmit} className={styles.form}>
               {error && <div className={styles.errorBox}>{error}</div>}
-
-              {/* Age Field */}
-              <div className={styles.formGroup}>
-                <label htmlFor="age">
-                  Your Age <span className={styles.required}>*</span>
-                </label>
-                <input
-                  type="number"
-                  id="age"
-                  name="age"
-                  value={formData.age}
-                  onChange={handleChange}
-                  placeholder="Enter your age (18-100)"
-                  min="18"
-                  max="100"
-                  required
-                />
-              </div>
-
-              {/* Income Field */}
-              <div className={styles.formGroup}>
-                <label htmlFor="income">
-                  Annual Income (₹) <span className={styles.required}>*</span>
-                </label>
-                <input
-                  type="number"
-                  id="income"
-                  name="income"
-                  value={formData.income}
-                  onChange={handleChange}
-                  placeholder="Enter annual income in rupees"
-                  min="0"
-                  step="10000"
-                  required
-                />
-              </div>
 
               {/* Purpose/Category Field */}
               <div className={styles.formGroup}>
@@ -210,6 +200,7 @@ export default function QuickFilter() {
                 {loading ? '🔍 Searching...' : '🔍 Find Schemes'}
               </button>
             </form>
+            )}
 
             {/* Results Display */}
             {results && results.length > 0 && (

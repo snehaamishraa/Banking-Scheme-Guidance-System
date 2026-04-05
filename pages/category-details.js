@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import styles from '../styles/CategoryDetails.module.css';
 import InfoIcon from '../components/InfoIcon';
 import { categoryFieldExplanations, schemeExplanations } from '../utils/explanations';
+import { useUserProfile } from '../context/UserProfileContext';
 
 const categoryQuestions = {
   'Education Loans': {
@@ -112,17 +113,24 @@ const categoryQuestions = {
 
 export default function CategoryDetails() {
   const router = useRouter();
+  const { profile, hasProfile, isHydrated } = useUserProfile();
   const category = router.query.category ? decodeURIComponent(router.query.category) : '';
   const depositType = router.query.depositType ? decodeURIComponent(router.query.depositType) : '';
 
   const config = useMemo(() => {
-    return categoryQuestions[category] || {
+    const baseConfig = categoryQuestions[category] || {
       title: 'Category Details',
       hint: 'Enter your details to see relevant schemes.',
       fields: [
         { key: 'age', label: 'Age', type: 'number', min: 18, max: 90, required: true },
         { key: 'income', label: 'Monthly Income (₹)', type: 'number', min: 0, required: true }
       ]
+    };
+
+    return {
+      ...baseConfig,
+      // Age and income are captured once in Get Started and reused globally.
+      fields: baseConfig.fields.filter((field) => field.key !== 'age' && field.key !== 'income')
     };
   }, [category]);
 
@@ -141,18 +149,33 @@ export default function CategoryDetails() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const annualIncome = parseInt(profile.income, 10);
+    const monthlyIncome = annualIncome > 0 ? Math.floor(annualIncome / 12) : '';
+
     const query = new URLSearchParams({
       category,
       depositType: depositType || '',
-      age: formData.age || '',
-      income: formData.income || '',
+      age: profile.age || '',
+      income: monthlyIncome ? String(monthlyIncome) : '',
+      monthlyIncome: monthlyIncome ? String(monthlyIncome) : '',
       loanAmount: formData.loanAmount || '',
-      occupation: formData.businessType || formData.farmingType || formData.accountType || formData.educationLevel || formData.beneficiaryType || '',
-      savingsGoal: category
+      occupation:
+        formData.businessType ||
+        formData.farmingType ||
+        formData.accountType ||
+        formData.educationLevel ||
+        formData.beneficiaryType ||
+        profile.employmentType ||
+        '',
+      savingsGoal: profile.financialGoal || category
     });
 
     router.push(`/results?${query.toString()}`);
   };
+
+  if (!isHydrated) {
+    return null;
+  }
 
   return (
     <>
@@ -170,6 +193,10 @@ export default function CategoryDetails() {
             <h1>{config.title}</h1>
             {depositType && <p className={styles.subtitle}>Type: {depositType}</p>}
             <p className={styles.subtitle}>{config.hint}</p>
+            <p className={styles.subtitle}>
+              Using profile: {profile.name || 'Guest'}, Age {profile.age || '-'}, Annual Income ₹
+              {profile.income || '-'}
+            </p>
             
             {/* Scheme explanation */}
             {schemeExplanations[category] && (
@@ -194,6 +221,21 @@ export default function CategoryDetails() {
             )}
           </div>
 
+          {!hasProfile && (
+            <div className={styles.schemeExplainer}>
+              <div className={styles.explainerContent}>
+                <h3>Complete your profile first</h3>
+                <p className={styles.simpleExplainer}>
+                  To avoid filling age and income again, this page uses your saved profile.
+                </p>
+                <button className={styles.submitButton} onClick={() => router.push('/get-started')}>
+                  Go to Get Started
+                </button>
+              </div>
+            </div>
+          )}
+
+          {hasProfile && (
           <form onSubmit={handleSubmit} className={styles.form}>
             {config.fields.map((field) => {
               const fieldExplain = categoryFieldExplanations[category]?.[field.key];
@@ -247,6 +289,7 @@ export default function CategoryDetails() {
               Show Relevant Schemes →
             </button>
           </form>
+          )}
         </div>
       </div>
     </>
