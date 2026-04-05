@@ -93,6 +93,8 @@ export default function QuickFilter() {
         body: JSON.stringify({
           age,
           income: Math.floor(annualIncome / 12),
+          employmentType: profile.employmentType,
+          savingsGoal: profile.financialGoal,
           purpose: formData.purpose,
           loanAmount: formData.loanAmount ? parseInt(formData.loanAmount) : 0
         })

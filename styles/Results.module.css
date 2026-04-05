@@ -130,6 +130,18 @@
   flex-direction: column;
 }
 
+.recommendedBanner {
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+  background: #16a34a;
+  color: #f8fafc;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .schemeCard::before {
   content: '';
   position: absolute;
@@ -191,6 +203,63 @@
   line-height: 1.5;
   margin-bottom: 1rem;
   flex-grow: 1;
+}
+
+.labelsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.labelChip {
+  background: rgba(22, 163, 74, 0.18);
+  border: 1px solid rgba(22, 163, 74, 0.45);
+  color: #14532d;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.labelChipMuted {
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  color: #1d4ed8;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.extraSection {
+  margin: 0.25rem 0 1rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.extraSection strong {
+  color: var(--text-primary);
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.extraSection p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.extraSection ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.extraSection li {
+  margin: 0.18rem 0;
 }
 
 .schemeDetails {

@@ -39,6 +39,27 @@ function normalizeLabel(value) {
   return (value || '').toString().toLowerCase().replace(/[^a-z0-9]+/g, '');
 }
 
+function normalizeEmployment(value) {
+  const key = normalizeLabel(value);
+  if (!key) return '';
+  if (key.includes('salar')) return 'salaried';
+  if (key.includes('student')) return 'student';
+  if (key.includes('self') || key.includes('freelancer') || key.includes('business')) return 'self-employed';
+  if (key.includes('retir')) return 'retired';
+  return key;
+}
+
+const SPECIAL_SCHEME_RULES = {
+  gov_epf_1: {
+    recommendationTitle: 'Recommended for You',
+    shouldRecommend: (criteria) => {
+      const goal = normalizeLabel(criteria.savingsGoal);
+      const isSavingOrRetirement = goal === 'saving' || goal === 'retirement';
+      return isSavingOrRetirement && normalizeEmployment(criteria.employmentType) === 'salaried';
+    }
+  }
+};
+
 function isTagCategory(value) {
   const key = normalizeLabel(value);
   return key === 'singlechild' || key === 'girlchild';
@@ -80,6 +101,17 @@ function matchesCriteria(scheme, criteria) {
     if (scheme.bank_name !== criteria.bank) return false;
   }
 
+  // Employment type check (for schemes like EPF)
+  const requiredEmployment =
+    scheme?.eligibility?.employmentType ||
+    scheme.employment_type_required ||
+    scheme.employmentType;
+  if (requiredEmployment) {
+    const required = normalizeEmployment(requiredEmployment);
+    const userEmployment = normalizeEmployment(criteria.employmentType);
+    if (!userEmployment || userEmployment !== required) return false;
+  }
+
   return true;
 }
 
@@ -116,6 +148,11 @@ function calculateMatchScore(scheme, criteria) {
     if (incomeRatio >= 1.5) score += 5;
   }
 
+  const rule = SPECIAL_SCHEME_RULES[scheme.id];
+  if (rule && rule.shouldRecommend(criteria)) {
+    score += 20;
+  }
+
   return Math.min(100, Math.max(0, score));
 }
 
@@ -145,6 +182,8 @@ export default function handler(req, res) {
       const gender = incoming.gender || null;
       const category = incoming.category || null;
       const savingsGoal = incoming.savingsGoal || incoming.purpose || null;
+      const filterPurpose = incoming.category || incoming.purpose || null;
+      const employmentType = incoming.employmentType || incoming.occupation || null;
 
       // Validate input
       if (age && (age < 18 || age > 100)) {
@@ -152,7 +191,15 @@ export default function handler(req, res) {
       }
 
       // Filter schemes using helper to handle all criteria (age, income, loan amount, purpose, bank)
-      const criteriaObject = { age, income: monthlyIncome, loanAmount: incoming.loanAmount || 0, purpose: savingsGoal, bank: incoming.bank || null };
+      const criteriaObject = {
+        age,
+        income: monthlyIncome,
+        loanAmount: incoming.loanAmount || 0,
+        purpose: filterPurpose,
+        bank: incoming.bank || null,
+        employmentType,
+        savingsGoal
+      };
 
       let filteredSchemes = data.schemes.filter(scheme => matchesCriteria(scheme, criteriaObject));
 
@@ -168,6 +215,8 @@ export default function handler(req, res) {
       // Generate bestFitExplanation and matchScore for each matched scheme
       const explainedSchemes = filteredSchemes.map(scheme => {
         const explanations = [];
+        const rule = SPECIAL_SCHEME_RULES[scheme.id];
+        const recommendedForYou = Boolean(rule && rule.shouldRecommend(criteriaObject));
 
         // Age match explanation
         if (age) {
@@ -206,9 +255,15 @@ export default function handler(req, res) {
           }
         }
 
+        if (recommendedForYou) {
+          explanations.unshift('Recommended for your salaried profile and long-term saving/retirement goal.');
+        }
+
         return {
           ...scheme,
           bestFitExplanation: explanations,
+          recommendedForYou,
+          recommendationLabel: recommendedForYou ? rule.recommendationTitle : null,
           matchScore: calculateMatchScore(scheme, criteriaObject)
         };
       });
@@ -221,7 +276,7 @@ export default function handler(req, res) {
         totalSchemes: data.schemes.length,
         matchedSchemes: explainedSchemes.length,
         schemes: explainedSchemes,
-        userCriteria: { age, gender, category, monthlyIncome, savingsGoal },
+        userCriteria: { age, gender, category, monthlyIncome, savingsGoal, employmentType },
         timestamp: new Date().toISOString()
       });
     }

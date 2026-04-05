@@ -60,6 +60,7 @@ export default function Filter() {
       category: formData.category,
       monthlyIncome: toMonthlyIncome(profile.income),
       occupation: toOccupation(profile.employmentType),
+      employmentType: profile.employmentType,
       savingsGoal: profile.financialGoal,
       loanAmount: formData.loanAmount || ''
     });

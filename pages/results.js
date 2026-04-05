@@ -5,7 +5,19 @@ import styles from '../styles/Results.module.css';
 
 export default function Results() {
   const router = useRouter();
-  const { bank, age, gender, category, monthlyIncome, occupation, savingsGoal, income, loanAmount, depositType } = router.query;
+  const {
+    bank,
+    age,
+    gender,
+    category,
+    monthlyIncome,
+    occupation,
+    employmentType,
+    savingsGoal,
+    income,
+    loanAmount,
+    depositType
+  } = router.query;
   
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -17,8 +29,8 @@ export default function Results() {
       // Category browsing mode
       setBrowseMode('category');
       filterByCategory();
-    } else if (bank && age && gender && category && monthlyIncome && occupation && savingsGoal) {
-      // Filter mode (from quick filter)
+    } else if (bank && age && category && monthlyIncome && occupation && savingsGoal) {
+      // Filter mode
       setBrowseMode('filter');
       filterSchemes();
     }
@@ -61,13 +73,14 @@ export default function Results() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          bankId: bank,
+          bank: bank,
           age: parseInt(age),
           gender,
           category,
           depositType: depositType || undefined,
           monthlyIncome: parseInt(monthlyIncome),
           occupation,
+          employmentType: employmentType || occupation,
           savingsGoal
         }),
       });
@@ -94,6 +107,7 @@ export default function Results() {
         monthlyIncome: resolvedIncome ? parseInt(resolvedIncome) : undefined,
         loanAmount: loanAmount ? parseInt(loanAmount) : undefined,
         occupation: occupation || undefined,
+        employmentType: employmentType || occupation || undefined,
         savingsGoal: savingsGoal || router.query.category
       };
 
@@ -231,6 +245,10 @@ export default function Results() {
                           <span className={styles.criteriaValue}>{results.userCriteria.occupation}</span>
                         </div>
                         <div className={styles.criteriaItem}>
+                          <span className={styles.criteriaLabel}>Employment Type:</span>
+                          <span className={styles.criteriaValue}>{results.userCriteria.employmentType || 'Not specified'}</span>
+                        </div>
+                        <div className={styles.criteriaItem}>
                           <span className={styles.criteriaLabel}>Goal:</span>
                           <span className={styles.criteriaValue}>{results.userCriteria.savingsGoal}</span>
                         </div>
@@ -246,6 +264,10 @@ export default function Results() {
                         key={scheme.id} 
                         className={styles.schemeCard}
                       >
+                        {scheme.recommendedForYou && (
+                          <div className={styles.recommendedBanner}>Recommended for You</div>
+                        )}
+
                         <div className={styles.schemeHeader}>
                           <div>
                             <h3>{scheme.scheme_name || scheme.name}</h3>
@@ -255,6 +277,22 @@ export default function Results() {
                             <span className={styles.matchBadge}>{scheme.scheme_category}</span>
                           )}
                         </div>
+
+                        {Array.isArray(scheme.ui_labels) && scheme.ui_labels.length > 0 && (
+                          <div className={styles.labelsRow}>
+                            {scheme.ui_labels.map((label) => (
+                              <span key={label} className={styles.labelChip}>{label}</span>
+                            ))}
+                          </div>
+                        )}
+
+                        {Array.isArray(scheme.scheme_tags) && scheme.scheme_tags.length > 0 && (
+                          <div className={styles.labelsRow}>
+                            {scheme.scheme_tags.slice(0, 3).map((tag) => (
+                              <span key={tag} className={styles.labelChipMuted}>{tag}</span>
+                            ))}
+                          </div>
+                        )}
                         
                         <div className={styles.schemeDetails}>
                           <div className={styles.detailRow}>
@@ -284,6 +322,27 @@ export default function Results() {
 
                         {scheme.description && (
                           <p className={styles.description}>{scheme.description}</p>
+                        )}
+
+                        {scheme.eligibility && (
+                          <div className={styles.extraSection}>
+                            <strong>Eligibility:</strong>
+                            <p>
+                              {scheme.eligibility.employmentType ? `Employment: ${scheme.eligibility.employmentType}. ` : ''}
+                              {scheme.minimum_age ? `Age: ${scheme.minimum_age}+ years.` : 'Age as per scheme rules.'}
+                            </p>
+                          </div>
+                        )}
+
+                        {Array.isArray(scheme.benefits) && scheme.benefits.length > 0 && (
+                          <div className={styles.extraSection}>
+                            <strong>Benefits:</strong>
+                            <ul>
+                              {scheme.benefits.slice(0, 4).map((benefit) => (
+                                <li key={benefit}>{benefit}</li>
+                              ))}
+                            </ul>
+                          </div>
                         )}
 
                         {scheme.bestFitExplanation && scheme.bestFitExplanation.length > 0 && (

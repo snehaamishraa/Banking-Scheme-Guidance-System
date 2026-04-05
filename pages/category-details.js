@@ -167,6 +167,7 @@ export default function CategoryDetails() {
         formData.beneficiaryType ||
         profile.employmentType ||
         '',
+      employmentType: profile.employmentType || '',
       savingsGoal: profile.financialGoal || category
     });
 

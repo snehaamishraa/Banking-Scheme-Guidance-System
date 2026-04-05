@@ -1230,6 +1230,69 @@
         "Girl Child"
       ],
       "last_updated": "2026-02-25"
+    },
+    {
+      "id": "gov_epf_1",
+      "bank_name": "Government-backed (All Banks)",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Employee Provident Fund (EPF)",
+      "description": "A government-backed retirement savings scheme where both employee and employer contribute monthly.",
+      "target_audience": "Salaried employees seeking long-term retirement savings",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 58,
+      "loan_amount_min": "INR 0",
+      "loan_amount_max": "INR 0",
+      "interest_rate_range": "EPFO notified annual rate",
+      "processing_fee": "INR 0",
+      "repayment_tenure": "Long-term till retirement",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Monthly contribution by employee and employer",
+        "Government-backed corpus for retirement",
+        "Compounding over long tenure"
+      ],
+      "required_documents": [
+        "Universal Account Number (UAN)",
+        "Employee identity proof",
+        "Employer enrollment records"
+      ],
+      "eligibility_criteria": [
+        "Salaried employee",
+        "Age 18 years or above",
+        "Employed in EPFO-covered establishment"
+      ],
+      "eligibility": {
+        "employmentType": "salaried",
+        "age": "18+"
+      },
+      "employment_type_required": "salaried",
+      "benefits": [
+        "Employer contribution",
+        "Fixed interest",
+        "Tax benefits",
+        "Long-term wealth accumulation"
+      ],
+      "pros": [
+        "Employer adds to your monthly contribution",
+        "Stable government-backed returns",
+        "Tax advantages under applicable rules",
+        "Strong long-term retirement corpus creation"
+      ],
+      "cons": [
+        "Primarily for salaried workforce",
+        "Partial liquidity restrictions before retirement"
+      ],
+      "scheme_tags": [
+        "long-term savings",
+        "retirement"
+      ],
+      "ui_labels": [
+        "Best for salaried employees",
+        "Long-term saving"
+      ],
+      "official_website_reference": "www.epfindia.gov.in",
+      "last_updated": "2026-04-05"
     }
   ]
 }
