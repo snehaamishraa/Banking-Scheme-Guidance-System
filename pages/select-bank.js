@@ -66,7 +66,13 @@ export default function SelectBank() {
     if (browseMode === 'bank' && selectedBank) {
       router.push(`/schemes/${encodeURIComponent(selectedBank)}`);
     } else if (browseMode === 'category' && selectedCategory) {
-      router.push(`/category-details?category=${encodeURIComponent(selectedCategory)}`);
+      if (selectedCategory === 'Loans') {
+        router.push('/loan-categories');
+      } else if (selectedCategory === 'Fixed Deposits') {
+        router.push('/fixed-deposit-categories');
+      } else {
+        router.push(`/category-details?category=${encodeURIComponent(selectedCategory)}`);
+      }
     }
   };
 
@@ -279,12 +285,17 @@ export default function SelectBank() {
                   {loanCategories.length > 0 && (
                     <div
                       key="Loans"
-                      className={styles.categoryCard}
-                      onClick={() => router.push('/loan-categories')}
+                      className={`${styles.categoryCard} ${
+                        selectedCategory === 'Loans' ? styles.selected : ''
+                      }`}
+                      onClick={() => handleCategorySelect('Loans')}
                     >
                       <div className={styles.categoryIcon}>{getCategoryIcon('Loans')}</div>
                       <h3>Loans</h3>
                       <p>Browse all loan schemes</p>
+                      {selectedCategory === 'Loans' && (
+                        <div className={styles.checkmark}>✓</div>
+                      )}
                     </div>
                   )}
 
@@ -292,12 +303,17 @@ export default function SelectBank() {
                   {fixedDepositPresent && (
                     <div
                       key="Fixed Deposits"
-                      className={styles.categoryCard}
-                      onClick={() => router.push('/fixed-deposit-categories')}
+                      className={`${styles.categoryCard} ${
+                        selectedCategory === 'Fixed Deposits' ? styles.selected : ''
+                      }`}
+                      onClick={() => handleCategorySelect('Fixed Deposits')}
                     >
                       <div className={styles.categoryIcon}>{getCategoryIcon('Fixed Deposits')}</div>
                       <h3>Fixed Deposits</h3>
                       <p>Browse all fixed deposit types</p>
+                      {selectedCategory === 'Fixed Deposits' && (
+                        <div className={styles.checkmark}>✓</div>
+                      )}
                     </div>
                   )}
 

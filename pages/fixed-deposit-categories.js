@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/SelectBank.module.css';
+import { useUserProfile } from '../context/UserProfileContext';
+import { fdOptions } from '../data/fdOptions';
+import { compareFdOptions } from '../utils/fdCalculations';
+import FDComparisonTable from '../components/FDComparisonTable';
 
 export default function FixedDepositCategories() {
   const router = useRouter();
+  const { profile } = useUserProfile();
   const fdTypes = [
     'Regular Fixed Deposit',
     'Senior Citizen Fixed Deposit',
@@ -33,6 +38,29 @@ export default function FixedDepositCategories() {
   };
 
   const [selectedType, setSelectedType] = useState('');
+  const [compareInputs, setCompareInputs] = useState({
+    amount: '',
+    tenureValue: '1',
+    tenureUnit: 'years'
+  });
+  const [showComparison, setShowComparison] = useState(false);
+
+  const age = Number(profile?.age || 0);
+  const isSeniorCitizen = age >= 60;
+
+  const comparedOptions = useMemo(() => {
+    const principal = Number(compareInputs.amount);
+    if (!showComparison || !Number.isFinite(principal) || principal <= 0) {
+      return [];
+    }
+
+    return compareFdOptions(fdOptions, {
+      principal,
+      tenureValue: compareInputs.tenureValue,
+      tenureUnit: compareInputs.tenureUnit,
+      age
+    });
+  }, [showComparison, compareInputs, age]);
 
   const handleTypeSelect = (type) => {
     setSelectedType(type);
@@ -46,6 +74,15 @@ export default function FixedDepositCategories() {
         )}`
       );
     }
+  };
+
+  const handleCompareChange = (field, value) => {
+    setCompareInputs((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleCompareSubmit = (event) => {
+    event.preventDefault();
+    setShowComparison(true);
   };
 
   return (
@@ -110,6 +147,73 @@ export default function FixedDepositCategories() {
                 the next screen.
               </p>
             </div>
+
+            <div className={styles.info}>
+              <p>
+                <strong>FD Compare:</strong> Enter amount and tenure to compare banks by maturity value.
+                {isSeniorCitizen
+                  ? ' Senior citizen rates are applied for your profile.'
+                  : ' Add age 60+ in your profile to apply senior citizen rates automatically.'}
+              </p>
+            </div>
+
+            <form className={styles.form} onSubmit={handleCompareSubmit}>
+              <div className={styles.formSection}>
+                <h3>Compare Fixed Deposits</h3>
+
+                <div className={styles.formGroup}>
+                  <label htmlFor="amount">Deposit Amount (INR)</label>
+                  <input
+                    id="amount"
+                    type="number"
+                    min="1"
+                    value={compareInputs.amount}
+                    onChange={(e) => handleCompareChange('amount', e.target.value)}
+                    placeholder="e.g. 100000"
+                    required
+                  />
+                </div>
+
+                <div className={styles.twoCol}>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="tenureValue">Tenure</label>
+                    <input
+                      id="tenureValue"
+                      type="number"
+                      min="1"
+                      value={compareInputs.tenureValue}
+                      onChange={(e) => handleCompareChange('tenureValue', e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label htmlFor="tenureUnit">Tenure Unit</label>
+                    <select
+                      id="tenureUnit"
+                      value={compareInputs.tenureUnit}
+                      onChange={(e) => handleCompareChange('tenureUnit', e.target.value)}
+                    >
+                      <option value="years">Years</option>
+                      <option value="months">Months</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit" className={styles.continueButton}>
+                  Compare FD Options
+                  <span className={styles.arrow}>→</span>
+                </button>
+              </div>
+            </form>
+
+            {showComparison && comparedOptions.length === 0 && (
+              <div className={styles.noResults}>
+                <p>No FD options matched your deposit amount. Try a higher amount.</p>
+              </div>
+            )}
+
+            <FDComparisonTable comparedOptions={comparedOptions} />
           </div>
         </main>
       </div>

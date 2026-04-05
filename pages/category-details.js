@@ -5,6 +5,9 @@ import styles from '../styles/CategoryDetails.module.css';
 import InfoIcon from '../components/InfoIcon';
 import { categoryFieldExplanations, schemeExplanations } from '../utils/explanations';
 import { useUserProfile } from '../context/UserProfileContext';
+import { fdOptions } from '../data/fdOptions';
+import { compareFdOptions } from '../utils/fdCalculations';
+import FDComparisonTable from '../components/FDComparisonTable';
 
 const categoryQuestions = {
   'Education Loans': {
@@ -135,9 +138,38 @@ export default function CategoryDetails() {
   }, [category]);
 
   const [formData, setFormData] = useState({});
+  const [compareInputs, setCompareInputs] = useState({
+    amount: '',
+    tenureValue: '1',
+    tenureUnit: 'years'
+  });
+  const [showComparison, setShowComparison] = useState(false);
+
+  const isFixedDeposits = category === 'Fixed Deposits';
+  const comparedOptions = useMemo(() => {
+    if (!isFixedDeposits || !showComparison) return [];
+    const principal = Number(compareInputs.amount);
+    if (!Number.isFinite(principal) || principal <= 0) return [];
+
+    return compareFdOptions(fdOptions, {
+      principal,
+      tenureValue: compareInputs.tenureValue,
+      tenureUnit: compareInputs.tenureUnit,
+      age: Number(profile.age || 0)
+    });
+  }, [isFixedDeposits, showComparison, compareInputs, profile.age]);
 
   const handleChange = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleCompareChange = (field, value) => {
+    setCompareInputs((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleCompareSubmit = (event) => {
+    event.preventDefault();
+    setShowComparison(true);
   };
 
   const isFormValid = config.fields.every((field) => {
@@ -290,6 +322,65 @@ export default function CategoryDetails() {
               Show Relevant Schemes →
             </button>
           </form>
+          )}
+
+          {hasProfile && isFixedDeposits && (
+            <>
+              <form onSubmit={handleCompareSubmit} className={styles.form}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="fdAmount">FD Amount (INR)</label>
+                  <input
+                    id="fdAmount"
+                    type="number"
+                    min="1"
+                    value={compareInputs.amount}
+                    onChange={(e) => handleCompareChange('amount', e.target.value)}
+                    placeholder="e.g. 100000"
+                    required
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label htmlFor="fdTenureValue">Tenure Value</label>
+                  <input
+                    id="fdTenureValue"
+                    type="number"
+                    min="1"
+                    value={compareInputs.tenureValue}
+                    onChange={(e) => handleCompareChange('tenureValue', e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label htmlFor="fdTenureUnit">Tenure Unit</label>
+                  <select
+                    id="fdTenureUnit"
+                    value={compareInputs.tenureUnit}
+                    onChange={(e) => handleCompareChange('tenureUnit', e.target.value)}
+                  >
+                    <option value="years">Years</option>
+                    <option value="months">Months</option>
+                  </select>
+                </div>
+
+                <button type="submit" className={styles.submitButton}>
+                  Compare FD Options
+                </button>
+              </form>
+
+              {showComparison && comparedOptions.length === 0 && (
+                <div className={styles.schemeExplainer}>
+                  <div className={styles.explainerContent}>
+                    <p className={styles.simpleExplainer}>
+                      No FD options matched this amount. Try a higher amount.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              <FDComparisonTable comparedOptions={comparedOptions} />
+            </>
           )}
         </div>
       </div>
