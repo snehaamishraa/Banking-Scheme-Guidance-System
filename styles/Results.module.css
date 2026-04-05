@@ -57,7 +57,7 @@
 .spinner {
   width: 50px;
   height: 50px;
-  border: 3px solid rgba(6, 182, 212, 0.2);
+  border: 3px solid rgba(37, 99, 235, 0.2);
   border-top-color: #2563eb;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -239,7 +239,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
 }
 
 .learnMoreButton::before {
@@ -254,7 +254,7 @@
 }
 
 .learnMoreButton:hover {
-  box-shadow: 0 16px 40px rgba(6, 182, 212, 0.4);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.4);
   transform: translateY(-3px);
 }
 
@@ -276,8 +276,8 @@
 }
 
 .criteriaCard {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.3);
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -386,35 +386,35 @@
   background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
   border: none;
   color: white;
-  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
 }
 
 .primaryButton:hover {
-  box-shadow: 0 15px 40px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
   transform: translateY(-2px);
 }
 
 .secondaryButton {
   background: transparent;
-  border: 1.5px solid rgba(51, 211, 191, 0.5);
+  border: 1.5px solid rgba(37, 99, 235, 0.5);
   color: #2563eb;
 }
 
 .secondaryButton:hover {
-  background: rgba(6, 182, 212, 0.1);
-  border-color: rgba(51, 211, 191, 0.8);
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.8);
 }
 
 .disclaimer {
-  background: rgba(249, 115, 22, 0.08);
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.3);
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 3rem;
 }
 
 .disclaimer h3 {
-  color: #f97316;
+  color: #2563eb;
   margin: 0 0 0.8rem 0;
   font-size: 1rem;
 }
@@ -427,7 +427,7 @@
 }
 
 .disclaimer strong {
-  color: #f97316;
+  color: #2563eb;
 }
 
 .explanations {
@@ -463,7 +463,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #34d399;
+  color: #2563eb;
   font-weight: bold;
 }
 

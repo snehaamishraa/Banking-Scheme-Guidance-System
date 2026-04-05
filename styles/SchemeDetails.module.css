@@ -79,7 +79,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(20, 184, 166, 0.2));
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.2));
   border: 1.5px solid rgba(59, 130, 246, 0.6);
   padding: 0.75rem 2.5rem;
   border-radius: 999px;
@@ -107,8 +107,8 @@
 
 .targetGroup {
   display: inline-block;
-  background: rgba(20, 184, 166, 0.12);
-  border: 1px solid rgba(20, 184, 166, 0.45);
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.45);
   padding: 0.75rem 1.5rem;
   border-radius: 999px;
   font-size: 1rem;
@@ -145,7 +145,7 @@
 }
 
 .eligibilityCard {
-  background: linear-gradient(135deg, rgba(20, 184, 166, 0.08), rgba(59, 130, 246, 0.08));
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(59, 130, 246, 0.08));
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 14px;
   padding: 1.5rem;
@@ -154,7 +154,7 @@
 }
 
 .eligibilityCard:hover {
-  background: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(59, 130, 246, 0.15));
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.15));
   border-color: rgba(59, 130, 246, 0.6);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
@@ -176,8 +176,8 @@
 }
 
 .howToApply {
-  background: rgba(20, 184, 166, 0.08);
-  border-left: 4px solid rgba(20, 184, 166, 0.6);
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 4px solid rgba(59, 130, 246, 0.6);
   padding: 1.5rem;
   border-radius: 12px;
 }
@@ -279,8 +279,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.25);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.25);
   border-radius: 12px;
   padding: 1rem 1.5rem;
   font-size: 1rem;
@@ -290,8 +290,8 @@
 }
 
 .benefitItem:hover {
-  background: rgba(34, 197, 94, 0.14);
-  border-color: rgba(34, 197, 94, 0.6);
+  background: rgba(37, 99, 235, 0.14);
+  border-color: rgba(37, 99, 235, 0.6);
   transform: translateX(4px);
 }
 
@@ -309,16 +309,16 @@
 }
 
 .contactCard {
-  background: rgba(249, 115, 22, 0.08);
-  border: 1px solid rgba(249, 115, 22, 0.25);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.25);
   border-radius: 14px;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .contactCard:hover {
-  background: rgba(249, 115, 22, 0.12);
-  border-color: rgba(249, 115, 22, 0.5);
+  background: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.5);
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
 }
@@ -355,8 +355,8 @@
 }
 
 .disclaimerSection {
-  background: rgba(249, 115, 22, 0.08);
-  border: 1px solid rgba(249, 115, 22, 0.35);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.35);
   border-radius: 14px;
   padding: 2rem;
   margin-top: 3rem;
@@ -418,7 +418,7 @@
 
 .filterButton {
   background: transparent;
-  border: 1px solid rgba(249, 115, 22, 0.6);
+  border: 1px solid rgba(37, 99, 235, 0.6);
   color: var(--accent);
   font-size: 1.1rem;
   font-weight: bold;
@@ -429,9 +429,9 @@
 }
 
 .filterButton:hover {
-  background: rgba(249, 115, 22, 0.15);
+  background: rgba(37, 99, 235, 0.15);
   color: #ffffff;
-  border-color: rgba(249, 115, 22, 0.8);
+  border-color: rgba(37, 99, 235, 0.8);
   box-shadow: var(--shadow-md);
 }
 
@@ -449,7 +449,7 @@
 .spinner {
   width: 60px;
   height: 60px;
-  border: 4px solid rgba(0, 243, 255, 0.2);
+  border: 4px solid rgba(37, 99, 235, 0.2);
   border-top-color: var(--primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
