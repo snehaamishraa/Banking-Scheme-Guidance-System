@@ -20,7 +20,7 @@
 .backButton,
 .viewAllButton {
   background: transparent;
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  border: 1px solid rgba(37, 99, 235, 0.3);
   color: var(--primary);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -32,8 +32,8 @@
 
 .backButton:hover,
 .viewAllButton:hover {
-  background: rgba(0, 212, 255, 0.1);
-  border-color: rgba(0, 212, 255, 0.5);
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.5);
   transform: translateX(-2px);
 }
 
@@ -58,7 +58,7 @@
   width: 50px;
   height: 50px;
   border: 3px solid rgba(6, 182, 212, 0.2);
-  border-top-color: #06b6d4;
+  border-top-color: #2563eb;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 1rem;
@@ -72,7 +72,7 @@
   margin-top: 1rem;
   background: rgba(239, 68, 68, 0.2);
   border: 1px solid rgba(239, 68, 68, 0.5);
-  color: #fca5a5;
+  color: #b91c1c;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -119,7 +119,7 @@
 }
 
 .schemeCard {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(102, 126, 234, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
   border: 1.5px solid var(--border-light);
   border-radius: 16px;
   padding: 2rem;
@@ -143,10 +143,10 @@
 }
 
 .schemeCard:hover {
-  border-color: rgba(0, 212, 255, 0.6);
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(102, 126, 234, 0.15) 100%);
+  border-color: rgba(37, 99, 235, 0.6);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
   transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0, 212, 255, 0.25);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25);
 }
 
 .schemeCard:hover::before {
@@ -170,13 +170,13 @@
 
 .bankName {
   font-size: 0.9rem;
-  color: #06b6d4;
+  color: #2563eb;
   font-weight: 600;
   margin: 0;
 }
 
 .matchBadge {
-  background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
   color: #0f172a;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
@@ -218,7 +218,7 @@
 }
 
 .detailValue {
-  color: #06b6d4;
+  color: #2563eb;
   font-size: 0.95rem;
   font-weight: 600;
 }
@@ -229,7 +229,7 @@
   justify-content: center;
   gap: 0.6rem;
   padding: 1.05rem 2rem;
-  background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
   border: none;
   border-radius: 12px;
   color: white;
@@ -284,7 +284,7 @@
 }
 
 .criteriaCard h3 {
-  color: #06b6d4;
+  color: #2563eb;
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
   font-weight: 600;
@@ -320,7 +320,7 @@
 .noResults {
   text-align: center;
   padding: 4rem 2rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 .noResultsIcon {
@@ -343,7 +343,7 @@
 }
 
 .suggestions h3 {
-  color: #06b6d4;
+  color: #2563eb;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -355,12 +355,12 @@
 
 .suggestions li {
   padding: 0.5rem 0;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 .suggestions li:before {
   content: "✓ ";
-  color: #06b6d4;
+  color: #2563eb;
   font-weight: bold;
   margin-right: 0.5rem;
 }
@@ -384,7 +384,7 @@
 }
 
 .primaryButton {
-  background: linear-gradient(90deg, #06b6d4 0%, #a78bfa 100%);
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
   border: none;
   color: white;
   box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
@@ -398,7 +398,7 @@
 .secondaryButton {
   background: transparent;
   border: 1.5px solid rgba(51, 211, 191, 0.5);
-  color: #06b6d4;
+  color: #2563eb;
 }
 
 .secondaryButton:hover {
@@ -421,7 +421,7 @@
 }
 
 .disclaimer p {
-  color: #cbd5e1;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin: 0.5rem 0;
   line-height: 1.6;
@@ -453,7 +453,7 @@
 }
 
 .explanations li {
-  color: #cbd5e1;
+  color: var(--text-secondary);
   padding: 0.5rem 0 0.5rem 1.5rem;
   position: relative;
   font-size: 0.9rem;

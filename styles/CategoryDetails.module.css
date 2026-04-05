@@ -19,7 +19,7 @@
 
 .backButton {
   border: none;
-  background: rgba(0, 212, 255, 0.12);
+  background: rgba(37, 99, 235, 0.12);
   color: var(--primary);
   padding: 0.6rem 1rem;
   border-radius: 10px;
@@ -70,7 +70,7 @@
 .formGroup select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .submitButton {
@@ -81,7 +81,7 @@
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: #071018;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -102,8 +102,8 @@
 
 /* New styles for enhanced explanations */
 .schemeExplainer {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(102, 126, 234, 0.08) 100%);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   border-radius: 12px;
   padding: 1.25rem;
   margin-bottom: 2rem;
@@ -142,7 +142,7 @@
 
 .benefitItem {
   background: var(--surface-soft);
-  border: 1px solid rgba(0, 212, 255, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   border-radius: 8px;
   padding: 0.75rem;
 }

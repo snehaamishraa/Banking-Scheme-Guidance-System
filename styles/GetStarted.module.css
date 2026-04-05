@@ -33,7 +33,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #00d4ff 0%, #33e5ff 50%, #00a8cc 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #1d4ed8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -53,7 +53,7 @@
 }
 
 .backBtn {
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 0.6rem 1.2rem;
@@ -68,7 +68,7 @@
 }
 
 .backBtn:hover {
-  background: rgba(0, 212, 255, 0.2);
+  background: rgba(37, 99, 235, 0.2);
   transform: translateY(-2px);
 }
 
@@ -97,7 +97,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   border: none;
   color: var(--primary);
   width: 44px;
@@ -111,7 +111,7 @@
 }
 
 .backStep:hover {
-  background: rgba(0, 212, 255, 0.2);
+  background: rgba(37, 99, 235, 0.2);
   transform: translateX(-4px);
 }
 
@@ -168,14 +168,14 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.15), transparent);
   transition: left 0.5s ease;
 }
 
 .choiceCard:hover {
   border-color: var(--primary);
   transform: translateY(-15px);
-  box-shadow: 0 30px 60px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.2);
 }
 
 .choiceCard:hover::before {
@@ -187,8 +187,8 @@
   z-index: 1;
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(102, 126, 234, 0.3));
-  border: 2px solid rgba(0, 212, 255, 0.3);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(59, 130, 246, 0.3));
+  border: 2px solid rgba(37, 99, 235, 0.3);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -199,7 +199,7 @@
 
 .choiceCard:hover .choiceIcon {
   transform: scale(1.15);
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.5), rgba(102, 126, 234, 0.5));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(59, 130, 246, 0.5));
 }
 
 .choiceCard h3 {
@@ -344,7 +344,7 @@
   outline: none;
   border-color: var(--primary);
   background: var(--input-focus-bg);
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.2);
 }
 
 .formGroup select {
@@ -387,8 +387,8 @@
   align-items: center;
   gap: 0.8rem;
   padding: 1.2rem;
-  background: rgba(0, 212, 255, 0.05);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -431,13 +431,13 @@
 
 .primaryBtn {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: #08080e;
-  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
 }
 
 .primaryBtn:hover:not(:disabled) {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.5);
 }
 
 .primaryBtn:disabled {
@@ -446,13 +446,13 @@
 }
 
 .secondaryBtn {
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   color: var(--primary);
   border: 2px solid var(--primary);
 }
 
 .secondaryBtn:hover {
-  background: rgba(0, 212, 255, 0.2);
+  background: rgba(37, 99, 235, 0.2);
   transform: translateY(-4px);
 }
 
@@ -487,8 +487,8 @@
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(0, 212, 255, 0.3);
+  background: var(--surface-soft);
+  border: 2px solid rgba(37, 99, 235, 0.3);
   border-radius: 14px;
   padding: 0.75rem 1.5rem;
   transition: all 0.3s ease;
@@ -498,8 +498,8 @@
 
 .searchInputGroup:focus-within {
   border-color: var(--primary);
-  background: rgba(0, 212, 255, 0.08);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  background: rgba(37, 99, 235, 0.08);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
 }
 
 .searchIcon {
@@ -523,7 +523,7 @@
 
 .searchBtn {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: #08080e;
+  color: #ffffff;
   border: none;
   padding: 0.6rem 1.5rem;
   border-radius: 10px;
@@ -536,7 +536,7 @@
 
 .searchBtn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 .searchBtn:disabled {
@@ -585,18 +585,18 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: var(--surface-soft);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .searchResultCard:hover {
-  background: rgba(0, 212, 255, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   border-color: var(--primary);
   transform: translateX(8px);
-  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
 }
 
 .resultCardContent {
@@ -647,7 +647,7 @@
    FOOTER
    ============================================ */
 .footer {
-  background: linear-gradient(135deg, var(--darker-bg) 0%, rgba(10, 10, 18, 0.8) 100%);
+  background: linear-gradient(135deg, var(--darker-bg) 0%, rgba(241, 245, 249, 0.8) 100%);
   border-top: 1px solid var(--border-light);
   padding: 2rem;
   text-align: center;
