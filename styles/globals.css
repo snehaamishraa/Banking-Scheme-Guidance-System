@@ -5,30 +5,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary: #00d4ff;
-  --primary-dark: #0088cc;
-  --primary-light: #33e5ff;
-  --secondary: #667eea;
-  --accent: #f39c12;
-  --accent-light: #ffb84d;
-  --dark-bg: #08080e;
-  --darker-bg: #0a0a12;
-  --card-bg: #151521;
-  --card-bg-light: #1f1f2e;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0b0;
-  --text-tertiary: #808090;
-  --border-color: #2a2a3e;
-  --border-light: #35354a;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #3b82f6;
+  --secondary: #60a5fa;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --dark-bg: #f8fafc;
+  --darker-bg: #eff6ff;
+  --card-bg: #ffffff;
+  --card-bg-light: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --border-color: #cbd5e1;
+  --border-light: #e2e8f0;
   --success: #27ae60;
   --error: #e74c3c;
   --neon-cyan: var(--primary);
   --neon-purple: var(--secondary);
   --neon-pink: var(--accent);
   --neon-green: var(--success);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 16px 48px rgba(15, 23, 42, 0.18);
   --bg-glow-1: rgba(0, 212, 255, 0.08);
   --bg-glow-2: rgba(102, 126, 234, 0.06);
   --input-bg: rgba(255, 255, 255, 0.05);
@@ -134,7 +134,7 @@ input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--primary);
   background-color: var(--input-focus-bg);
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 /* Keep native dropdown option lists readable across browsers/OS themes */
@@ -157,24 +157,24 @@ select option[value=""] {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 212, 255, 0.3);
+  background: rgba(37, 99, 235, 0.35);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 212, 255, 0.5);
+  background: rgba(37, 99, 235, 0.5);
 }
 
 /* Selection Styling */
 ::selection {
-  background: rgba(0, 212, 255, 0.3);
-  color: var(--text-primary);
+  background: rgba(37, 99, 235, 0.2);
+  color: #0f172a;
 }
 
 /* Code Block Styling */
 code {
   font-family: 'Courier New', monospace;
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(37, 99, 235, 0.12);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   color: var(--primary);
