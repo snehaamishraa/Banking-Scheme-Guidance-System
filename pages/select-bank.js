@@ -164,8 +164,8 @@ export default function SelectBank() {
                     setActiveTab('all');
                   }}
                 >
-                  <span className={styles.modeIcon}>🏦</span>
-                  Browse by Bank
+                  <span className={styles.modeTitle}>Browse by Bank</span>
+                  <span className={styles.modeMeta}>Compare all schemes from one bank</span>
                 </button>
                 <button
                   className={`${styles.modeButton} ${browseMode === 'category' ? styles.activeModeButton : ''}`}
@@ -175,8 +175,8 @@ export default function SelectBank() {
                     setSelectedCategory('');
                   }}
                 >
-                  <span className={styles.modeIcon}>📂</span>
-                  Browse by Category
+                  <span className={styles.modeTitle}>Browse by Category</span>
+                  <span className={styles.modeMeta}>Compare banks within one scheme type</span>
                 </button>
               </div>
             )}
@@ -188,28 +188,24 @@ export default function SelectBank() {
                   className={`${styles.tab} ${activeTab === 'all' ? styles.activeTab : ''}`}
                   onClick={() => setActiveTab('all')}
                 >
-                  <span className={styles.tabIcon}>📊</span>
                   All Banks
                 </button>
                 <button
                   className={`${styles.tab} ${activeTab === 'public' ? styles.activeTab : ''}`}
                   onClick={() => setActiveTab('public')}
                 >
-                  <span className={styles.tabIcon}>🏛️</span>
                   Public Sector
                 </button>
                 <button
                   className={`${styles.tab} ${activeTab === 'private' ? styles.activeTab : ''}`}
                   onClick={() => setActiveTab('private')}
                 >
-                  <span className={styles.tabIcon}>💼</span>
                   Private Sector
                 </button>
                 <button
                   className={`${styles.tab} ${activeTab === 'government' ? styles.activeTab : ''}`}
                   onClick={() => setActiveTab('government')}
                 >
-                  <span className={styles.tabIcon}>🏵️</span>
                   Government
                 </button>
               </div>
@@ -269,7 +265,7 @@ export default function SelectBank() {
 
                 <div className={styles.info}>
                   <p>
-                    💡 <strong>Tip:</strong> Select a bank above to browse all available schemes. 
+                    <strong>Tip:</strong> Select a bank above to browse all available schemes. 
                     Click the scheme card to view detailed eligibility and application information.
                   </p>
                 </div>
@@ -340,7 +336,7 @@ export default function SelectBank() {
 
                 <div className={styles.info}>
                   <p>
-                    💡 <strong>Tip:</strong> Select a category to see all available schemes. 
+                    <strong>Tip:</strong> Select a category to see all available schemes. 
                     Compare schemes across different banks within the same category.
                   </p>
                 </div>
