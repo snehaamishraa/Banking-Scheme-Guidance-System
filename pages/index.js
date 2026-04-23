@@ -166,7 +166,7 @@ export default function Home({ theme = 'light', toggleTheme }) {
               <div className={`${styles.heroContent} ${styles.reveal}`} data-reveal>
                 <p className={styles.heroKicker}>Premium Fintech Assistant</p>
                 <h1 className={styles.heroTitle}>
-                  Compare Financial Schemes with <span className={styles.accent}>Confidence</span>
+                  Find Schemes That Fit <span className={styles.accent}>Your Life</span>
                 </h1>
                 <p className={styles.heroSubtitle}>
                   A clean, professional way to discover the right banking products based on your

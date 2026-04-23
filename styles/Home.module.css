@@ -8,7 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0.85rem 1rem;
+  padding: 0.95rem 1rem;
   backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.78);
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
@@ -20,9 +20,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.25rem;
   border-radius: 14px;
-  padding: 0.65rem 0.9rem;
+  padding: 0.72rem 1rem;
   transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .logoText {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.45rem;
   font-weight: 700;
   color: #0f172a;
@@ -49,13 +49,15 @@
 .navLinks {
   display: none;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.55rem;
 }
 
 .navLinks a {
+  font-family: 'Montserrat', sans-serif;
   color: #475569;
   font-size: 0.95rem;
   font-weight: 500;
+  letter-spacing: 0.01em;
   transition: color 0.3s ease-in-out;
 }
 
@@ -64,11 +66,12 @@
 }
 
 .navCta {
+  font-family: 'Montserrat', sans-serif;
   background: linear-gradient(90deg, #2563eb, #3b82f6);
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.56rem 0.95rem;
+  padding: 0.6rem 1rem;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -81,7 +84,7 @@
 .navActions {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.7rem;
 }
 
 .themeToggleNav {
@@ -106,11 +109,11 @@
 .main {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 0 1rem 4.5rem;
+  padding: 0 1rem 5.25rem;
 }
 
 .heroSection {
-  padding: 3.5rem 0 2.75rem;
+  padding: 4.25rem 0 3.25rem;
   position: relative;
 }
 
@@ -128,12 +131,12 @@
 
 .heroGrid {
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .heroContent {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .heroKicker {
@@ -154,9 +157,9 @@
 .heroTitle {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(2rem, 6vw, 3.7rem);
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: -1.5px;
-  color: #0f172a;
+  color: #2563eb;
 }
 
 .accent {
@@ -168,15 +171,15 @@
 
 .heroSubtitle {
   color: #475569;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.04rem;
+  line-height: 1.85;
   max-width: 54ch;
 }
 
 .heroCTA {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.95rem;
 }
 
 .primaryBtn,
@@ -584,7 +587,6 @@
 }
 
 [data-theme='dark'] .logoText,
-[data-theme='dark'] .heroTitle,
 [data-theme='dark'] .sectionHeader h2,
 [data-theme='dark'] .benefitsContent h2,
 [data-theme='dark'] .ctaSection h2,
@@ -596,6 +598,10 @@
 [data-theme='dark'] .mockPanel p,
 [data-theme='dark'] .testimonialAuthor h4 {
   color: var(--text-primary);
+}
+
+[data-theme='dark'] .heroTitle {
+  color: #2563eb;
 }
 
 [data-theme='dark'] .navLinks a,
@@ -692,15 +698,15 @@
 
 @media (min-width: 768px) {
   .header {
-    padding: 1rem 1.2rem;
+    padding: 1.05rem 1.2rem;
   }
 
   .main {
-    padding: 0 1.2rem 5rem;
+    padding: 0 1.2rem 5.75rem;
   }
 
   .heroSection {
-    padding: 5rem 0 3rem;
+    padding: 5.5rem 0 3.4rem;
   }
 
   .heroGrid {
