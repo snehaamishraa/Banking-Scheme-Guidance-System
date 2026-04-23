@@ -568,6 +568,107 @@
   transform: translateY(0);
 }
 
+[data-theme='dark'] .container {
+  background: linear-gradient(180deg, #0b1020 0%, #0f172a 28%, #111827 100%);
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .header {
+  background: rgba(15, 23, 42, 0.78);
+  border-bottom-color: rgba(148, 163, 184, 0.2);
+}
+
+[data-theme='dark'] .navbarScrolled {
+  background: rgba(15, 23, 42, 0.92);
+  box-shadow: 0 10px 34px rgba(2, 6, 23, 0.5);
+}
+
+[data-theme='dark'] .logoText,
+[data-theme='dark'] .heroTitle,
+[data-theme='dark'] .sectionHeader h2,
+[data-theme='dark'] .benefitsContent h2,
+[data-theme='dark'] .ctaSection h2,
+[data-theme='dark'] .footerSection h4,
+[data-theme='dark'] .footerSection h5,
+[data-theme='dark'] .featureCard h3,
+[data-theme='dark'] .stepCard h3,
+[data-theme='dark'] .trustCard h3,
+[data-theme='dark'] .mockPanel p,
+[data-theme='dark'] .testimonialAuthor h4 {
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .navLinks a,
+[data-theme='dark'] .heroSubtitle,
+[data-theme='dark'] .heroTrustRow,
+[data-theme='dark'] .sectionHeader p,
+[data-theme='dark'] .featureCard p,
+[data-theme='dark'] .stepCard p,
+[data-theme='dark'] .testimonialText,
+[data-theme='dark'] .trustCard p,
+[data-theme='dark'] .benefitsContent p,
+[data-theme='dark'] .benefitsContent li,
+[data-theme='dark'] .ctaSection p,
+[data-theme='dark'] .footerSection p,
+[data-theme='dark'] .footerSection a,
+[data-theme='dark'] .mockPanel h3,
+[data-theme='dark'] .mockPanel li {
+  color: var(--text-secondary);
+}
+
+[data-theme='dark'] .navLinks a:hover,
+[data-theme='dark'] .footerSection a:hover {
+  color: #93c5fd;
+}
+
+[data-theme='dark'] .secondaryBtn {
+  background: #0f172a;
+  border-color: rgba(96, 165, 250, 0.3);
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .heroVisual,
+[data-theme='dark'] .mockPanel,
+[data-theme='dark'] .featureCard,
+[data-theme='dark'] .stepCard,
+[data-theme='dark'] .testimonialCard,
+[data-theme='dark'] .trustCard,
+[data-theme='dark'] .benefitsGrid,
+[data-theme='dark'] .ctaSection,
+[data-theme='dark'] .footer {
+  background: var(--card-bg);
+  border-color: rgba(148, 163, 184, 0.22);
+}
+
+[data-theme='dark'] .heroVisual {
+  background: linear-gradient(160deg, #111827 0%, #1e293b 100%);
+}
+
+[data-theme='dark'] .benefitsGrid {
+  background: linear-gradient(145deg, #111827 0%, #1e293b 100%);
+}
+
+[data-theme='dark'] .ctaSection {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 70%, #111827 100%);
+}
+
+[data-theme='dark'] .progressTrack {
+  background: rgba(59, 130, 246, 0.24);
+}
+
+[data-theme='dark'] .scrollIndicator {
+  border-color: rgba(147, 197, 253, 0.6);
+}
+
+[data-theme='dark'] .footer {
+  border-top-color: rgba(148, 163, 184, 0.24);
+}
+
+[data-theme='dark'] .footerBottom {
+  border-top-color: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+
 @keyframes scrollDot {
   0% {
     transform: translateY(0);
