@@ -180,24 +180,3 @@ code {
   color: var(--primary);
 }
 
-.themeToggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2000;
-  border: 1px solid var(--toggle-border);
-  border-radius: 999px;
-  padding: 0.5rem 0.9rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  color: var(--text-primary);
-  background: var(--toggle-bg);
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(8px);
-}
-
-.themeToggle:hover {
-  border-color: var(--primary);
-  transform: translateY(-1px);
-}

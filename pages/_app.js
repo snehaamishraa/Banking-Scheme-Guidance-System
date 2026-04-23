@@ -22,15 +22,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <UserProfileProvider>
-      <button
-        type="button"
-        className="themeToggle"
-        onClick={toggleTheme}
-        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-      >
-        {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-      </button>
-      <Component {...pageProps} />
+      <Component {...pageProps} theme={theme} toggleTheme={toggleTheme} />
     </UserProfileProvider>
   );
 }

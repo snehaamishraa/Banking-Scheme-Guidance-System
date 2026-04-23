@@ -9,13 +9,15 @@ import {
   Clock3,
   Layers,
   Lock,
+  Moon,
   Shield,
   Sparkles,
+  Sun,
   Workflow,
 } from 'lucide-react';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home({ theme = 'light', toggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -141,9 +143,20 @@ export default function Home() {
               <a href="#benefits">Benefits</a>
               <a href="#about">About</a>
             </div>
-            <Link href="/get-started" className={styles.navCta}>
-              Try Now
-            </Link>
+            <div className={styles.navActions}>
+              <Link href="/get-started" className={styles.navCta}>
+                Try Now
+              </Link>
+              <button
+                type="button"
+                className={styles.themeToggleNav}
+                onClick={toggleTheme}
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+              >
+                {theme === 'light' ? <Moon size={18} aria-hidden="true" /> : <Sun size={18} aria-hidden="true" />}
+              </button>
+            </div>
           </nav>
         </header>
 

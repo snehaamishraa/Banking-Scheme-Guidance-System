@@ -78,6 +78,31 @@
   box-shadow: 0 12px 24px rgba(37, 99, 235, 0.28);
 }
 
+.navActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.themeToggleNav {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--toggle-border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  background: var(--toggle-bg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.themeToggleNav:hover {
+  transform: translateY(-1px);
+  border-color: var(--primary);
+}
+
 .main {
   max-width: 1160px;
   margin: 0 auto;
