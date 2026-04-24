@@ -29,23 +29,6 @@
   gap: 0.5rem;
 }
 
-.logo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #1d4ed8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -1px;
-  cursor: pointer;
-}
-
-.highlight {
-  color: #2563eb;
-  -webkit-text-fill-color: #2563eb;
-}
-
 .tagline {
   font-size: 0.85rem;
   color: var(--text-secondary);

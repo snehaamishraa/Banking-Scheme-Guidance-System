@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/SelectBank.module.css';
+import BrandLogo from '../components/BrandLogo';
 
 export default function SelectBank() {
   const router = useRouter();
@@ -143,7 +144,10 @@ export default function SelectBank() {
           <button onClick={() => router.push('/')} className={styles.backButton}>
             ← Back to Home
           </button>
-          <h1 className={styles.headerTitle}>{browseMode === 'category' ? 'Browse Categories' : 'Browse Banks'}</h1>
+          <div className={styles.headerBrand}>
+            <BrandLogo />
+            <span className={styles.headerLabel}>{browseMode === 'category' ? 'Browse Categories' : 'Browse Banks'}</span>
+          </div>
         </header>
 
         <main className={styles.main}>

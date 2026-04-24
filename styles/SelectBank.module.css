@@ -24,6 +24,20 @@
   font-weight: 600;
 }
 
+.headerBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.headerLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-left: 1px solid var(--border-light);
+  padding-left: 0.75rem;
+}
+
 .backButton {
   background: transparent;
   border: 1px solid rgba(37, 99, 235, 0.3);
@@ -788,5 +802,14 @@
   .backButton {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
+  }
+
+  .headerBrand {
+    gap: 0.55rem;
+  }
+
+  .headerLabel {
+    font-size: 0.78rem;
+    padding-left: 0.55rem;
   }
 }

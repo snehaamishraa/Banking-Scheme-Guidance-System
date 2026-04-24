@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { ArrowRight, User, Target, ArrowLeft } from 'lucide-react';
 import styles from '../styles/GetStarted.module.css';
 import { useUserProfile } from '../context/UserProfileContext';
+import BrandLogo from '../components/BrandLogo';
 
 export default function GetStarted() {
   const router = useRouter();
@@ -48,11 +49,7 @@ export default function GetStarted() {
       <div className={styles.container}>
         <header className={styles.header}>
           <div className={styles.headerContent}>
-            <Link href="/">
-              <span className={styles.logo}>
-                Fin<span className={styles.highlight}>Agent</span>
-              </span>
-            </Link>
+            <BrandLogo />
             <p className={styles.tagline}>Personalized Financial Guidance</p>
           </div>
           <Link href="/">

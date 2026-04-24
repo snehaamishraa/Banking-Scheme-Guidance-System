@@ -6,6 +6,7 @@ import { useUserProfile } from '../context/UserProfileContext';
 import { fdOptions } from '../data/fdOptions';
 import { compareFdOptions } from '../utils/fdCalculations';
 import FDComparisonTable from '../components/FDComparisonTable';
+import BrandLogo from '../components/BrandLogo';
 
 export default function FixedDepositCategories() {
   const router = useRouter();
@@ -102,7 +103,10 @@ export default function FixedDepositCategories() {
           >
             ← Back to Categories
           </button>
-          <h1 className={styles.headerTitle}>Fixed Deposit Types</h1>
+          <div className={styles.headerBrand}>
+            <BrandLogo />
+            <span className={styles.headerLabel}>Fixed Deposit Types</span>
+          </div>
         </header>
 
         <main className={styles.main}>

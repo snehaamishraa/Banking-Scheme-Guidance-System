@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/SelectBank.module.css';
+import BrandLogo from '../components/BrandLogo';
 
 export default function LoanCategories() {
   const router = useRouter();
@@ -62,7 +63,10 @@ export default function LoanCategories() {
           <button onClick={() => router.push('/select-bank?mode=category')} className={styles.backButton}>
             ← Back to Categories
           </button>
-          <h1 className={styles.headerTitle}>Loan Categories</h1>
+          <div className={styles.headerBrand}>
+            <BrandLogo />
+            <span className={styles.headerLabel}>Loan Categories</span>
+          </div>
         </header>
 
         <main className={styles.main}>
