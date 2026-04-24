@@ -917,6 +917,897 @@
       "last_updated": "2026-02-25"
     },
     {
+      "id": "axis_gov_ppf_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Public Provident Fund (PPF)",
+      "description": "Long-term government-backed savings product with tax benefits and compounding returns.",
+      "target_audience": "Individuals planning long-term wealth creation",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 70,
+      "loan_amount_min": "₹500",
+      "loan_amount_max": "₹1,50,000",
+      "interest_rate_range": "As per Government notification",
+      "processing_fee": "Nil",
+      "repayment_tenure": "15 years lock-in",
+      "collateral_required": "None",
+      "key_features": [
+        "EEE tax status",
+        "Sovereign-backed safety",
+        "Annual contribution flexibility",
+        "Compounded returns"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN card",
+        "Address proof",
+        "Photograph"
+      ],
+      "eligibility_criteria": [
+        "Resident Indian individual",
+        "PPF account as per prevailing rules",
+        "Contribution within prescribed annual limit"
+      ],
+      "pros": [
+        "Tax-efficient",
+        "Low risk",
+        "Disciplined long-term savings"
+      ],
+      "cons": [
+        "Long lock-in",
+        "Annual contribution cap"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/government-products/public-provident-fund-ppf",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_gov_frsb_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "RBI Floating Rate Savings Bonds",
+      "description": "Government-backed floating-rate bonds for conservative investors seeking periodic interest.",
+      "target_audience": "Risk-averse investors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹1,000",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Floating (RBI linked)",
+      "processing_fee": "Nil",
+      "repayment_tenure": "7 years",
+      "collateral_required": "None",
+      "key_features": [
+        "Sovereign safety",
+        "Semi-annual interest payout",
+        "Floating interest rate"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN card",
+        "Bank account details"
+      ],
+      "eligibility_criteria": [
+        "Resident individual or HUF",
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Very low credit risk",
+        "Regular interest payout"
+      ],
+      "cons": [
+        "Limited liquidity",
+        "Rate may reset periodically"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/government-products/savings-bonds",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_gov_nps_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "National Pension System (NPS)",
+      "description": "Retirement-oriented market-linked scheme with tax benefits under prevailing rules.",
+      "target_audience": "Working professionals and self-employed planning retirement",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 70,
+      "loan_amount_min": "₹500",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked",
+      "processing_fee": "As per POP charges",
+      "repayment_tenure": "Until retirement / exit as per NPS norms",
+      "collateral_required": "None",
+      "key_features": [
+        "Retirement corpus creation",
+        "Tax benefits",
+        "Choice of asset allocation"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details",
+        "Photograph"
+      ],
+      "eligibility_criteria": [
+        "Indian citizen aged 18-70 years",
+        "KYC compliance"
+      ],
+      "pros": [
+        "Long-term retirement focus",
+        "Tax saving potential"
+      ],
+      "cons": [
+        "Partial withdrawal restrictions",
+        "Market risk"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/government-products/national-pension-scheme-nps",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_gov_apy_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Atal Pension Yojana (APY)",
+      "description": "Government pension scheme designed to provide guaranteed pension post-retirement.",
+      "target_audience": "Workers in unorganized and organized sectors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 40,
+      "loan_amount_min": "Monthly contribution as per slab",
+      "loan_amount_max": "As per pension slab",
+      "interest_rate_range": "Government defined pension structure",
+      "processing_fee": "Nil",
+      "repayment_tenure": "Till age 60",
+      "collateral_required": "None",
+      "key_features": [
+        "Guaranteed pension bands",
+        "Auto-debit contribution",
+        "Low entry amount"
+      ],
+      "required_documents": [
+        "Savings account",
+        "KYC documents",
+        "Aadhaar and mobile number"
+      ],
+      "eligibility_criteria": [
+        "Indian citizen aged 18-40 years",
+        "Valid savings bank account"
+      ],
+      "pros": [
+        "Pension support",
+        "Simple enrollment"
+      ],
+      "cons": [
+        "Fixed pension slabs",
+        "Long contribution horizon"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/government-products/atal-pension-yojana",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_gov_kvp_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Kisan Vikas Patra (KVP)",
+      "description": "Safe small-savings certificate scheme designed for capital doubling over defined tenure.",
+      "target_audience": "Conservative savers",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹1,000",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "As per Government notification",
+      "processing_fee": "Nil",
+      "repayment_tenure": "As per KVP maturity cycle",
+      "collateral_required": "None",
+      "key_features": [
+        "Government-backed",
+        "Predictable growth",
+        "Certificate-based investment"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN where applicable"
+      ],
+      "eligibility_criteria": [
+        "Resident Indian individual",
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Low risk",
+        "Simple product"
+      ],
+      "cons": [
+        "Taxable returns",
+        "Lower flexibility"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/government-products/kisan-vikas-patra",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_gov_ssy_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Sukanya Samriddhi Yojana (SSY)",
+      "description": "Girl child focused long-term savings scheme with tax benefits and attractive rates.",
+      "target_audience": "Parents/guardians of girl child",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 70,
+      "loan_amount_min": "₹250",
+      "loan_amount_max": "₹1,50,000",
+      "interest_rate_range": "As per Government notification",
+      "processing_fee": "Nil",
+      "repayment_tenure": "21 years / as per SSY rules",
+      "collateral_required": "None",
+      "key_features": [
+        "High-focus savings for girl child",
+        "Tax benefits",
+        "Compounding returns"
+      ],
+      "required_documents": [
+        "Birth certificate of girl child",
+        "Guardian KYC",
+        "Address proof"
+      ],
+      "eligibility_criteria": [
+        "Account for eligible girl child",
+        "Within age criteria as per SSY rules"
+      ],
+      "pros": [
+        "Purpose-driven savings",
+        "Government-backed safety"
+      ],
+      "cons": [
+        "Restricted withdrawal",
+        "Long lock-in"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/government-products/sukanya-samriddhi-yojana",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_gov_cgas_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Government-backed schemes",
+      "scheme_name": "Capital Gain Account Scheme (CGAS)",
+      "description": "Special deposit account to park capital gains and claim tax benefits under applicable laws.",
+      "target_audience": "Taxpayers with capital gains",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "As per customer requirement",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "As per account type",
+      "processing_fee": "As per bank schedule",
+      "repayment_tenure": "As per tax timelines and scheme rules",
+      "collateral_required": "None",
+      "key_features": [
+        "Supports tax planning",
+        "Designed for capital gains reinvestment window",
+        "Branch-assisted setup"
+      ],
+      "required_documents": [
+        "PAN card",
+        "KYC documents",
+        "Capital gains details"
+      ],
+      "eligibility_criteria": [
+        "Eligible taxpayer with capital gains",
+        "Compliance with CGAS norms"
+      ],
+      "pros": [
+        "Useful for tax deferment planning",
+        "Structured compliance route"
+      ],
+      "cons": [
+        "Documentation intensive",
+        "Rule-based withdrawal"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/government-products/capital-gain-account-scheme",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_invest_digital_gold_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Digital Gold",
+      "description": "Digital route to buy 24K gold without storing physical gold.",
+      "target_audience": "Investors seeking gold exposure",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹1",
+      "loan_amount_max": "As per platform limits",
+      "interest_rate_range": "Market-linked to gold prices",
+      "processing_fee": "Platform spread applicable",
+      "repayment_tenure": "No fixed tenure",
+      "collateral_required": "None",
+      "key_features": [
+        "24K gold ownership in digital form",
+        "Secure vault-backed storage",
+        "Small-ticket investing"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "Registered mobile and bank account"
+      ],
+      "eligibility_criteria": [
+        "KYC-compliant resident investor"
+      ],
+      "pros": [
+        "Convenient gold access",
+        "No physical storage risk"
+      ],
+      "cons": [
+        "Price volatility",
+        "Spread and charges"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/digital-gold",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_invest_sgb_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Sovereign Gold Bonds (SGB)",
+      "description": "RBI-issued gold-linked bond with fixed annual interest over gold price movement.",
+      "target_audience": "Long-term gold investors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "1 gram equivalent",
+      "loan_amount_max": "As per RBI limits",
+      "interest_rate_range": "2.5% p.a. plus gold price movement",
+      "processing_fee": "Nil / as notified",
+      "repayment_tenure": "8 years (early exit options as per rules)",
+      "collateral_required": "None",
+      "key_features": [
+        "Sovereign backing",
+        "Fixed coupon plus gold-linked returns",
+        "No making charges"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN card",
+        "Demat/bank details"
+      ],
+      "eligibility_criteria": [
+        "Resident individual / HUF / trusts as per RBI norms"
+      ],
+      "pros": [
+        "Tax-efficient on maturity as per rules",
+        "No storage risk"
+      ],
+      "cons": [
+        "Issue window based subscriptions",
+        "Market price fluctuations before maturity"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/government-products/sovereign-gold-bond",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_invest_demat_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Direct Demat & Trading Account",
+      "description": "Integrated demat and trading account for equity and related market investments.",
+      "target_audience": "New and experienced market investors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "Not applicable",
+      "processing_fee": "As per account plan",
+      "repayment_tenure": "Not applicable",
+      "collateral_required": "None",
+      "key_features": [
+        "Demat plus trading integration",
+        "Portfolio tracking",
+        "Online account opening"
+      ],
+      "required_documents": [
+        "PAN",
+        "Aadhaar",
+        "Bank proof",
+        "Signature"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant resident investor"
+      ],
+      "pros": [
+        "Single platform investing",
+        "Research and execution support"
+      ],
+      "cons": [
+        "Brokerage and platform charges",
+        "Market risk exposure"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/demat-account",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_invest_mutual_fund_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Mutual Fund Management",
+      "description": "Platform access to Axis mutual fund investing across equity, debt, hybrid and thematic options.",
+      "target_audience": "SIP and lump-sum mutual fund investors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "As per scheme (often ₹100 or ₹500)",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "No fixed tenure",
+      "collateral_required": "None",
+      "key_features": [
+        "Multiple fund categories",
+        "SIP and lump-sum options",
+        "Goal-based investing"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank account details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Diversified investing",
+        "Flexible contribution"
+      ],
+      "cons": [
+        "Market volatility",
+        "Scheme selection complexity"
+      ],
+      "official_website_reference": "www.axis.bank.in/investment/mutual-funds",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_small_cap_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Small Cap Fund Direct Growth",
+      "description": "Equity small-cap focused mutual fund option from Axis AMC.",
+      "target_audience": "High risk appetite long-term investors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked (Very High Risk)",
+      "processing_fee": "Expense ratio as per fund factsheet",
+      "repayment_tenure": "Recommended 5+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "Small-cap equity exposure",
+        "SIP supported",
+        "Long-term growth potential"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "Mutual fund eligible KYC-compliant investor"
+      ],
+      "pros": [
+        "High growth potential",
+        "Diversified portfolio"
+      ],
+      "cons": [
+        "High volatility",
+        "Not ideal for short-term goals"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-small-cap-fund-direct-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_midcap_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Midcap Fund Direct Plan Growth",
+      "description": "Mid-cap equity mutual fund aiming long-term capital appreciation.",
+      "target_audience": "Investors seeking mid-cap growth exposure",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked (Very High Risk)",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "Recommended 5+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "Mid-cap diversification",
+        "SIP enabled",
+        "Growth-oriented strategy"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Growth potential",
+        "Managed portfolio"
+      ],
+      "cons": [
+        "Market fluctuations",
+        "Requires long holding period"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-midcap-fund-direct-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_large_cap_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Large Cap Fund Direct Growth",
+      "description": "Large-cap equity fund focused on relatively stable market leaders.",
+      "target_audience": "Investors seeking core equity allocation",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "Recommended 3+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "Large-cap exposure",
+        "Suitable as core portfolio fund",
+        "SIP supported"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Relatively lower volatility than small caps",
+        "Professional fund management"
+      ],
+      "cons": [
+        "Market-linked returns",
+        "No guaranteed outcome"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-large-cap-fund-direct-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_elss_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis ELSS Tax Saver Direct Plan Growth",
+      "description": "Equity-linked tax saving mutual fund under Section 80C (as per prevailing tax rules).",
+      "target_audience": "Tax-saving equity investors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹500",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "3 years lock-in",
+      "collateral_required": "None",
+      "key_features": [
+        "80C tax-saving benefit",
+        "Shortest lock-in among tax-saving options",
+        "Equity growth potential"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Tax benefit potential",
+        "Long-term wealth creation"
+      ],
+      "cons": [
+        "3-year lock-in",
+        "Equity market risk"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-elss-tax-saver-direct-plan-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_liquid_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Liquid Direct Fund Growth",
+      "description": "Debt-oriented liquid fund for short-term parking and liquidity needs.",
+      "target_audience": "Short-term conservative mutual fund investors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked debt returns",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "No fixed tenure",
+      "collateral_required": "None",
+      "key_features": [
+        "Short-duration debt allocation",
+        "Relatively lower volatility",
+        "Quick redemption"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Better liquidity",
+        "Useful for short-term funds"
+      ],
+      "cons": [
+        "Returns not guaranteed",
+        "Debt market and credit risk"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-liquid-direct-fund-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_multicap_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Multicap Fund Direct Growth",
+      "description": "Multi-cap equity fund allocating across large, mid and small-cap segments.",
+      "target_audience": "Investors seeking diversified equity exposure",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "Recommended 5+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "Cross-cap diversification",
+        "Actively managed equity portfolio",
+        "SIP supported"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Diversified equity exposure",
+        "Flexible long-term strategy"
+      ],
+      "cons": [
+        "Equity volatility",
+        "No capital guarantee"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-multicap-fund-direct-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_large_midcap_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Large & Mid Cap Fund Direct Growth",
+      "description": "Blend of large and mid-cap stocks for balanced growth exposure.",
+      "target_audience": "Moderately aggressive equity investors",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "Recommended 5+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "Dual exposure to large and mid-cap",
+        "SIP and lump-sum options",
+        "Long-term growth focus"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Balanced equity style",
+        "Diversified portfolio"
+      ],
+      "cons": [
+        "Market risk",
+        "Performance can vary by cycle"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-large-mid-cap-fund-direct-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_nifty_smallcap50_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Nifty Smallcap 50 Index Fund Direct Growth",
+      "description": "Passive index fund tracking Nifty Smallcap 50 universe.",
+      "target_audience": "Investors preferring passive small-cap exposure",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Index-linked returns",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "Recommended 5+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "Passive index strategy",
+        "Small-cap basket exposure",
+        "Transparent benchmark tracking"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Rule-based index investing",
+        "Cost-efficient compared to many active funds"
+      ],
+      "cons": [
+        "Small-cap volatility",
+        "No downside protection"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-nifty-smallcap-50-index-fund-direct-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_nifty500_value50_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Nifty500 Value 50 Index Fund Direct Growth",
+      "description": "Passive value-style index fund tracking Nifty500 Value 50.",
+      "target_audience": "Investors seeking factor-based value investing",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Index-linked returns",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "Recommended 5+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "Value-factor index approach",
+        "Rules-based portfolio",
+        "SIP friendly"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Factor diversification",
+        "Transparent benchmark strategy"
+      ],
+      "cons": [
+        "Market-linked returns",
+        "Tracking error risk"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-nifty500-value-50-index-fund-directgrowth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_global_innovation_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Global Innovation FoF Direct Growth",
+      "description": "Global thematic fund-of-fund focused on innovation-led businesses.",
+      "target_audience": "Investors seeking international thematic diversification",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked international equity returns",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "Recommended 5+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "International diversification",
+        "Innovation-focused theme",
+        "Managed fund-of-fund approach"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Global exposure",
+        "Thematic growth potential"
+      ],
+      "cons": [
+        "Currency and global market risk",
+        "Higher volatility"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-global-innovation-fof-direct-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
+      "id": "axis_mf_greater_china_1",
+      "bank_name": "Axis Bank",
+      "scheme_category": "Investment",
+      "scheme_name": "Axis Greater China Equity FoF Direct Growth",
+      "description": "International fund-of-fund offering Greater China equity market exposure.",
+      "target_audience": "Investors seeking geography-specific global exposure",
+      "minimum_income_required": "No minimum income required",
+      "minimum_age": 18,
+      "maximum_age": 75,
+      "loan_amount_min": "₹100",
+      "loan_amount_max": "No upper limit",
+      "interest_rate_range": "Market-linked international equity returns",
+      "processing_fee": "Expense ratio as per scheme",
+      "repayment_tenure": "Recommended 5+ years",
+      "collateral_required": "None",
+      "key_features": [
+        "Regional international allocation",
+        "FoF structure",
+        "Long-term diversification"
+      ],
+      "required_documents": [
+        "KYC documents",
+        "PAN",
+        "Bank details"
+      ],
+      "eligibility_criteria": [
+        "KYC compliant investor"
+      ],
+      "pros": [
+        "Geographic diversification",
+        "Potentially differentiated returns"
+      ],
+      "cons": [
+        "High market and currency volatility",
+        "International policy risk"
+      ],
+      "official_website_reference": "groww.in/mutual-funds/axis-greater-china-equity-fof-direct-growth",
+      "last_updated": "2026-04-24"
+    },
+    {
       "id": "canara_education_1",
       "bank_name": "Canara Bank",
       "scheme_category": "Education Loans",
