@@ -65,6 +65,16 @@ function isTagCategory(value) {
   return key === 'singlechild' || key === 'girlchild';
 }
 
+function isPpfCategory(value) {
+  const key = normalizeLabel(value);
+  return key === 'ppf' || key === 'publicprovidentfundppf' || key === 'publicprovidentfund';
+}
+
+function isPpfScheme(scheme) {
+  const combinedText = `${scheme.scheme_name || ''} ${scheme.description || ''} ${scheme.official_website_reference || ''}`.toLowerCase();
+  return combinedText.includes('public provident fund') || /\bppf\b/.test(combinedText);
+}
+
 function matchesCriteria(scheme, criteria) {
   // Age check
   if (criteria.age) {
@@ -91,6 +101,8 @@ function matchesCriteria(scheme, criteria) {
       const schemeTags = Array.isArray(scheme.scheme_tags) ? scheme.scheme_tags : [];
       const normalizedTags = schemeTags.map(tag => normalizeLabel(tag));
       if (!normalizedTags.includes(purposeKey)) return false;
+    } else if (isPpfCategory(criteria.purpose)) {
+      if (!isPpfScheme(scheme)) return false;
     } else if (normalizeLabel(scheme.scheme_category) !== purposeKey) {
       return false;
     }
@@ -123,6 +135,8 @@ function calculateMatchScore(scheme, criteria) {
     const purposeKey = normalizeLabel(criteria.purpose);
     const categoryKey = normalizeLabel(scheme.scheme_category);
     if (purposeKey === categoryKey) {
+      score += 30;
+    } else if (isPpfCategory(criteria.purpose) && isPpfScheme(scheme)) {
       score += 30;
     } else if (isTagCategory(criteria.purpose)) {
       const schemeTags = Array.isArray(scheme.scheme_tags) ? scheme.scheme_tags : [];

@@ -111,6 +111,11 @@ const categoryQuestions = {
         options: ['General', 'Women', 'Senior Citizen', 'Farmer', 'Student']
       }
     ]
+  },
+  'Public Provident Fund (PPF)': {
+    title: 'PPF Schemes',
+    hint: 'Browse all available Public Provident Fund schemes from supported banks.',
+    fields: []
   }
 };
 
