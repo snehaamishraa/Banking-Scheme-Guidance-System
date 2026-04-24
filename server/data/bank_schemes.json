@@ -2198,25 +2198,47 @@
       "scheme_name": "Baroda Advantage Savings Account",
       "description": "A savings account with features like debit cards, internet banking, and mobile banking.",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "2.75% p.a. for balances up to 1 lakh",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
+      "minimum_income_required": "No minimum income",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% p.a. on balance up to ₹1 lakh, 3.0% above ₹1 lakh",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
       "key_features": [
-        "Debit card",
-        "Internet banking",
-        "Mobile banking"
+        "Debit card (free)",
+        "Internet banking and mobile app",
+        "Free ATM withdrawals at BoB ATMs",
+        "Overdraft facility available",
+        "Insurance coverage on deposits",
+        "Free cheque book"
       ],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "required_documents": [
+        "Identity proof (Aadhaar/PAN/Passport)",
+        "Address proof (utility bill/lease)",
+        "Recent photograph",
+        "Account opening form"
+      ],
+      "eligibility_criteria": [
+        "Indian citizen aged 18+",
+        "Valid identity and address proof",
+        "No minimum balance requirement"
+      ],
+      "pros": [
+        "No minimum balance",
+        "Competitive interest rates",
+        "Free debit card",
+        "Good ATM network",
+        "Insurance coverage"
+      ],
+      "cons": [
+        "Limited interest rate (rates vary by balance)",
+        "Charges after free transactions",
+        "Limited locker facility"
+      ],
+      "official_website_reference": "www.bankofbaroda.in/savings-accounts",
       "last_updated": "2024-07-26"
     },
     {
@@ -2226,25 +2248,48 @@
       "scheme_name": "Baroda Salary Premium",
       "description": "A savings account tailored for salaried individuals.",
       "target_audience": "Salaried Individuals",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
+      "minimum_income_required": "₹2,00,000 per annum (salaried)",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a. on balance",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
       "key_features": [
-        "Debit card",
-        "Internet banking",
-        "Mobile banking"
+        "Salary account with auto-credit facility",
+        "Premium debit card",
+        "Free ATM withdrawals",
+        "Internet and mobile banking",
+        "Overdraft facility",
+        "Salary protection insurance",
+        "Free standing instructions"
       ],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "required_documents": [
+        "Salary slip (3 months)",
+        "Identity proof",
+        "Address proof",
+        "Employment letter"
+      ],
+      "eligibility_criteria": [
+        "Salaried individual",
+        "Minimum annual income ₹2,00,000",
+        "Employment letter from employer"
+      ],
+      "pros": [
+        "Salary account benefits",
+        "Higher overdraft limits",
+        "Insurance coverage",
+        "Relationship manager support",
+        "Priority customer service"
+      ],
+      "cons": [
+        "Requires proof of employment",
+        "Limited to salaried individuals",
+        "Charges if salary is not credited"
+      ],
+      "official_website_reference": "www.bankofbaroda.in/salary-accounts",
       "last_updated": "2024-07-26"
     },
     {
@@ -2254,25 +2299,47 @@
       "scheme_name": "Super Savings Account",
       "description": "A savings account with various features.",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
       "key_features": [
-        "Debit card",
-        "Internet banking",
-        "Mobile banking"
+        "Premium debit card",
+        "Free ATM withdrawals",
+        "Internet and mobile banking",
+        "Overdraft facility available",
+        "Higher transaction limits",
+        "Free cheque book",
+        "Free standing instructions"
       ],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "required_documents": [
+        "Identity proof",
+        "Address proof",
+        "Photograph",
+        "Account opening form"
+      ],
+      "eligibility_criteria": [
+        "Indian citizen aged 18+",
+        "Valid KYC documents"
+      ],
+      "pros": [
+        "Flexible account with no restrictions",
+        "Overdraft facility",
+        "Higher withdrawal limits",
+        "Free services",
+        "Good ATM network"
+      ],
+      "cons": [
+        "Interest rates comparable to standard accounts",
+        "Charges for additional services",
+        "Limited premium features"
+      ],
+      "official_website_reference": "www.bankofbaroda.in/savings-accounts",
       "last_updated": "2024-07-26"
     },
     {
@@ -2544,21 +2611,48 @@
       "scheme_name": "Canara Savings Account",
       "description": "Basic savings account with competitive interest rates, internet banking, mobile banking, and ATM access for everyday banking needs",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Free debit card",
+        "Internet banking",
+        "Mobile banking app",
+        "ATM access nationwide",
+        "Overdraft facility available",
+        "Free cheque book",
+        "Deposit insurance coverage"
+      ],
+      "required_documents": [
+        "Identity proof (Aadhaar/PAN/Passport)",
+        "Address proof",
+        "Photograph",
+        "KYC form"
+      ],
+      "eligibility_criteria": [
+        "Indian citizen aged 18+",
+        "No minimum income required",
+        "Valid KYC documents"
+      ],
+      "pros": [
+        "No minimum balance",
+        "Competitive interest rates",
+        "Free banking services",
+        "Good network of branches and ATMs",
+        "Deposit insurance"
+      ],
+      "cons": [
+        "Limited premium features",
+        "Charges for overdraft",
+        "Transaction limits apply"
+      ],
+      "official_website_reference": "www.canarabank.com/savings-accounts",
       "last_updated": "2024-07-26"
     },
     {
@@ -2760,21 +2854,50 @@
       "scheme_name": "HDFC Golden Years Senior Citizens Account",
       "description": "Premium banking for senior citizens with wealth management and healthcare benefits, featuring higher FD rates, free health checkup packages, priority customer service, and relationship manager support.",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 60,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "3.5% - 4.0% p.a. (higher than regular accounts)",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Higher FD rates (additional 0.5-0.75%)",
+        "Free health checkup packages annually",
+        "Priority customer service",
+        "Dedicated relationship manager",
+        "Premium debit card",
+        "Free ATM withdrawals",
+        "Wealth management services",
+        "Free locker facility"
+      ],
+      "required_documents": [
+        "Age proof (birth certificate/Aadhaar)",
+        "Identity proof",
+        "Address proof",
+        "Recent photograph"
+      ],
+      "eligibility_criteria": [
+        "Indian citizen aged 60+ years",
+        "Valid KYC documents",
+        "Proof of age"
+      ],
+      "pros": [
+        "Higher FD interest rates",
+        "Free annual health checkups",
+        "Premium customer service",
+        "Relationship manager support",
+        "Wealth management benefits",
+        "Free locker facility"
+      ],
+      "cons": [
+        "Limited to senior citizens (60+)",
+        "May have higher minimum balance in some cities",
+        "Premium features may not be used by all"
+      ],
+      "official_website_reference": "www.hdfcbank.com/senior-citizen-accounts",
       "last_updated": "2024-07-26"
     },
     {
@@ -2784,21 +2907,50 @@
       "scheme_name": "HDFC Women's Savings Account",
       "description": "Specially designed account for women with lifestyle benefits and preferential pricing, including free personal accident insurance, special debit card with benefits, lower home loan rates, and free locker facility.",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Free personal accident insurance",
+        "Special women-centric debit card",
+        "Preferential home loan rates (0.25% discount)",
+        "Free locker facility",
+        "Shopping and lifestyle benefits",
+        "Cashback on transactions",
+        "Free ATM withdrawals",
+        "Priority customer support"
+      ],
+      "required_documents": [
+        "Identity proof (Aadhaar/PAN)",
+        "Address proof",
+        "Photograph",
+        "Account opening form"
+      ],
+      "eligibility_criteria": [
+        "Women aged 18+",
+        "Valid KYC documents",
+        "Resident Indian"
+      ],
+      "pros": [
+        "Free personal accident insurance",
+        "Lower home loan interest rates",
+        "Free locker facility",
+        "Shopping and lifestyle benefits",
+        "Preferential loan terms",
+        "Priority support"
+      ],
+      "cons": [
+        "Limited to women",
+        "Minimum balance requirements vary",
+        "Some benefits may have conditions"
+      ],
+      "official_website_reference": "www.hdfcbank.com/women-savings-account",
       "last_updated": "2024-07-26"
     },
     {
@@ -2808,21 +2960,50 @@
       "scheme_name": "HDFC Kids Advantage Account",
       "description": "Savings account for children with parental controls and financial education. Features no minimum balance, free debit card for teens, parental oversight features, financial literacy tools, and goal-based savings features.",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum (for minors)",
+      "minimum_age": 0,
+      "maximum_age": 18,
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "No minimum balance requirement",
+        "Free debit card for teens (13+)",
+        "Parental controls and monitoring",
+        "Financial literacy tools",
+        "Goal-based savings features",
+        "Pocket money management",
+        "Free ATM withdrawals",
+        "Educational resources"
+      ],
+      "required_documents": [
+        "Birth certificate or school ID",
+        "Parent/guardian identity proof",
+        "Address proof",
+        "Recent photograph"
+      ],
+      "eligibility_criteria": [
+        "Minors aged 0-18 years",
+        "Parent or legal guardian required",
+        "Valid identification for guardian"
+      ],
+      "pros": [
+        "No minimum balance",
+        "Parental controls",
+        "Financial literacy focus",
+        "Free debit card for teens",
+        "Goal tracking features",
+        "Safe and secure"
+      ],
+      "cons": [
+        "Limited to minors",
+        "Requires guardian involvement",
+        "Limited transaction limits for minors"
+      ],
+      "official_website_reference": "www.hdfcbank.com/kids-savings-account",
       "last_updated": "2024-07-26"
     },
     {
@@ -2832,21 +3013,53 @@
       "scheme_name": "HDFC Salary Account Advantage",
       "description": "Feature-rich salary account for professionals with zero balance and exclusive benefits, including free platinum debit card, pre-approved loans, airport lounge access, and investment advisory services.",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "₹5,00,000 per annum (minimum)",
+      "minimum_age": 21,
+      "maximum_age": 65,
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Zero balance requirement for salary account",
+        "Free platinum debit card",
+        "Pre-approved personal loans",
+        "Airport lounge access",
+        "Investment advisory services",
+        "Priority banking support",
+        "Free ATM withdrawals",
+        "Accidental death insurance"
+      ],
+      "required_documents": [
+        "Salary slip (last 3 months)",
+        "Identity proof",
+        "Address proof",
+        "Employment letter",
+        "Bank statements"
+      ],
+      "eligibility_criteria": [
+        "Salaried professionals",
+        "Minimum annual income ₹5,00,000",
+        "Permanent employment",
+        "Aged 21-65 years"
+      ],
+      "pros": [
+        "Zero balance requirement",
+        "Pre-approved loans",
+        "Airport lounge access",
+        "Investment advisory",
+        "Priority service",
+        "Accidental insurance cover"
+      ],
+      "cons": [
+        "Requires high minimum income",
+        "Limited to salaried employees",
+        "Employment proof needed",
+        "May have charges if salary not credited"
+      ],
+      "official_website_reference": "www.hdfcbank.com/salary-account",
       "last_updated": "2024-07-26"
     },
     {
@@ -2856,21 +3069,50 @@
       "scheme_name": "HDFC Savings Max Young Saver",
       "description": "Digital-first account for young adults (18-28 years) with lifestyle rewards and investment options. Features cashback on transactions, instant personal loan facility, free forex card for travel, investment guidance, and digital wallet integration.",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 18,
+      "maximum_age": 28,
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Digital-first platform",
+        "Cashback on transactions (up to 5%)",
+        "Instant personal loan facility",
+        "Free forex card for travel",
+        "Investment guidance",
+        "Digital wallet integration",
+        "Rewards points program",
+        "Penalty-free overdraft"
+      ],
+      "required_documents": [
+        "Identity proof (Aadhaar/PAN)",
+        "Address proof",
+        "Selfie verification"
+      ],
+      "eligibility_criteria": [
+        "Young adults aged 18-28 years",
+        "Digital savvy profile",
+        "Valid KYC documents"
+      ],
+      "pros": [
+        "Digital and user-friendly",
+        "Cashback rewards",
+        "Instant personal loan access",
+        "Travel benefits",
+        "Investment opportunities",
+        "No traditional formalities"
+      ],
+      "cons": [
+        "Limited to age group 18-28",
+        "Digital-only features (limited branch support)",
+        "May have transaction limits",
+        "Rewards conditions apply"
+      ],
+      "official_website_reference": "www.hdfcbank.com/young-saver-account",
       "last_updated": "2024-07-26"
     },
     {
@@ -2880,21 +3122,50 @@
       "scheme_name": "ICICI Savings Account",
       "description": "Basic savings account for individuals with competitive interest rates, free online banking, and ATM access across India",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Free debit card",
+        "Free online banking",
+        "ATM access across India (24/7)",
+        "Mobile banking app",
+        "Free ATM withdrawals",
+        "Overdraft facility available",
+        "Free cheque book",
+        "Deposit insurance coverage"
+      ],
+      "required_documents": [
+        "Identity proof (Aadhaar/PAN/Passport)",
+        "Address proof",
+        "Photograph",
+        "KYC form"
+      ],
+      "eligibility_criteria": [
+        "Indian citizen aged 18+",
+        "No minimum income required",
+        "Valid KYC documents"
+      ],
+      "pros": [
+        "No minimum balance",
+        "Free online banking",
+        "Large ATM network",
+        "Easy account opening",
+        "Good customer service",
+        "Deposit insurance"
+      ],
+      "cons": [
+        "Standard interest rates",
+        "Transaction limits apply",
+        "Charges for overdraft facility"
+      ],
+      "official_website_reference": "www.icicibank.com/savings-accounts",
       "last_updated": "2024-07-26"
     },
     {
@@ -2904,21 +3175,50 @@
       "scheme_name": "ICICI Advantage Savings Account",
       "description": "Flexible savings account with tiered benefits based on balance maintained, multicurrency debit card, and integrated investment platform",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.5% p.a. (tiered based on balance)",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Tiered benefits based on balance maintained",
+        "Multicurrency debit card",
+        "Integrated investment platform",
+        "Higher transaction limits",
+        "Priority customer service",
+        "Free ATM withdrawals",
+        "Cashback on spending",
+        "Investment advisory"
+      ],
+      "required_documents": [
+        "Identity proof",
+        "Address proof",
+        "Photograph",
+        "KYC form"
+      ],
+      "eligibility_criteria": [
+        "Indian citizen aged 18+",
+        "Valid KYC documents",
+        "Balance requirement for benefits"
+      ],
+      "pros": [
+        "Tiered interest rates",
+        "Multicurrency debit card",
+        "Investment integration",
+        "Higher withdrawal limits",
+        "Cashback benefits",
+        "Priority support"
+      ],
+      "cons": [
+        "Benefits depend on balance maintained",
+        "Minimum balance requirements",
+        "Cashback conditions apply"
+      ],
+      "official_website_reference": "www.icicibank.com/advantage-savings",
       "last_updated": "2024-07-26"
     },
     {
@@ -2928,21 +3228,50 @@
       "scheme_name": "ICICI Senior Citizen Care Account",
       "description": "Premium banking for senior citizens (60+) with enhanced FD interest rates, free annual health checkup, doorstep banking, and priority service",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 60,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "3.5% - 4.0% p.a. (higher rates for seniors)",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Enhanced FD interest rates",
+        "Free annual health checkup",
+        "Doorstep banking services",
+        "Priority customer service",
+        "Dedicated relationship manager",
+        "Free locker facility",
+        "Free ATM withdrawals",
+        "Healthcare benefits"
+      ],
+      "required_documents": [
+        "Age proof (Aadhaar/birth certificate)",
+        "Identity proof",
+        "Address proof",
+        "Recent photograph"
+      ],
+      "eligibility_criteria": [
+        "Senior citizens aged 60+ years",
+        "Valid KYC documents",
+        "Indian resident"
+      ],
+      "pros": [
+        "Higher interest rates",
+        "Free health checkups",
+        "Doorstep banking",
+        "Dedicated support",
+        "Free locker facility",
+        "Healthcare focus"
+      ],
+      "cons": [
+        "Limited to age 60+",
+        "May have minimum balance",
+        "Premium features may not be used"
+      ],
+      "official_website_reference": "www.icicibank.com/senior-citizen-account",
       "last_updated": "2024-07-26"
     },
     {
@@ -2952,21 +3281,50 @@
       "scheme_name": "ICICI Women's Savings Account",
       "description": "Empowering savings account for women with lower loan interest rates, free personal accident cover, shopping benefits, and women entrepreneurship support",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Free personal accident cover",
+        "Shopping benefits and discounts",
+        "Lower loan interest rates",
+        "Women entrepreneurship support",
+        "Special debit card",
+        "Priority customer service",
+        "Investment advisory",
+        "Free ATM withdrawals"
+      ],
+      "required_documents": [
+        "Identity proof (Aadhaar/PAN)",
+        "Address proof",
+        "Photograph",
+        "KYC form"
+      ],
+      "eligibility_criteria": [
+        "Women aged 18+",
+        "Valid KYC documents",
+        "Indian resident"
+      ],
+      "pros": [
+        "Free personal accident insurance",
+        "Shopping and lifestyle benefits",
+        "Lower loan rates",
+        "Entrepreneurship support",
+        "Priority service",
+        "Empowerment focus"
+      ],
+      "cons": [
+        "Limited to women",
+        "May have balance requirements",
+        "Some benefits conditional"
+      ],
+      "official_website_reference": "www.icicibank.com/women-savings-account",
       "last_updated": "2024-07-26"
     },
     {
@@ -2976,21 +3334,50 @@
       "scheme_name": "ICICI Young Stars Account",
       "description": "Banking for children and teens (0-18 years) with zero balance, pocket money cards, parental monitoring, savings goal tracker, and financial education",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum (for minors)",
+      "minimum_age": 0,
+      "maximum_age": 18,
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "Zero minimum balance",
+        "Pocket money cards (for kids 10+)",
+        "Parental monitoring and controls",
+        "Savings goal tracker",
+        "Financial education resources",
+        "Free ATM withdrawals",
+        "Safe and secure",
+        "Learning tools"
+      ],
+      "required_documents": [
+        "Birth certificate or school ID",
+        "Parent/guardian identity proof",
+        "Address proof",
+        "Photograph"
+      ],
+      "eligibility_criteria": [
+        "Minors aged 0-18 years",
+        "Parent or legal guardian",
+        "Valid guardian identification"
+      ],
+      "pros": [
+        "Zero minimum balance",
+        "Pocket money management",
+        "Parental controls",
+        "Financial learning tools",
+        "Goal tracking",
+        "Safe platform"
+      ],
+      "cons": [
+        "Limited to minors",
+        "Guardian required",
+        "Transaction limits for minors"
+      ],
+      "official_website_reference": "www.icicibank.com/young-stars-account",
       "last_updated": "2024-07-26"
     },
     {
@@ -3000,21 +3387,49 @@
       "scheme_name": "ICICI Rural Development Account",
       "description": "Financial inclusion account for rural population (farmers, agricultural workers) with no minimum balance, micro-insurance, government DBT enabled, and micro ATM facility",
       "target_audience": "...",
-      "minimum_income_required": "...",
-      "minimum_age": "...",
-      "maximum_age": "...",
-      "loan_amount_min": "...",
-      "loan_amount_max": "...",
-      "interest_rate_range": "...",
-      "processing_fee": "...",
-      "repayment_tenure": "...",
-      "collateral_required": "...",
-      "key_features": [],
-      "required_documents": [],
-      "eligibility_criteria": [],
-      "pros": [],
-      "cons": [],
-      "official_website_reference": "...",
+      "minimum_income_required": "No minimum",
+      "minimum_age": 18,
+      "maximum_age": "No upper limit",
+      "loan_amount_min": "Not applicable",
+      "loan_amount_max": "Not applicable",
+      "interest_rate_range": "2.75% - 3.0% p.a.",
+      "processing_fee": "None",
+      "repayment_tenure": "Ongoing account",
+      "collateral_required": "Not applicable",
+      "key_features": [
+        "No minimum balance requirement",
+        "Micro-insurance coverage",
+        "Government DBT enabled",
+        "Micro ATM facility",
+        "Financial inclusion focus",
+        "Easy account opening",
+        "Direct benefit transfer support",
+        "Mobile banking"
+      ],
+      "required_documents": [
+        "Identity proof (Aadhaar)",
+        "Address proof (simple)",
+        "Signature or thumbprint"
+      ],
+      "eligibility_criteria": [
+        "Rural population farmers/agricultural workers",
+        "Valid Aadhaar",
+        "Resident Indian"
+      ],
+      "pros": [
+        "No minimum balance",
+        "Micro-insurance benefits",
+        "Government schemes support (DBT)",
+        "Easy account opening",
+        "Micro ATM access",
+        "Financial inclusion"
+      ],
+      "cons": [
+        "Limited to rural population",
+        "Basic features only",
+        "Limited branch network"
+      ],
+      "official_website_reference": "www.icicibank.com/rural-development-account",
       "last_updated": "2024-07-26"
     },
     {
