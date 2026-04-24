@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/Filter.module.css';
 import { useUserProfile } from '../context/UserProfileContext';
+import BrandLogo from '../components/BrandLogo';
 
 export default function Filter() {
   const router = useRouter();
@@ -86,6 +87,9 @@ export default function Filter() {
           >
             ← Back to Schemes
           </button>
+          <div className={styles.headerBrand}>
+            <BrandLogo size="md" />
+          </div>
         </header>
 
         <main className={styles.main}>

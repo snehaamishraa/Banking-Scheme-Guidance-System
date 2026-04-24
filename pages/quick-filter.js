@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from '../styles/Filter.module.css';
 import resultStyles from '../styles/Results.module.css';
 import { useUserProfile } from '../context/UserProfileContext';
+import BrandLogo from '../components/BrandLogo';
 
 export default function QuickFilter() {
   const { profile, hasProfile, isHydrated } = useUserProfile();
@@ -131,6 +132,9 @@ export default function QuickFilter() {
           <Link href="/">
             <button className={styles.backButton}>← Back to Home</button>
           </Link>
+          <div className={styles.headerBrand}>
+            <BrandLogo size="md" />
+          </div>
         </header>
 
         <main className={styles.main}>

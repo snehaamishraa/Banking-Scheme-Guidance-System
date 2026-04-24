@@ -31,21 +31,6 @@
   box-shadow: 0 10px 34px rgba(15, 23, 42, 0.09);
 }
 
-.logoText {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #0f172a;
-  letter-spacing: -0.4px;
-}
-
-.highlight {
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .navLinks {
   display: none;
   align-items: center;
@@ -586,7 +571,6 @@
   box-shadow: 0 10px 34px rgba(2, 6, 23, 0.5);
 }
 
-[data-theme='dark'] .logoText,
 [data-theme='dark'] .sectionHeader h2,
 [data-theme='dark'] .benefitsContent h2,
 [data-theme='dark'] .ctaSection h2,

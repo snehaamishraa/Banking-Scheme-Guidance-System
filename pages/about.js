@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/About.module.css';
+import BrandLogo from '../components/BrandLogo';
 
 export default function About() {
   const router = useRouter();
@@ -16,6 +17,9 @@ export default function About() {
           <button onClick={() => router.push('/')} className={styles.backButton}>
             ← Back to Home
           </button>
+          <div className={styles.headerBrand}>
+            <BrandLogo size="md" />
+          </div>
         </header>
 
         <main className={styles.main}>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/Results.module.css';
+import BrandLogo from '../components/BrandLogo';
 
 export default function Results() {
   const router = useRouter();
@@ -190,6 +191,9 @@ export default function Results() {
           <button onClick={handleTryAgain} className={styles.backButton}>
             ← {browseMode === 'category' ? 'Back' : 'Modify Criteria'}
           </button>
+          <div className={styles.headerBrand}>
+            <BrandLogo size="md" />
+          </div>
           {bank && (
             <button onClick={handleViewAllSchemes} className={styles.viewAllButton}>
               View All Schemes

@@ -16,6 +16,7 @@ import {
   Workflow,
 } from 'lucide-react';
 import styles from '../styles/Home.module.css';
+import BrandLogo from '../components/BrandLogo';
 
 export default function Home({ theme = 'light', toggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -132,11 +133,7 @@ export default function Home({ theme = 'light', toggleTheme }) {
       <div className={styles.container}>
         <header className={styles.header}>
           <nav className={`${styles.navbar} ${isScrolled ? styles.navbarScrolled : ''}`}>
-            <div className={styles.logo}>
-              <span className={styles.logoText}>
-                Fin<span className={styles.highlight}>Agent</span>
-              </span>
-            </div>
+            <BrandLogo size="md" />
             <div className={styles.navLinks}>
               <a href="#features">Features</a>
               <a href="#how-it-works">How It Works</a>

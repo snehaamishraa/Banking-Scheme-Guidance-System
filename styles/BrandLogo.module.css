@@ -1,24 +1,157 @@
-.logoWrap {
+.logoContainer {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 0.35rem 0.6rem;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.logoContainer:hover {
+  background: rgba(37, 99, 235, 0.08);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+  transform: translateY(-1px);
+}
+
+.logoContainer:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.logoWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  line-height: 1;
+}
+
+.logoIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(59, 130, 246, 0.2));
+  color: #2563eb;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.logoContainer:hover .logoIcon {
+  transform: scale(1.08) rotate(-3deg);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.3));
+}
+
+.logoIcon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .logoText {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.9rem;
   font-weight: 700;
   color: #0f172a;
   letter-spacing: -0.04em;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .highlight {
-  color: #3b82f6;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+/* Size variants */
+.size_sm .logoIcon {
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0.3rem;
+}
+
+.size_sm .logoText {
+  font-size: 1.3rem;
+}
+
+.size_md .logoIcon {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.38rem;
+}
+
+.size_md .logoText {
+  font-size: 1.55rem;
+}
+
+.size_lg .logoIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0.45rem;
+}
+
+.size_lg .logoText {
+  font-size: 1.95rem;
+}
+
+/* Dark mode */
+[data-theme='dark'] .logoContainer:hover {
+  background: rgba(59, 130, 246, 0.12);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.18);
+}
+
+[data-theme='dark'] .logoIcon {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.18), rgba(59, 130, 246, 0.28));
+  color: #60a5fa;
+}
+
+[data-theme='dark'] .logoContainer:hover .logoIcon {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.28), rgba(59, 130, 246, 0.4));
+}
+
+[data-theme='dark'] .logoText {
+  color: #f8fafc;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .logoText {
-    font-size: 2.2rem;
+  .size_sm .logoIcon {
+    width: 1.4rem;
+    height: 1.4rem;
+    padding: 0.25rem;
+  }
+
+  .size_sm .logoText {
+    font-size: 1.15rem;
+  }
+
+  .size_md .logoIcon {
+    width: 1.7rem;
+    height: 1.7rem;
+    padding: 0.32rem;
+  }
+
+  .size_md .logoText {
+    font-size: 1.35rem;
+  }
+
+  .size_lg .logoIcon {
+    width: 2.1rem;
+    height: 2.1rem;
+    padding: 0.38rem;
+  }
+
+  .size_lg .logoText {
+    font-size: 1.65rem;
+  }
+
+  .logoWrap {
+    gap: 0.45rem;
+  }
+
+  .logoContainer {
+    padding: 0.25rem 0.45rem;
+    border-radius: 10px;
   }
 }
+
