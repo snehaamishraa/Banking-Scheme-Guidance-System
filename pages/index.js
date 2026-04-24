@@ -169,8 +169,8 @@ export default function Home({ theme = 'light', toggleTheme }) {
                   Find Schemes That Fit <span className={styles.accent}>Your Life</span>
                 </h1>
                 <p className={styles.heroSubtitle}>
-                  Discover relevant banking products through guided matching built around your
-                  profile, eligibility, and financial priorities.
+                  Make confident banking decisions faster with curated recommendations matched to
+                  your profile, verified eligibility, and financial objectives.
                 </p>
                 <div className={styles.heroCTA}>
                   <Link href="/get-started" className={styles.primaryBtn}>
