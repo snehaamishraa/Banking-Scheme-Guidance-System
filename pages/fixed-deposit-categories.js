@@ -39,7 +39,7 @@ export default function FixedDepositCategories() {
 
   const [selectedType, setSelectedType] = useState('');
   const [compareInputs, setCompareInputs] = useState({
-    amount: '',
+    amount: '100000',
     tenureValue: '1',
     tenureUnit: 'years'
   });
@@ -78,6 +78,9 @@ export default function FixedDepositCategories() {
 
   const handleCompareChange = (field, value) => {
     setCompareInputs((prev) => ({ ...prev, [field]: value }));
+    if (showComparison) {
+      setShowComparison(false);
+    }
   };
 
   const handleCompareSubmit = (event) => {
@@ -148,7 +151,7 @@ export default function FixedDepositCategories() {
               </p>
             </div>
 
-            <div className={styles.info}>
+            <div className={styles.compareInfo}>
               <p>
                 <strong>FD Compare:</strong> Enter amount and tenure to compare banks by maturity value.
                 {isSeniorCitizen
@@ -157,25 +160,28 @@ export default function FixedDepositCategories() {
               </p>
             </div>
 
-            <form className={styles.form} onSubmit={handleCompareSubmit}>
-              <div className={styles.formSection}>
-                <h3>Compare Fixed Deposits</h3>
+            <section className={styles.compareSection}>
+              <div className={styles.compareHeader}>
+                <h2>Compare Fixed Deposits</h2>
+                <p>Quickly compare FD options for your selected deposit type.</p>
+              </div>
 
-                <div className={styles.formGroup}>
-                  <label htmlFor="amount">Deposit Amount (INR)</label>
-                  <input
-                    id="amount"
-                    type="number"
-                    min="1"
-                    value={compareInputs.amount}
-                    onChange={(e) => handleCompareChange('amount', e.target.value)}
-                    placeholder="e.g. 100000"
-                    required
-                  />
-                </div>
+              <form onSubmit={handleCompareSubmit}>
+                <div className={styles.compareFormGrid}>
+                  <div className={styles.compareFormGroup}>
+                    <label htmlFor="amount">Deposit Amount (INR)</label>
+                    <input
+                      id="amount"
+                      type="number"
+                      min="1"
+                      value={compareInputs.amount}
+                      onChange={(e) => handleCompareChange('amount', e.target.value)}
+                      placeholder="e.g. 100000"
+                      required
+                    />
+                  </div>
 
-                <div className={styles.twoCol}>
-                  <div className={styles.formGroup}>
+                  <div className={styles.compareFormGroup}>
                     <label htmlFor="tenureValue">Tenure</label>
                     <input
                       id="tenureValue"
@@ -187,7 +193,7 @@ export default function FixedDepositCategories() {
                     />
                   </div>
 
-                  <div className={styles.formGroup}>
+                  <div className={styles.compareFormGroup}>
                     <label htmlFor="tenureUnit">Tenure Unit</label>
                     <select
                       id="tenureUnit"
@@ -200,12 +206,12 @@ export default function FixedDepositCategories() {
                   </div>
                 </div>
 
-                <button type="submit" className={styles.continueButton}>
+                <button type="submit" className={styles.compareButton} disabled={!selectedType}>
                   Compare FD Options
                   <span className={styles.arrow}>→</span>
                 </button>
-              </div>
-            </form>
+              </form>
+            </section>
 
             {showComparison && comparedOptions.length === 0 && (
               <div className={styles.noResults}>

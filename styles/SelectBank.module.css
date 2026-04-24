@@ -444,6 +444,131 @@
   color: #2563eb;
 }
 
+.compareInfo {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.12) 0%, rgba(147, 197, 253, 0.18) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.24);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem auto 0;
+  max-width: 600px;
+}
+
+.compareInfo p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.compareInfo strong {
+  color: #2563eb;
+}
+
+.compareSection {
+  max-width: 600px;
+  margin: 1.75rem auto 0;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+}
+
+.compareHeader {
+  margin-bottom: 1.1rem;
+}
+
+.compareHeader h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.compareHeader p {
+  margin: 0.35rem 0 0;
+  color: var(--text-tertiary);
+  font-size: 0.92rem;
+}
+
+.compareFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.compareFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.compareFormGroup:last-child {
+  grid-column: span 2;
+  max-width: 180px;
+}
+
+.compareFormGroup label {
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.compareFormGroup input,
+.compareFormGroup select {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0f172a;
+  padding: 0.72rem 0.82rem;
+  font-size: 0.98rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.compareFormGroup input::placeholder {
+  color: #94a3b8;
+}
+
+.compareFormGroup input:focus,
+.compareFormGroup select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+.compareButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.92rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.24);
+}
+
+.compareButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.3);
+}
+
+.compareButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 /* Loading State */
 .loading {
   display: flex;
@@ -607,6 +732,53 @@
 
   .info p {
     font-size: 0.85rem;
+  }
+
+  .compareInfo {
+    padding: 0.9rem;
+  }
+
+  .compareInfo p {
+    font-size: 0.84rem;
+  }
+
+  .compareSection {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .compareHeader h2 {
+    font-size: 1.85rem;
+  }
+
+  .compareHeader p {
+    font-size: 0.84rem;
+  }
+
+  .compareFormGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .compareFormGroup:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  .compareFormGroup label {
+    font-size: 0.84rem;
+  }
+
+  .compareFormGroup input,
+  .compareFormGroup select {
+    font-size: 0.92rem;
+    padding: 0.68rem 0.75rem;
+  }
+
+  .compareButton {
+    font-size: 0.95rem;
+    padding: 0.82rem 0.9rem;
+    margin-top: 1rem;
   }
 
   .header {
