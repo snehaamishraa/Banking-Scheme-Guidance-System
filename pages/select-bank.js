@@ -14,7 +14,6 @@ export default function SelectBank() {
   const [error, setError] = useState('');
   const [activeTab, setActiveTab] = useState('all');
   const [browseMode, setBrowseMode] = useState('bank'); // 'bank' or 'category'
-  const [hasPpfSchemes, setHasPpfSchemes] = useState(false);
 
   useEffect(() => {
     fetchBanksAndCategories();
@@ -49,12 +48,7 @@ export default function SelectBank() {
       // Extract unique categories from schemes
       const schemeList = Array.isArray(schemesData.schemes) ? schemesData.schemes : [];
       const uniqueCategories = [...new Set(schemeList.map(s => s.scheme_category))].sort();
-      const ppfAvailable = schemeList.some((scheme) => {
-        const combinedText = `${scheme.scheme_name || ''} ${scheme.description || ''}`.toLowerCase();
-        return combinedText.includes('public provident fund') || /\bppf\b/.test(combinedText);
-      });
       setCategories(uniqueCategories);
-      setHasPpfSchemes(ppfAvailable);
       setLoading(false);
     } catch (err) {
       setError('Failed to load data. Please ensure the server is running.');
@@ -331,22 +325,20 @@ export default function SelectBank() {
                     </div>
                   )}
 
-                  {hasPpfSchemes && (
-                    <div
-                      key="Public Provident Fund (PPF)"
-                      className={`${styles.categoryCard} ${
-                        selectedCategory === 'Public Provident Fund (PPF)' ? styles.selected : ''
-                      }`}
-                      onClick={() => handleCategorySelect('Public Provident Fund (PPF)')}
-                    >
-                      <div className={styles.categoryIcon}>{getCategoryIcon('Public Provident Fund (PPF)')}</div>
-                      <h3>Public Provident Fund (PPF)</h3>
-                      <p>Browse all PPF schemes across banks</p>
-                      {selectedCategory === 'Public Provident Fund (PPF)' && (
-                        <div className={styles.checkmark}>✓</div>
-                      )}
-                    </div>
-                  )}
+                  <div
+                    key="Public Provident Fund (PPF)"
+                    className={`${styles.categoryCard} ${
+                      selectedCategory === 'Public Provident Fund (PPF)' ? styles.selected : ''
+                    }`}
+                    onClick={() => handleCategorySelect('Public Provident Fund (PPF)')}
+                  >
+                    <div className={styles.categoryIcon}>{getCategoryIcon('Public Provident Fund (PPF)')}</div>
+                    <h3>Public Provident Fund (PPF)</h3>
+                    <p>Browse all PPF schemes across banks</p>
+                    {selectedCategory === 'Public Provident Fund (PPF)' && (
+                      <div className={styles.checkmark}>✓</div>
+                    )}
+                  </div>
 
                   {otherCategories.map((category) => (
                     <div
