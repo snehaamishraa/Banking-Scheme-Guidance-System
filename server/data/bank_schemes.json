@@ -351,7 +351,7 @@
     {
       "id": "sbi_fd_1",
       "bank_name": "State Bank of India (SBI)",
-      "scheme_category": "Fixed Deposit",
+      "scheme_category": "Fixed Deposits",
       "scheme_name": "SBI Fixed Deposit Scheme",
       "description": "Safe investment option offering fixed interest rates on deposits for various tenures",
       "target_audience": "All individuals and senior citizens seeking safe investment returns",
@@ -2732,7 +2732,7 @@
     {
       "id": "canara_investment_1",
       "bank_name": "Canara Bank",
-      "scheme_category": "Fixed Deposit",
+      "scheme_category": "Fixed Deposits",
       "scheme_name": "Canara Fixed Deposit",
       "description": "Safe investment option with competitive interest rates, flexible tenures (7 days to 10 years), and additional benefits for senior citizens",
       "target_audience": "...",
@@ -2756,7 +2756,7 @@
     {
       "id": "canara_investment_2",
       "bank_name": "Canara Bank",
-      "scheme_category": "Fixed Deposit",
+      "scheme_category": "Recurring Deposit",
       "scheme_name": "Canara Recurring Deposit",
       "description": "Monthly savings scheme with competitive interest rates, flexible tenure options, and compounded returns on regular monthly contributions",
       "target_audience": "...",
@@ -3188,7 +3188,7 @@
     {
       "id": "icici_investment_1",
       "bank_name": "ICICI Bank",
-      "scheme_category": "Fixed Deposit",
+      "scheme_category": "Fixed Deposits",
       "scheme_name": "ICICI Fixed Deposit (FD)",
       "description": "Safe investment option with competitive interest rates (5.5%-7.5% p.a. for general public), flexible tenure from 7 days to 10 years, and secure returns",
       "target_audience": "...",
@@ -3212,7 +3212,7 @@
     {
       "id": "icici_investment_2",
       "bank_name": "ICICI Bank",
-      "scheme_category": "Fixed Deposit",
+      "scheme_category": "Recurring Deposit",
       "scheme_name": "ICICI Recurring Deposit (RD)",
       "description": "Monthly investment plan with fixed installments and guaranteed maturity amount, interest rates around 5.0%-6.5% p.a., flexible tenure options",
       "target_audience": "...",
@@ -3236,7 +3236,7 @@
     {
       "id": "icici_investment_3",
       "bank_name": "ICICI Bank",
-      "scheme_category": "Fixed Deposit",
+      "scheme_category": "Fixed Deposits",
       "scheme_name": "ICICI Senior Citizen Fixed Deposit",
       "description": "Premium FD for senior citizens (60+ years) offering higher interest rates (up to 7.5%-8.0% p.a.) with special senior benefits and priority service",
       "target_audience": "...",
