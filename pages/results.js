@@ -38,11 +38,18 @@ export default function Results() {
 
   const parseCurrency = (amount) => {
     if (typeof amount === 'number') return amount;
-    if (typeof amount !== 'string') return 0;
-    return parseInt(amount.replace(/[₹,\s]/g, '')) || 0;
+    if (typeof amount !== 'string') return null;
+
+    const digitsOnly = amount.replace(/[^\d]/g, '');
+    if (!digitsOnly) return null;
+
+    const parsed = parseInt(digitsOnly, 10);
+    return Number.isFinite(parsed) ? parsed : null;
   };
 
   const formatCurrency = (amount) => {
+    if (!Number.isFinite(amount) || amount <= 0) return null;
+
     if (amount >= 10000000) {
       return '₹' + (amount / 10000000).toFixed(1) + ' Cr';
     } else if (amount >= 100000) {
@@ -54,13 +61,18 @@ export default function Results() {
   };
 
   const formatSchemeData = (scheme) => {
+    const minRaw = scheme.loan_amount_min;
+    const maxRaw = scheme.loan_amount_max;
+    const minParsed = parseCurrency(minRaw);
+    const maxParsed = parseCurrency(maxRaw);
+
     return {
       ...scheme,
-      loanAmountMin: parseCurrency(scheme.loan_amount_min),
-      loanAmountMax: parseCurrency(scheme.loan_amount_max),
+      loanAmountMin: minParsed,
+      loanAmountMax: maxParsed,
       loanAmountFormatted: {
-        min: formatCurrency(parseCurrency(scheme.loan_amount_min)),
-        max: formatCurrency(parseCurrency(scheme.loan_amount_max))
+        min: formatCurrency(minParsed) || (typeof minRaw === 'string' ? minRaw : null),
+        max: formatCurrency(maxParsed) || (typeof maxRaw === 'string' ? maxRaw : null)
       }
     };
   };
@@ -298,10 +310,9 @@ export default function Results() {
                           <div className={styles.detailRow}>
                             <span className={styles.detailLabel}>💰 Loan Amount:</span>
                             <span className={styles.detailValue}>
-                              {scheme.loanAmountFormatted && scheme.loanAmountFormatted.min && scheme.loanAmountFormatted.max
-                                ? `${scheme.loanAmountFormatted.min} - ${scheme.loanAmountFormatted.max}`
-                                : 'Not specified'
-                              }
+                              {scheme.loanAmountFormatted && (scheme.loanAmountFormatted.min || scheme.loanAmountFormatted.max)
+                                ? `${scheme.loanAmountFormatted.min || 'Not specified'} - ${scheme.loanAmountFormatted.max || 'Not specified'}`
+                                : 'Not specified'}
                             </span>
                           </div>
 
