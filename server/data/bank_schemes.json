@@ -921,22 +921,24 @@
       "bank_name": "Axis Bank",
       "scheme_category": "Government-backed schemes",
       "scheme_name": "Public Provident Fund (PPF)",
-      "description": "Long-term government-backed savings product with tax benefits and compounding returns.",
+      "description": "Government-backed long-term savings account with sovereign safety, annual compounding, and EEE tax benefits.",
       "target_audience": "Individuals planning long-term wealth creation",
       "minimum_income_required": "No minimum income required",
       "minimum_age": 18,
       "maximum_age": 70,
       "loan_amount_min": "₹500",
       "loan_amount_max": "₹1,50,000",
-      "interest_rate_range": "As per Government notification",
+      "interest_rate_range": "7.10% p.a. (revised quarterly by Government)",
       "processing_fee": "Nil",
-      "repayment_tenure": "15 years lock-in",
+      "repayment_tenure": "15 years, extendable in blocks of 5 years",
       "collateral_required": "None",
       "key_features": [
-        "EEE tax status",
-        "Sovereign-backed safety",
-        "Annual contribution flexibility",
-        "Compounded returns"
+        "EEE tax status under prevailing tax rules",
+        "Sovereign guarantee by Government of India",
+        "Minimum annual contribution ₹500 and maximum ₹1.5 lakh",
+        "Compounded annual interest",
+        "Loan facility available from year 3",
+        "Partial withdrawal allowed after 5 years as per rules"
       ],
       "required_documents": [
         "KYC documents",
@@ -945,18 +947,22 @@
         "Photograph"
       ],
       "eligibility_criteria": [
-        "Resident Indian individual",
-        "PPF account as per prevailing rules",
+        "Only Indian citizens are eligible",
+        "One account per individual",
+        "Parents/guardians may open for minors",
+        "NRIs and HUFs are not eligible",
         "Contribution within prescribed annual limit"
       ],
       "pros": [
-        "Tax-efficient",
-        "Low risk",
-        "Disciplined long-term savings"
+        "Tax-efficient long-term savings",
+        "Low-risk sovereign-backed product",
+        "Useful for retirement and long-horizon goals",
+        "Online access and account servicing"
       ],
       "cons": [
         "Long lock-in",
-        "Annual contribution cap"
+        "Annual contribution cap",
+        "Premature closure allowed only under specific conditions"
       ],
       "official_website_reference": "www.axis.bank.in/investment/government-products/public-provident-fund-ppf",
       "last_updated": "2026-04-24"
