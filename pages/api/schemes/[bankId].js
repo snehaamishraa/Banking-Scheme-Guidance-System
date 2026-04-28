@@ -2,6 +2,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 
 let schemesCache = null;
+let bankOfBarodaCache = null;
 
 function loadSchemes() {
   if (schemesCache) return schemesCache;
@@ -15,6 +16,38 @@ function loadSchemes() {
     console.error('Error loading schemes:', error);
     return null;
   }
+}
+
+function loadBankOfBarodaSchemes() {
+  if (bankOfBarodaCache) return bankOfBarodaCache;
+
+  try {
+    const filePath = join(process.cwd(), 'server/data/bank_of_baroda_schemes.json');
+    const fileContent = readFileSync(filePath, 'utf-8');
+    bankOfBarodaCache = JSON.parse(fileContent);
+    return bankOfBarodaCache;
+  } catch (error) {
+    console.error('Error loading Bank of Baroda schemes:', error);
+    return null;
+  }
+}
+
+function isBankOfBaroda(bankId) {
+  return bankId.toLowerCase().includes('baroda');
+}
+
+function dedupeSchemes(primarySchemes, secondarySchemes) {
+  const seen = new Set();
+  const mergedSchemes = [];
+
+  [...primarySchemes, ...secondarySchemes].forEach((scheme) => {
+    const dedupeKey = `${scheme.id || ''}::${scheme.scheme_name || ''}::${scheme.scheme_category || ''}`;
+    if (seen.has(dedupeKey)) return;
+    seen.add(dedupeKey);
+    mergedSchemes.push(scheme);
+  });
+
+  return mergedSchemes;
 }
 
 export default function handler(req, res) {
@@ -40,7 +73,16 @@ export default function handler(req, res) {
       scheme.id.startsWith(bankId.toLowerCase())
     );
 
-    if (bankSchemes.length === 0) {
+    const mergedSchemes = isBankOfBaroda(bankId)
+      ? dedupeSchemes(
+          bankSchemes,
+          (loadBankOfBarodaSchemes()?.schemes || []).filter((scheme) =>
+            scheme.bank_name.toLowerCase().includes('bank of baroda')
+          )
+        )
+      : bankSchemes;
+
+    if (mergedSchemes.length === 0) {
       return res.status(404).json({ 
         success: false, 
         error: 'No schemes found for this bank' 
@@ -50,8 +92,8 @@ export default function handler(req, res) {
     res.status(200).json({ 
       success: true,
       bank: bankId,
-      count: bankSchemes.length,
-      schemes: bankSchemes,
+      count: mergedSchemes.length,
+      schemes: mergedSchemes,
       timestamp: new Date().toISOString()
     });
   } catch (error) {
