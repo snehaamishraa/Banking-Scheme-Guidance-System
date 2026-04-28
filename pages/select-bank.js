@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from '../styles/SelectBank.module.css';
 import BrandLogo from '../components/BrandLogo';
+import { BankLogo } from '../components/BankLogos';
 
 export default function SelectBank() {
   const router = useRouter();
@@ -103,24 +104,6 @@ export default function SelectBank() {
     if (bankName.includes('Government')) return 'government';
     if (bankName.includes('SBI') || bankName.includes('PNB') || bankName.includes('Union') || bankName.includes('Baroda')) return 'public';
     return 'private';
-  };
-
-  const getBankIcon = (bankName) => {
-    const icons = {
-      'State Bank of India': '🏛️',
-      'HDFC Bank': '🏦',
-      'ICICI Bank': '💳',
-      'Axis Bank': '⚙️',
-      'Kotak': '🎯',
-      'Punjab National': '🇮🇳',
-      'Bank of Baroda': '🌟',
-      'Union Bank': '🤝',
-      'Government': '📋'
-    };
-    for (const [key, icon] of Object.entries(icons)) {
-      if (bankName.includes(key)) return icon;
-    }
-    return '🏦';
   };
 
   const filterBanks = (banks) => {
@@ -252,7 +235,9 @@ export default function SelectBank() {
                       }`}
                       onClick={() => handleBankSelect(bank)}
                     >
-                      <div className={styles.bankIcon}>{getBankIcon(bank)}</div>
+                      <div className={styles.bankIcon}>
+                        {bank.includes('Government') ? <span aria-hidden="true">📋</span> : <BankLogo bankName={bank} />}
+                      </div>
                       <h3>{bank}</h3>
                       <p>Explore schemes & benefits</p>
                       {selectedBank === bank && (
