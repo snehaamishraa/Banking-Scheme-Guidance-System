@@ -178,7 +178,8 @@
 
 .globalTaglineTrack {
   display: flex;
-  width: 200%;
+  width: max-content;
+  min-width: 200%;
   padding: 10px 0;
   will-change: transform;
   animation: globalTaglineSlide 16s linear infinite;
@@ -186,18 +187,21 @@
 
 .trackInner {
   display: flex;
+  flex: 0 0 auto;
+  width: max-content;
   gap: 3rem;
   align-items: center;
-  width: 50%;
   justify-content: flex-start;
-  padding-left: 1rem;
+  white-space: nowrap;
+  padding-right: 3rem;
 }
 
 .trackInner span {
-  display: inline-block;
+  flex: 0 0 auto;
   font-weight: 700;
   font-size: 1rem;
   color: #0b63de;
+  white-space: nowrap;
 }
 
 @keyframes globalTaglineSlide {
