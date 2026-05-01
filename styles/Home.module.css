@@ -181,14 +181,14 @@
   width: max-content;
   padding: 10px 0;
   will-change: transform;
-  animation: globalTaglineSlide var(--marquee-duration, 20s) linear infinite;
+  animation: globalTaglineSlide var(--marquee-duration, 22s) linear infinite;
 }
 
 .trackInner {
   display: flex;
   flex: 0 0 auto;
   width: max-content;
-  gap: 1.75rem;
+  gap: 2.25rem;
   align-items: center;
   justify-content: flex-start;
   white-space: nowrap;
