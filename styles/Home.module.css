@@ -177,22 +177,21 @@
 }
 
 .globalTaglineTrack {
-  display: flex;
-  width: 200%;
+  display: inline-flex;
+  width: max-content;
   padding: 10px 0;
   will-change: transform;
-  animation: globalTaglineSlide 16s linear infinite;
+  animation: globalTaglineSlide 18s linear infinite;
 }
 
 .trackInner {
-  display: flex;
+  display: inline-flex;
   flex: 0 0 auto;
-  width: 50%;
+  width: max-content;
   gap: 3rem;
   align-items: center;
   justify-content: flex-start;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .trackInner span {
@@ -204,8 +203,8 @@
 }
 
 @keyframes globalTaglineSlide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 .taglineTrack span::before {
