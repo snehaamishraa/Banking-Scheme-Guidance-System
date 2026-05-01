@@ -195,29 +195,6 @@
 }
 
 .trackInner span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.taglineLogo {
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footerBrand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.footerBrand h4 {
-  margin: 0;
-}
-
-.trackInner span {
   flex: 0 0 auto;
   font-weight: 700;
   font-size: 1rem;
