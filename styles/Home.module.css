@@ -177,22 +177,21 @@
 }
 
 .globalTaglineTrack {
-  display: inline-flex;
+  display: flex;
   width: max-content;
   padding: 10px 0;
   will-change: transform;
-  animation: globalTaglineSlide 18s linear infinite;
+  animation: globalTaglineSlide var(--marquee-duration, 20s) linear infinite;
 }
 
 .trackInner {
-  display: inline-flex;
+  display: flex;
   flex: 0 0 auto;
   width: max-content;
-  width: 33.333333%;
-  gap: 1.5rem;
+  gap: 1.75rem;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 1rem;
+  padding-right: 1.75rem;
   white-space: nowrap;
 }
 
@@ -206,7 +205,7 @@
 
 @keyframes globalTaglineSlide {
   0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-33.333333%, 0, 0); }
+  100% { transform: translate3d(calc(-1 * var(--marquee-distance, 0px)), 0, 0); }
 }
 
 .taglineTrack span::before {

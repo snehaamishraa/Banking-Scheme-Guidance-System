@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   ArrowRight,
   BadgeCheck,
@@ -20,6 +20,8 @@ import BrandLogo from '../components/BrandLogo';
 
 export default function Home({ theme = 'light', toggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const marqueeTrackRef = useRef(null);
+  const marqueeInnerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +53,22 @@ export default function Home({ theme = 'light', toggleTheme }) {
       revealItems.forEach((item) => observer.unobserve(item));
       observer.disconnect();
     };
+  }, []);
+
+  useEffect(() => {
+    const updateMarqueeDistance = () => {
+      if (!marqueeTrackRef.current || !marqueeInnerRef.current) {
+        return;
+      }
+
+      const distance = marqueeInnerRef.current.scrollWidth;
+      marqueeTrackRef.current.style.setProperty('--marquee-distance', `${distance}px`);
+    };
+
+    updateMarqueeDistance();
+    window.addEventListener('resize', updateMarqueeDistance);
+
+    return () => window.removeEventListener('resize', updateMarqueeDistance);
   }, []);
 
   const features = [
@@ -158,20 +176,18 @@ export default function Home({ theme = 'light', toggleTheme }) {
         </header>
 
         <div className={styles.globalTagline} role="region" aria-label="Site Tagline">
-          <div className={styles.globalTaglineTrack}>
-            <div className={styles.trackInner}>
+          <div className={styles.globalTaglineTrack} ref={marqueeTrackRef}>
+            <div className={styles.trackInner} ref={marqueeInnerRef}>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-            </div>
-            <div className={styles.trackInner} aria-hidden="true">
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
             </div>
             <div className={styles.trackInner} aria-hidden="true">
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
