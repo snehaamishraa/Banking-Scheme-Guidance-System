@@ -178,16 +178,16 @@ export default function Home({ theme = 'light', toggleTheme }) {
         <div className={styles.globalTagline} role="region" aria-label="Site Tagline">
           <div className={styles.globalTaglineTrack} ref={marqueeTrackRef}>
             <div className={styles.trackInner} ref={marqueeInnerRef}>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span><span className={styles.taglineLogo}><BrandLogo withLink={false} size="sm" /></span> Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span><span className={styles.taglineLogo}><BrandLogo withLink={false} size="sm" /></span> Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span><span className={styles.taglineLogo}><BrandLogo withLink={false} size="sm" /></span> Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span><span className={styles.taglineLogo}><BrandLogo withLink={false} size="sm" /></span> Finagent-Har Kadam,Aapke Finance Ke Sath</span>
             </div>
             <div className={styles.trackInner} aria-hidden="true">
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span><span className={styles.taglineLogo}><BrandLogo withLink={false} size="sm" /></span> Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span><span className={styles.taglineLogo}><BrandLogo withLink={false} size="sm" /></span> Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span><span className={styles.taglineLogo}><BrandLogo withLink={false} size="sm" /></span> Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span><span className={styles.taglineLogo}><BrandLogo withLink={false} size="sm" /></span> Finagent-Har Kadam,Aapke Finance Ke Sath</span>
             </div>
           </div>
         </div>
@@ -350,7 +350,10 @@ export default function Home({ theme = 'light', toggleTheme }) {
         <footer className={styles.footer}>
           <div className={styles.footerContent}>
             <div className={styles.footerSection}>
-              <h4>FinAgent</h4>
+              <div className={styles.footerBrand}>
+                <BrandLogo withLink={false} size="sm" />
+                <h4>FinAgent</h4>
+              </div>
               <p>Professional financial scheme discovery for modern users.</p>
             </div>
             <div className={styles.footerSection}>
