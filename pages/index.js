@@ -164,16 +164,14 @@ export default function Home({ theme = 'light', toggleTheme }) {
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
-              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
             </div>
             <div className={styles.trackInner} aria-hidden="true">
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+            </div>
+            <div className={styles.trackInner} aria-hidden="true">
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
