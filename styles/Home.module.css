@@ -139,6 +139,85 @@
   padding: 0.35rem 0.75rem;
 }
 
+.taglineMarquee {
+  width: 100%;
+  max-width: 34rem;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.06), rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.06));
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.06);
+}
+
+.taglineTrack {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.2rem;
+  width: max-content;
+  padding: 0.72rem 1rem;
+  white-space: nowrap;
+  color: #1d4ed8;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  animation: taglineSlide 16s linear infinite;
+}
+
+.taglineTrack span {
+  position: relative;
+  padding-left: 1.05rem;
+}
+
+.globalTagline {
+  width: 100%;
+  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
+  color: #fff;
+  overflow: hidden;
+}
+
+.globalTaglineTrack {
+  display: flex;
+  width: 200%;
+  padding: 10px 0;
+  will-change: transform;
+  animation: globalTaglineSlide 16s linear infinite;
+}
+
+.trackInner {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  width: 50%;
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+.trackInner span {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0b63de;
+}
+
+@keyframes globalTaglineSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.taglineTrack span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
 .heroTitle {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(2rem, 6vw, 3.7rem);
@@ -680,6 +759,15 @@
   }
 }
 
+@keyframes taglineSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
 @media (min-width: 768px) {
   .header {
     padding: 1.05rem 1.2rem;
@@ -692,6 +780,39 @@
   .heroSection {
     padding: 5.5rem 0 3.4rem;
   }
+
+  .taglineMarquee {
+    max-width: 38rem;
+  }
+
+/* Full width header tagline bar placed under the header */
+.globalTagline {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(37,99,235,0.03), rgba(255,255,255,0));
+  border-top: 1px solid rgba(15,23,42,0.03);
+  border-bottom: 1px solid rgba(15,23,42,0.03);
+  padding: 0.45rem 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.globalTaglineTrack {
+  display: inline-flex;
+  gap: 3rem;
+  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.01em;
+  font-size: 0.95rem;
+  animation: globalTaglineSlide 18s linear infinite;
+}
+
+@keyframes globalTaglineSlide {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
 
   .heroGrid {
     grid-template-columns: 1.15fr 0.85fr;

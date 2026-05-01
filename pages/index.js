@@ -157,6 +157,23 @@ export default function Home({ theme = 'light', toggleTheme }) {
           </nav>
         </header>
 
+        <div className={styles.globalTagline} role="region" aria-label="Site Tagline">
+          <div className={styles.globalTaglineTrack}>
+            <div className={styles.trackInner}>
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+            </div>
+            <div className={styles.trackInner} aria-hidden="true">
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+              <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
+            </div>
+          </div>
+        </div>
+
         <main className={styles.main}>
           <section className={`${styles.heroSection} ${styles.reveal}`} id="home" data-reveal>
             <div className={styles.heroGrid}>
