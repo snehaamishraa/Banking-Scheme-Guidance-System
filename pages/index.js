@@ -22,6 +22,7 @@ export default function Home({ theme = 'light', toggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const marqueeTrackRef = useRef(null);
   const marqueeInnerRef = useRef(null);
+  const marqueeSpacerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,12 +58,14 @@ export default function Home({ theme = 'light', toggleTheme }) {
 
   useEffect(() => {
     const updateMarqueeDistance = () => {
-      if (!marqueeTrackRef.current || !marqueeInnerRef.current) {
+      if (!marqueeTrackRef.current || !marqueeInnerRef.current || !marqueeSpacerRef.current) {
         return;
       }
 
       const distance = marqueeInnerRef.current.scrollWidth;
+      const gap = marqueeSpacerRef.current.getBoundingClientRect().width;
       marqueeTrackRef.current.style.setProperty('--marquee-distance', `${distance}px`);
+      marqueeTrackRef.current.style.setProperty('--marquee-gap-distance', `${gap}px`);
     };
 
     updateMarqueeDistance();
@@ -185,6 +188,7 @@ export default function Home({ theme = 'light', toggleTheme }) {
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
             </div>
+            <div className={styles.trackSpacer} ref={marqueeSpacerRef} aria-hidden="true" />
             <div className={styles.trackInner} aria-hidden="true">
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
               <span>Finagent-Har Kadam,Aapke Finance Ke Sath</span>
